@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+
+# ignore temp_plot folder
+/temp_plot/
