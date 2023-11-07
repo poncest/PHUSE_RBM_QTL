@@ -77,7 +77,7 @@ q6_raw <- raw_data %>%
     x6_which_aspects_of_risk_based_approaches_to_quality_does_your_company_apply_to_the_following_trial_types_please_check_all_that_apply_phase_iv
     )
 
-# Question 05 ----      
+# Question 07 ----      
 q7_raw <- raw_data %>%
   select(
     x7_if_you_answered_yes_to_other_risk_based_approaches_used_in_question_6_please_identify_those_used_please_check_all_that_apply

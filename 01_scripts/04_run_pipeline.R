@@ -33,7 +33,7 @@ source(here("01_scripts/02_data_wrangling.R"))
 # Generate output (table or visual)
 source(here("01_scripts/03_vidualizations.R")) 
 
-# Remove unnecessary df (save memory)
-rm(q1_raw, q2_raw, q3_raw, q4_raw, q5_raw, q6_raw)
+# House keeping
+rm(q1_raw, q2_raw, q3_raw, q4_raw, q5_raw, q6_raw, q7_raw)
 
 
