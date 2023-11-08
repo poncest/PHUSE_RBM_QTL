@@ -5,7 +5,7 @@
 
 #' Goal:
 #' 1. Clean the data from the QTL survey
-#' 2. Generate the corresponding visual to support the 'white-paper'.
+#' 2. Generate the corresponding visual to support the 'whitepaper'.
 
 #' Author: Steven Ponce
 #' Date: 2023-11-01
@@ -34,6 +34,6 @@ source(here("01_scripts/02_data_wrangling.R"))
 source(here("01_scripts/03_vidualizations.R")) 
 
 # House keeping
-rm(q1_raw, q2_raw, q3_raw, q4_raw, q5_raw, q6_raw, q7_raw)
+rm(q1_raw, q2_raw, q3_raw, q4_raw, q5_raw, q6_raw, q7_raw, q8_raw, q9_raw)
 
 

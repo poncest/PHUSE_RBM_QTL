@@ -5,7 +5,7 @@
 
 #' Goal:
 #' 1. Clean the data from the QTL survey
-#' 2. Generate the corresponding visual to support the 'white-paper'.
+#' 2. Generate the corresponding visual to support the 'whitepaper'.
 
 #' Author: Steven Ponce
 #' Date: 2023-11-01
@@ -37,7 +37,7 @@ title_col       <- "gray20"
 caption_col     <- "gray20"
 bar_label_color <- "gray20" 
 bar_plot_col    <- "#004f63"
-# palette_col     <- met.brewer("Cross", n = 09, type = "discrete", direction = -1)
+#palette_col     <- met.brewer("Cross", n = 09, type = "discrete", direction = -1)
 
 
 p1 <- q1_clean %>% 
@@ -318,6 +318,75 @@ p6
 ggsave(path = here("02_img/"),
        filename = "Q6.png", device = "png", plot = p6,   
        width = 8.5, height = 8, units = 'in', dpi = 320)  
+
+
+# Question 08 ----
+
+# |- figure size ---- 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 9,
+  height = 9,
+  units  = "in",
+  dpi    = 320) 
+
+p8 <- q8_clean %>% 
+  
+  # bar_plot()
+  bar_plot_2(x_variable = trial_attribute, y_variable = pct, label_adjust = 0.025, col_width = 0.90)+
+  
+  # Scales
+  scale_x_reordered(expand = expansion(add = c(0.8, .3)))+ 
+  scale_y_continuous(breaks = seq(0, .05, by = .025), 
+                     limits = c(0, .05),
+                     expand = c(0, 0.0),
+                     labels = percent_format())+
+  
+  # Facet
+  facet_wrap( ~ factor(activity,
+                       levels = c(
+                         "Identification<br>of CTQ’s",
+                         "Overall<br>Implementation<br>of QbD",
+                         "QTL’s<br>Utilized",
+                         "QTL’s Aligned<br>with CTQ’s",
+                         "QTL Review<br>Processes",
+                         "Frequency<br>of QTL Review",
+                         "Communication<br>of QTL Breaches",
+                         "Implementation<br>of Corrective<br>Actions",
+                         "Reporting<br>Significant QTL<br>Deviations in CSR")
+                       ),
+              scales = "free_y", ncol = 3) +
+
+  # Labs
+  labs(x = "Activity",
+       y = "Percent",
+       title = "Q8: Is your company’s Risk Based Approach to quality applied differently\ndepending on the following trial attributes?"
+  )+
+  
+  # Theme
+  bar_plot_theme_2()+
+  theme(
+    strip.text   = element_textbox(size = 12,
+                                   face   = 'bold',
+                                   color  = text_col,
+                                   hjust  = 0.5,
+                                   halign = 0.5,
+                                   fill   = "transparent"),
+    
+    panel.spacing.x = unit(.85, 'lines')
+    
+  )
+
+p8
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "Q8.png", device = "png", plot = p8,   
+       width = 9, height = 9, units = 'in', dpi = 320)  
+
+
 
 
 

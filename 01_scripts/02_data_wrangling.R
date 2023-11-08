@@ -5,7 +5,7 @@
 
 #' Goal:
 #' 1. Clean the data from the QTL survey
-#' 2. Generate the corresponding visual to support the 'white-paper'.
+#' 2. Generate the corresponding visual to support the 'whitepaper'.
 
 #' Author: Steven Ponce
 #' Date: 2023-11-01
@@ -67,7 +67,6 @@ q2_clean <- q2_raw %>%
     bar_axis  = str_glue("{ company_size } ({ count })"),
     bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
   )
-
 
 
 
@@ -198,7 +197,6 @@ q3_clean_others <- q3_raw %>%
 
 
 
-
 # Question 04 ----
 q4_clean <- q4_raw %>% 
   
@@ -253,7 +251,6 @@ q4_clean <- q4_raw %>%
     bar_axis  = str_glue("{ functional_area } ({ count })"),
     bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
   )
-
 
 
 # Question 05 ----
@@ -333,7 +330,6 @@ q5_clean_why <- q5_raw %>%
   mutate(comment_why = str_to_sentence(comment_why))
 
   
-
 # Question 06 ----
 q6_clean <- q6_raw %>% 
   
@@ -406,7 +402,6 @@ q6_clean <- q6_raw %>%
   )) 
 
 
-
 # Question 07 ----
 q7_clean <- q7_raw %>% 
   
@@ -447,4 +442,101 @@ q7_clean <- q7_raw %>%
     bar_axis  = str_glue("{ other_rbm_approaches } ({ count })"),
     bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
   )
+
+
+# Question 08 ----
+q8_clean <- q8_raw %>% 
+  
+  # rename columns
+  rename(
+    identification     = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_identification_of_ct_qs,
+    implementation     = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_overall_implementation_of_qb_d,
+    utilized           = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_qt_ls_utilized,
+    aligned            = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_qt_ls_aligned_with_ct_qs,
+    review             = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_qtl_review_processes,
+    frequency          = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_frequency_of_qtl_review,
+    communication      = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_communication_of_qtl_breaches,
+    corrective_actions = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_implementation_of_corrective_actions,
+    reporting          = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_reporting_significant_qtl_deviations_in_csr
+  ) %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = everything(),
+    names_to = "activity",
+    values_to = "trial_attribute",
+    values_drop_na = TRUE,
+    ) %>% 
+  
+  # separate `other_rbm_approaches`
+  separate_wider_delim(cols = trial_attribute, 
+                       delim = ", ",
+                       names = c("1","2","3","4"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -activity,
+    names_to = "id",
+    values_to = "trial_attribute",
+    values_drop_na = TRUE,
+    ) %>% 
+  
+  # remove empty rows
+  filter(trial_attribute != "") %>% 
+  
+  # remove ((Tick if YES/Leave blank if NO)
+  mutate(trial_attribute = str_remove_all(string = trial_attribute, 
+                                          pattern = " \\(\\(Tick if YES/Leave blank if NO\\)")) %>% 
+
+  # remove `id` column
+  select(-id) %>% 
+  
+  # summary
+  group_by(activity, trial_attribute) %>% 
+  bar_summary_2() %>%
+  ungroup() %>% 
+  
+  # recode activity
+  mutate(activity = case_when(
+    activity == "identification"     ~ "Identification<br>of CTQ’s",
+    activity == "implementation"     ~ "Overall<br>Implementation<br>of QbD",
+    activity == "utilized"           ~ "QTL’s<br>Utilized",
+    activity == "aligned"            ~ "QTL’s Aligned<br>with CTQ’s",
+    activity == "review"             ~ "QTL Review<br>Processes",
+    activity == "frequency"          ~ "Frequency<br>of QTL Review",
+    activity == "communication"      ~ "Communication<br>of QTL Breaches",
+    activity == "corrective_actions" ~ "Implementation<br>of Corrective<br>Actions",
+    activity == "reporting"          ~ "Reporting<br>Significant QTL<br>Deviations in CSR"
+  )) %>% 
+
+  # reorder
+  mutate(trial_attribute = reorder_within(trial_attribute, count, activity)) %>% 
+
+  # add labels
+  mutate(
+    bar_axis  = str_glue("{ trial_attribute } ({ count })"),
+    bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
+  ) 
+
+
+# Question 09 ----
+q9_clean <- q9_raw %>% 
+  
+  # rename column
+  rename(feedback_loop_process = x9_does_your_company_have_a_process_in_place_with_regard_to_completing_a_feedback_loop) %>%   
+  
+  # summary
+  bar_summary(group_col = feedback_loop_process) %>% 
+  
+  # reorder
+  mutate(feedback_loop_process = fct_reorder(feedback_loop_process, count)) %>% 
+  
+  # add labels
+  mutate(
+    bar_axis  = str_glue("{ feedback_loop_process } ({ count })"),
+    bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
+  )
+
+
 
