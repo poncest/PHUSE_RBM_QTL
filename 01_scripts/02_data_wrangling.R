@@ -444,6 +444,7 @@ q7_clean <- q7_raw %>%
   )
 
 
+
 # Question 08 ----
 q8_clean <- q8_raw %>% 
   
@@ -537,6 +538,89 @@ q9_clean <- q9_raw %>%
     bar_axis  = str_glue("{ feedback_loop_process } ({ count })"),
     bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
   )
+
+
+
+# Question 10 ----
+q10_clean <- q10_raw %>% 
+  
+  # rename columns
+  rename(
+    identification     = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_identification_of_ct_qs,
+    implementation     = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_implementation_of_qb_d,
+    risk               = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_implementation_of_a_risk_strategy_3,
+    utilized           = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_qt_ls_utilized,
+    review             = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_qtl_review_processes,
+    aligned            = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_qt_ls_aligned_with_ct_qs,
+    frequency          = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_frequency_of_qtl_review,
+    communication      = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_communication_of_qtl_breaches,
+    corrective_actions = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_implementation_of_corrective_actions,
+    reporting          = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_reporting_significant_qtl_deviations_in_csr
+  ) %>% 
+
+  # pivot longer
+  pivot_longer(
+    cols = everything(),
+    names_to = "activity",
+    values_to = "documentation_type",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(documentation_type != "")
+  
+  # separate `other_rbm_approaches`
+  separate_wider_delim(cols = trial_attribute, 
+                       delim = ", ",
+                       names = c("1","2","3","4"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -activity,
+    names_to = "id",
+    values_to = "trial_attribute",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(trial_attribute != "") %>% 
+  
+  # remove ((Tick if YES/Leave blank if NO)
+  mutate(trial_attribute = str_remove_all(string = trial_attribute, 
+                                          pattern = " \\(\\(Tick if YES/Leave blank if NO\\)")) %>% 
+  
+  # remove `id` column
+  select(-id) %>% 
+  
+  # summary
+  group_by(activity, trial_attribute) %>% 
+  bar_summary_2() %>%
+  ungroup() %>% 
+  
+  # recode activity
+  mutate(activity = case_when(
+    activity == "identification"     ~ "Identification<br>of CTQ’s",
+    activity == "implementation"     ~ "Overall<br>Implementation<br>of QbD",
+    activity == "utilized"           ~ "QTL’s<br>Utilized",
+    activity == "aligned"            ~ "QTL’s Aligned<br>with CTQ’s",
+    activity == "review"             ~ "QTL Review<br>Processes",
+    activity == "frequency"          ~ "Frequency<br>of QTL Review",
+    activity == "communication"      ~ "Communication<br>of QTL Breaches",
+    activity == "corrective_actions" ~ "Implementation<br>of Corrective<br>Actions",
+    activity == "reporting"          ~ "Reporting<br>Significant QTL<br>Deviations in CSR"
+  )) %>% 
+  
+  # reorder
+  mutate(trial_attribute = reorder_within(trial_attribute, count, activity)) %>% 
+  
+  # add labels
+  mutate(
+    bar_axis  = str_glue("{ trial_attribute } ({ count })"),
+    bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
+  ) 
+
+
 
 
 

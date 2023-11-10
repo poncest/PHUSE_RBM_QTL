@@ -24,14 +24,14 @@ pacman::p_load(here)
 
 # Pipeline - Run Files
 
-# Read in the data
-source(here("01_scripts/01_data_read_in.R"))
+# Read data
+source(here("01_scripts/01_read_data.R"))
 
 # Data wrangling 
 source(here("01_scripts/02_data_wrangling.R"))
 
 # Generate output (table or visual)
-source(here("01_scripts/03_vidualizations.R")) 
+source(here("01_scripts/03_data_visualization.R")) 
 
 # House keeping
 rm(q1_raw, q2_raw, q3_raw, q4_raw, q5_raw, q6_raw, q7_raw, q8_raw, q9_raw)
