@@ -567,56 +567,66 @@ q10_clean <- q10_raw %>%
   ) %>% 
   
   # remove empty rows
-  filter(documentation_type != "")
+  filter(documentation_type != "") %>% 
+  
+  # format documentation_type
+  mutate(documentation_type = case_when(
+    documentation_type == "Part of a Protocol-Level Plan(e.g.,part of a Risk Mgmt Strategy Plan)"            ~ "Part of a Protocol-Level Plan",
+    documentation_type == "Separate Protocol- Level Plans (example Risk Mgmt Strategy Plan,Monitoring Plan)" ~ "Separate Protocol- Level Plans",
+    documentation_type == "Via Technology Solution(s)"                                                       ~ "Via Technology Solution",
+    TRUE                                                                                                     ~ as.character(documentation_type)
+  )) %>% 
   
   # separate `other_rbm_approaches`
-  separate_wider_delim(cols = trial_attribute, 
+  separate_wider_delim(cols = documentation_type, 
                        delim = ", ",
-                       names = c("1","2","3","4"),
+                       names = c("1","2","3"),
                        too_few = "align_start") %>% 
   
   # pivot longer
   pivot_longer(
     cols = -activity,
     names_to = "id",
-    values_to = "trial_attribute",
+    values_to = "documentation_type",
     values_drop_na = TRUE,
   ) %>% 
   
-  # remove empty rows
-  filter(trial_attribute != "") %>% 
-  
-  # remove ((Tick if YES/Leave blank if NO)
-  mutate(trial_attribute = str_remove_all(string = trial_attribute, 
-                                          pattern = " \\(\\(Tick if YES/Leave blank if NO\\)")) %>% 
+  # format documentation_type
+  mutate(documentation_type = case_when(
+    documentation_type == "Part of a Protocol-Level Plan(e.g.,part of a Risk Mgmt Strategy Plan)"            ~ "Part of a Protocol-Level Plan",
+    documentation_type == "Separate Protocol- Level Plans (example Risk Mgmt Strategy Plan,Monitoring Plan)" ~ "Separate Protocol- Level Plans",
+    documentation_type == "Via Technology Solution(s)"                                                       ~ "Via Technology Solution",
+    TRUE                                                                                                     ~ as.character(documentation_type)
+  )) %>% 
   
   # remove `id` column
   select(-id) %>% 
   
-  # summary
-  group_by(activity, trial_attribute) %>% 
+# summary
+group_by(activity, documentation_type) %>% 
   bar_summary_2() %>%
   ungroup() %>% 
-  
+    
   # recode activity
   mutate(activity = case_when(
-    activity == "identification"     ~ "Identification<br>of CTQ’s",
-    activity == "implementation"     ~ "Overall<br>Implementation<br>of QbD",
-    activity == "utilized"           ~ "QTL’s<br>Utilized",
+    activity == "identification"     ~ "Identification of CTQ’s",
+    activity == "implementation"     ~ "Overall Implementation<br>of QbD",
+    activity == "risk"               ~ "Implementation of<br>Risk Strategy",
+    activity == "utilized"           ~ "QTL’s Utilized",
+    activity == "review"             ~ "QTL Review Processes",
     activity == "aligned"            ~ "QTL’s Aligned<br>with CTQ’s",
-    activity == "review"             ~ "QTL Review<br>Processes",
-    activity == "frequency"          ~ "Frequency<br>of QTL Review",
+    activity == "frequency"          ~ "Frequency of<br>QTL Review",
     activity == "communication"      ~ "Communication<br>of QTL Breaches",
     activity == "corrective_actions" ~ "Implementation<br>of Corrective<br>Actions",
     activity == "reporting"          ~ "Reporting<br>Significant QTL<br>Deviations in CSR"
   )) %>% 
   
   # reorder
-  mutate(trial_attribute = reorder_within(trial_attribute, count, activity)) %>% 
+  mutate(documentation_type = reorder_within(documentation_type, count, activity)) %>% 
   
   # add labels
   mutate(
-    bar_axis  = str_glue("{ trial_attribute } ({ count })"),
+    bar_axis  = str_glue("{ documentation_type } ({ count })"),
     bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
   ) 
 

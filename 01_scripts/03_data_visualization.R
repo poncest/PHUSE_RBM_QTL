@@ -303,8 +303,8 @@ p6 <- q6_clean %>%
     strip.text   = element_textbox(size = 12,
                                    face   = 'bold',
                                    color  = text_col,
-                                   hjust  = 0.5,
-                                   halign = 0.5,
+                                   hjust  = 0,
+                                   halign = 0,
                                    fill   = "transparent"),
     
     panel.spacing.x = unit(1, 'lines')
@@ -354,8 +354,8 @@ p8 <- q8_clean %>%
                          "Frequency<br>of QTL Review",
                          "Communication<br>of QTL Breaches",
                          "Implementation<br>of Corrective<br>Actions",
-                         "Reporting<br>Significant QTL<br>Deviations in CSR")
-                       ),
+                         "Reporting<br>Significant QTL<br>Deviations in CSR"
+                         )),
               scales = "free_y", ncol = 3) +
 
   # Labs
@@ -365,13 +365,13 @@ p8 <- q8_clean %>%
   )+
   
   # Theme
-  bar_plot_theme_2()+
+  bar_plot_theme(base_size = 10)+
   theme(
     strip.text   = element_textbox(size = 12,
                                    face   = 'bold',
                                    color  = text_col,
-                                   hjust  = 0.5,
-                                   halign = 0.5,
+                                   hjust  = 0,
+                                   halign = 0,
                                    fill   = "transparent"),
     
     panel.spacing.x = unit(.85, 'lines')
@@ -387,6 +387,73 @@ ggsave(path = here("02_img/"),
        width = 9, height = 9, units = 'in', dpi = 320)  
 
 
+
+# Question 10 ----
+
+# |- figure size ---- 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 9,
+  height = 9,
+  units  = "in",
+  dpi    = 320) 
+
+p10 <- q10_clean %>% 
+  
+  # bar_plot()
+  bar_plot_2(x_variable = documentation_type, y_variable = pct, label_adjust = 0.028, col_width = 0.95)+
+  
+  # Scales
+  scale_x_reordered(expand = expansion(add = c(0.8, .3)))+ 
+  scale_y_continuous(breaks = seq(0, .06, by = .03), 
+                     limits = c(0, .07),
+                     expand = c(0, 0.0),
+                     labels = percent_format())+
+  
+  # Facet                                                                            
+  facet_wrap( ~ factor(activity,
+                       levels = c(
+                         "Identification of CTQ’s",
+                         "Overall Implementation<br>of QbD",
+                         "Implementation of<br>Risk Strategy",
+                         "QTL’s Utilized",
+                         "QTL Review Processes",
+                         "QTL’s Aligned<br>with CTQ’s",  
+                         "Frequency of<br>QTL Review",
+                         "Communication<br>of QTL Breaches",
+                         "Implementation<br>of Corrective<br>Actions",
+                         "Reporting<br>Significant QTL<br>Deviations in CSR"
+                         )),
+              scales = "free_y", ncol = 2) +
+    
+  # Labs
+  labs(x = "Activity",
+       y = "Percent",
+       title = "Q10: How does your company document your Risk-Based Approaches to Quality?"
+  )+
+  
+  # Theme
+  bar_plot_theme(base_size = 10)+
+  theme(
+    strip.text   = element_textbox(size = 12,
+                                   face   = 'bold',
+                                   color  = text_col,
+                                   hjust  = 0,
+                                   halign = 0,
+                                   fill   = "transparent"),
+    
+    panel.spacing.x = unit(.85, 'lines')
+    
+  )
+
+p10
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "Q10.png", device = "png", plot = p10,   
+       width = 9, height = 9, units = 'in', dpi = 320)  
 
 
 

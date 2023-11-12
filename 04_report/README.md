@@ -13,6 +13,6 @@
 | Q7                             | done       | table    |
 | Q8                             | done       | bar plot |
 | Q9                             | done       | table    |
-| Q10                            | in-process | bar plot |
-|                                |            |          |
+| Q10                            | done       | bar plot |
+| Q11                            | in-process |          |
 |                                |            |          |
