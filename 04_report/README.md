@@ -1,16 +1,20 @@
-# Figure Tracker
+# Figure Tracker:
 
-### Selected Questions
+------------------------------------------------------------------------
 
-| Question Number                | Status     | Type      |
-|--------------------------------|------------|-----------|
-| Q3b                            | done       | dot plot  |
-| Q3b (Other category breakdown) | done       | table     |
-| Q6b                            | in-process |           |
-| Q23b                           |            |           |
-| Q24b                           |            |           |
+## Selected Questions
 
-### Initial Work
+| Question Number                | Status     | Type     |
+|--------------------------------|------------|----------|
+| Q3b                            | done       | dot plot |
+| Q3b (Other category breakdown) | done       | table    |
+| Q6b                            | in-process |          |
+| Q23b                           |            |          |
+| Q24b                           |            |          |
+
+------------------------------------------------------------------------
+
+## Initial Work (EDA)
 
 | Question Number                | Status | Type     |
 |--------------------------------|--------|----------|
