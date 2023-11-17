@@ -153,8 +153,6 @@ q6_clean <- q6_raw %>%
   
 
 
-
-
 # Question 23 ----
 
 

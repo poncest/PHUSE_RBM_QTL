@@ -4,13 +4,13 @@
 
 ## Selected Questions
 
-| Question Number                | Status     | Type     |
-|--------------------------------|------------|----------|
-| Q3b                            | done       | dot plot |
-| Q3b (Other category breakdown) | done       | table    |
-| Q6b                            | in-process |          |
-| Q23b                           |            |          |
-| Q24b                           |            |          |
+| Question Number                | Status      | Type     |
+|--------------------------------|-------------|----------|
+| Q3b                            | done        | dot plot |
+| Q3b (Other category breakdown) | done        | table    |
+| Q6b                            | done        | dot plot |
+| Q23b                           | not started |          |
+| Q24b                           |             |          |
 
 ------------------------------------------------------------------------
 

@@ -268,6 +268,7 @@ ggsave(path = here("02_img/"),
        width = 8, height = 10, units = 'in', dpi = 320)  
 
 
+
 # Question 23 ----
 
 
