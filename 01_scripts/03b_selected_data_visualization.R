@@ -196,6 +196,78 @@ ggsave(path = here("02_img/"),
 
 
 
+## # Question 06 (Alternative) ---- 
+
+p6b_02 <- q6_clean %>% 
+  ggplot(aes(x = response_id, y = stage_phase, fill = stage_phase))+
+  
+  # geoms
+  ggdist::geom_dots(smooth      = "bar", 
+                    layout      = "bin", 
+                    orientation = "y",
+                    position    = "identity", 
+                    dotsize     = 0.8,
+                    shape       = 22) +
+  
+  # scale
+  scale_x_discrete() +                                
+  scale_y_discrete(expand = c(0.01, 0.5))+
+  urbnthemes::scale_color_discrete()+
+  coord_equal(clip = 'off')+
+  
+  #facet
+  facet_wrap(~ rbm_approaches, ncol = 1)+
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "RBM Approaches",
+    title = "Q6: Which aspects of Risk-Based Approaches to Quality\ndoes your company apply to the following Trial?"
+  )+
+  
+  # theme
+  theme_minimal()+
+  theme(
+    plot.title.position   = "plot",
+    plot.caption.position = "plot",
+    legend.position       = 'plot',
+    
+    plot.background       = element_rect(fill = bkg_col, color = bkg_col),
+    panel.background      = element_rect(fill = bkg_col, color = bkg_col),
+    
+    plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
+    
+    axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
+    axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
+    
+    axis.text             = element_text(size = 10, color = text_col, family = 'text'),
+    
+    axis.line.x           = element_line(color = "grey80", linewidth = .4),
+    axis.line.y           = element_blank(),
+    
+    strip.text            = element_textbox(size = 12,
+                                            face   = 'bold',
+                                            color  = text_col,
+                                            hjust  = 0.5,
+                                            halign = 0.5,
+                                            fill   = "transparent"),
+    
+    plot.title            = element_text(
+      family              = 'title',
+      color               = title_col,
+      face                = "bold",
+      size                = 14,  
+      lineheight          = 0.9, 
+      margin              = margin(b = 10)),
+  )
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "Q06b_02.png", device = "png", plot = p6b_02,   
+       width = 8, height = 10, units = 'in', dpi = 320)  
+
+
 # Question 23 ----
 
 
