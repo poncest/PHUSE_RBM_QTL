@@ -7,8 +7,12 @@
 #' 1. Clean the data from the QTL survey
 #' 2. Generate the corresponding visual to support the 'whitepaper'.
 
+#' Focus:
+#' Work on selected questions/figures only. 
+
 #' Author: Steven Ponce
-#' Date: 2023-11-01
+#' Date: 2023-16-01
+
 
 
 ## PURPOSE: 
@@ -23,18 +27,21 @@
 pacman::p_load(here)
 
 
-## Run Files -- Initial Work
+## Run Files -- Selected Questions
 
 # Read data
-source(here("01_scripts/01_read_data.R"))
+source(here("01_scripts/01b_selected_read_data.R"))
 
 # Data wrangling 
-source(here("01_scripts/02_data_wrangling.R"))
+source(here("01_scripts/02b_selected_data_wrangling.R"))
 
 # Generate output (table or visual)
-source(here("01_scripts/03_data_visualization.R")) 
+source(here("01_scripts/03b_selected_data_visualization.RR")) 
 
 # House keeping
-rm(q1_raw, q2_raw, q3_raw, q4_raw, q5_raw, q6_raw, q7_raw, q8_raw, q9_raw, q10_raw)
+rm(q3_raw, q6_raw)
+
+
+
 
 
