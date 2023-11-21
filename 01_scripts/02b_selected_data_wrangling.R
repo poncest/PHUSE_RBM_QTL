@@ -257,8 +257,104 @@ q23_clean <- q23_raw %>%
  
 
 # Question 24 ----
-
-
+q24_clean <- q24_raw %>% 
+  
+  # rename columns
+  rename(
+    pd_ie      = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_protocol_deviation_inclusion_exclusion_criteria,
+    pd_sc      = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_protocol_deviation_study_conduct,
+    pd_other   = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_protocol_deviation_other,
+    pea        = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_primary_endpoint_assessment,
+    sea        = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_secondary_endpoint_assessment,
+    ip_comp    = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_investigational_product_compliance,
+    ip_other   = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_investigational_product_other,
+    rf         = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_randomization_failure,
+    lfu        = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_lost_to_follow_up,
+    ic         = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_informed_consent,
+    ae_sea_rep = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_ae_sae_reporting,
+    cd         = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_censored_data_trial_participant_censored_for_primary_objectives_statistical_analysis,
+    disp       = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_disposition_early_termination_from_study_drug,
+    rmt        = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_repeated_measures_timepoints_for_fih_early_phase_trials,
+    strat      = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_stratification,
+    other1     = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_other_1,
+    other2     = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_other_2,
+    other3     = x24_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_other_3,
+  ) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "parameters",
+    values_to = "scale",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(scale != "") %>% 
+  
+  # remove digits from scale (1-, 2-)
+  mutate(scale = str_remove_all(string = scale, pattern = "\\d+-")) %>% 
+  
+  # recode `parameters` column
+  mutate(parameters = case_when(
+    parameters == "pd_ie"      ~ "Protocol Deviation – Inclusion/Exclusion Criteria",
+    parameters == "pd_sc"      ~ "Protocol Deviation – Study Conduct",
+    parameters == "pd_other"   ~ "Protocol Deviation - Other",
+    parameters == "pea"        ~ "Primary Endpoint Assessment",
+    parameters == "sea"        ~ "Secondary Endpoint Assessment",
+    parameters == "ip_comp"    ~ "Investigational Product – Compliance",
+    parameters == "ip_other"   ~ "Investigational Product - Other",
+    parameters == "rf"         ~ "Randomization Failure",
+    parameters == "lfu"        ~ "Lost to Follow Up",
+    parameters == "ic"         ~ "Informed Consent",
+    parameters == "ae_sea_rep" ~ "AE/SAE - Reporting",
+    parameters == "cd"         ~ "Censored Data – Trial participants censored for primary objective statistical analysis",
+    parameters == "disp"       ~ "Disposition – Early Termination from Study Drug",
+    parameters == "rmt"        ~ "Repeated Measures Timepoints for FIH / Early Phase trials",
+    parameters == "strat"      ~ "Stratification",
+    parameters == "other1"     ~ "Other1",
+    parameters == "other2"     ~ "Other2",
+    parameters == "other3"     ~ "Other3",
+  )) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    response_id = as_factor(response_id),
+    parameters = factor(parameters, 
+                        levels = c(
+                          "Protocol Deviation – Inclusion/Exclusion Criteria",
+                          "Protocol Deviation – Study Conduct",
+                          "Protocol Deviation - Other",
+                          "Primary Endpoint Assessment",
+                          "Secondary Endpoint Assessment",
+                          "Investigational Product – Compliance",
+                          "Investigational Product - Other",
+                          "Randomization Failure",
+                          "Lost to Follow Up",
+                          "Informed Consent",
+                          "AE/SAE - Reporting",
+                          "Censored Data – Trial participants censored for primary objective statistical analysis",
+                          "Disposition – Early Termination from Study Drug",
+                          "Repeated Measures Timepoints for FIH / Early Phase trials",
+                          "Stratification",
+                          "Other1",
+                          "Other2",
+                          "Other3"
+                          ),
+                        ),
+    scale = factor(scale, 
+                        levels = c(
+                          "Low",
+                          "Medium",
+                          "Medium, High",
+                          "High"
+                          ),
+                    )
+  )
 
 
 

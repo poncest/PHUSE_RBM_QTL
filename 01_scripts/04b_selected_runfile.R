@@ -36,10 +36,10 @@ source(here("01_scripts/01b_selected_read_data.R"))
 source(here("01_scripts/02b_selected_data_wrangling.R"))
 
 # Generate output (table or visual)
-source(here("01_scripts/03b_selected_data_visualization.RR")) 
+source(here("01_scripts/03b_selected_data_visualization.R")) 
 
 # House keeping
-rm(q3_raw, q6_raw)
+rm(q3_raw, q6_raw, q23_raw, q24_raw)
 
 
 

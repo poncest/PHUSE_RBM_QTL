@@ -292,7 +292,7 @@ p23_02 <- q23_clean %>%
   
   ggplot(aes(x = response_id, 
              y = factor(parameters),
-             fill = status                     #fill = parameters
+             fill = status                     
              ))+                                      
   
   # geoms
@@ -346,14 +346,7 @@ p23_02 <- q23_clean %>%
     
     axis.line.x           = element_line(color = "grey80", linewidth = .4),
     axis.line.y           = element_blank(),
-    
-    strip.text            = element_textbox(size = 12,
-                                            face   = 'bold',
-                                            color  = text_col,
-                                            hjust  = 0.5,
-                                            halign = 0.5,
-                                            fill   = "transparent"),
-    
+
     plot.title            = element_text(
       family              = 'title',
       color               = title_col,
@@ -375,6 +368,94 @@ ggsave(path = here("02_img/"),
 
 # Question 24 ----
 
+## (Alternative) ---- 
 
+# |- figure size ---- 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 9,
+  height = 6,
+  units  = "in",
+  dpi    = 320) 
+
+
+p24_02 <- q24_clean %>% 
+  
+  # filter out Others
+  filter(!str_detect(parameters, "Other\\d+")) %>% 
+  
+  ggplot(aes(x = response_id, 
+             y = factor(parameters),
+             fill = scale                     
+  ))+                                      
+  
+  # geoms
+  ggdist::geom_dots(smooth      = "discrete", 
+                    layout      = "bin", 
+                    orientation = "y",
+                    position    = "identity", 
+                    dotsize     = 0.8,
+                    shape       = 22) +
+  
+  # scale
+  scale_x_discrete() +                               
+  scale_y_discrete(expand = c(0.01, 0.1))+
+  urbnthemes::scale_color_discrete()+
+  coord_equal(clip = 'off')+
+  
+  # facet
+  # facet_wrap(~ scale, ncol = 1)+
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "TransCelerate Parameters",
+    title = "Q24: Rate the Parameters for QTLs (as defined by TransCelerate)",
+    fill  = "Scale"
+  )+
+  
+  # theme
+  theme_minimal() +
+  theme(
+    
+    plot.title.position   = "plot",              
+    plot.caption.position = "plot",          
+    
+    legend.position       = c(0.95, 1.1),
+    legend.justification  = c("right", "top"),
+    legend.box.just       = "right",
+    legend.margin         = margin(6, 6, 6, 6),
+    legend.direction      = 'horizontal',
+    legend.text           = element_text(size = 12),
+    
+    plot.background       = element_rect(fill = bkg_col, color = bkg_col),
+    panel.background      = element_rect(fill = bkg_col, color = bkg_col),
+    
+    plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
+    
+    axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
+    axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
+    
+    axis.text             = element_text(size = 10, color = text_col, family = 'text'),
+    
+    axis.line.x           = element_line(color = "grey80", linewidth = .4),
+    axis.line.y           = element_blank(),
+    
+    plot.title            = element_text(
+      family              = 'title',
+      color               = title_col,
+      face                = "bold",
+      size                = 14,  
+      lineheight          = 0.9, 
+      margin              = margin(b = 30)),
+  )
+
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "Q24b_02.png", device = "png", plot = p24_02,   
+       width = 9, height = 6, units = 'in', dpi = 320)  
 
 
