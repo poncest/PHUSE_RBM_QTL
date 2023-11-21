@@ -9,8 +9,8 @@
 | Q3b                            | done        | dot plot |
 | Q3b (Other category breakdown) | done        | table    |
 | Q6b                            | done        | dot plot |
-| Q23b                           | not started |          |
-| Q24b                           |             |          |
+| Q23b                           | done        | dpt plot |
+| Q24b                           | not started |          |
 
 ------------------------------------------------------------------------
 

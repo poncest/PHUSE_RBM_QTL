@@ -89,7 +89,7 @@ q6_clean <- q6_raw %>%
     ph3_rs = x6_which_aspects_of_risk_based_approaches_to_quality_does_your_company_apply_to_the_following_trial_types_please_check_all_that_apply_phase_iii_regulatory_submission,
     ph3_fu = x6_which_aspects_of_risk_based_approaches_to_quality_does_your_company_apply_to_the_following_trial_types_please_check_all_that_apply_phase_iii_follow_up,
     ph4    = x6_which_aspects_of_risk_based_approaches_to_quality_does_your_company_apply_to_the_following_trial_types_please_check_all_that_apply_phase_iv
-    ) %>% 
+  ) %>% 
   
   # add `response_id` column
   mutate(response_id = row_number()) %>% 
@@ -154,8 +154,107 @@ q6_clean <- q6_raw %>%
 
 
 # Question 23 ----
+q23_clean <- q23_raw %>% 
+  
+    # rename columns
+    rename(
+      pd_ie      = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_protocol_deviation_inclusion_exclusion_criteria,
+      pd_sc      = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_protocol_deviation_study_conduct,
+      pd_other   = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_protocol_deviation_other,
+      pea        = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_primary_endpoint_assessement,
+      sea        = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_secondary_endpoint_assessment,
+      ip_comp    = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_investigational_product_compliance,
+      ip_other   = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_investigational_product_other,
+      rf         = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_randomization_failure,
+      lfu        = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_lost_to_follow_up,
+      ic         = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_informed_consent,
+      ae_sea_rep = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_ae_sae_reporting,
+      cd         = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_censored_data_trial_participants_censored_for_primary_objective_statistical_analysis,
+      disp       = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_disposition_early_termination_from_study_drug,
+      rmt        = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_repeated_measures_timepoints_for_fih_early_phase_trials,
+      strat      = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_stratification,
+      other1     = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_other_1_please_specify_below,
+      other2     = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_other_2_please_specify_below,
+      other3     = x23_please_indicate_below_the_possible_potential_parameters_for_qt_ls_as_defined_by_trans_celerate_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_24_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_other_3_please_specify_below
+    ) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "parameters",
+    values_to = "status",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(status != "") %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    response_id = as_factor(response_id),
+    status      = factor(status, 
+                         levels = c(
+                           "Currently in Use",
+                           "Planned to Use",
+                           "Perceived Value",
+                           "Not Considered a QTL"
+                        )
+    )) %>% 
+  
+  # recode `parameters` column
+  mutate(parameters = case_when(
+    parameters == "pd_ie"      ~ "Protocol Deviation – Inclusion/Exclusion Criteria",
+    parameters == "pd_sc"      ~ "Protocol Deviation – Study Conduct",
+    parameters == "pd_other"   ~ "Protocol Deviation - Other",
+    parameters == "pea"        ~ "Primary Endpoint Assessment",
+    parameters == "sea"        ~ "Secondary Endpoint Assessment",
+    parameters == "ip_comp"    ~ "Investigational Product – Compliance",
+    parameters == "ip_other"   ~ "Investigational Product - Other",
+    parameters == "rf"         ~ "Randomization Failure",
+    parameters == "lfu"        ~ "Lost to Follow Up",
+    parameters == "ic"         ~ "Informed Consent",
+    parameters == "ae_sea_rep" ~ "AE/SAE - Reporting",
+    parameters == "cd"         ~ "Censored Data – Trial participants censored for primary objective statistical analysis",
+    parameters == "disp"       ~ "Disposition – Early Termination from Study Drug",
+    parameters == "rmt"        ~ "Repeated Measures Timepoints for FIH / Early Phase trials",
+    parameters == "strat"      ~ "Stratification",
+    parameters == "other1"     ~ "Other1",
+    parameters == "other2"     ~ "Other2",
+    parameters == "other3"     ~ "Other3",
+  )) %>% 
+  
+  # drop NA
+  filter(!is.na(status)) %>% 
 
-
+  # specify factors levels (as per questionnaire)
+  mutate(
+    parameters = factor(parameters, 
+                        levels = c(
+                          "Protocol Deviation – Inclusion/Exclusion Criteria",
+                          "Protocol Deviation – Study Conduct",
+                          "Protocol Deviation - Other",
+                          "Primary Endpoint Assessment",
+                          "Secondary Endpoint Assessment",
+                          "Investigational Product – Compliance",
+                          "Investigational Product - Other",
+                          "Randomization Failure",
+                          "Lost to Follow Up",
+                          "Informed Consent",
+                          "AE/SAE - Reporting",
+                          "Censored Data – Trial participants censored for primary objective statistical analysis",
+                          "Disposition – Early Termination from Study Drug",
+                          "Repeated Measures Timepoints for FIH / Early Phase trials",
+                          "Stratification",
+                          "Other1",
+                          "Other2",
+                          "Other3"
+                         )
+    )) 
+ 
 
 # Question 24 ----
 
