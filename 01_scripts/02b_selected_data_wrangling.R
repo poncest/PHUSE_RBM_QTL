@@ -77,6 +77,215 @@ q3_clean <- q3_raw %>%
                              ))
 
 
+# Question 03 (others) ----
+q3_others <- q3_raw %>% 
+  
+  # select only `others` col
+  select(other_2) %>% 
+  
+  # rename column
+  rename(other_functional_area = other_2) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  
+  # separate `functional_area`
+  separate_wider_delim(cols = other_functional_area, 
+                       delim = ", ", 
+                       names = c("C1","C2","C3","C4"),
+                       too_few = "align_end") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "temp_col",
+    values_to = "other_functional_area",
+    values_drop_na = TRUE, 
+  ) %>% 
+  
+  # select columns
+  select(response_id, other_functional_area) %>% 
+  
+  # trim white spaces
+  mutate(other_functional_area = str_trim(other_functional_area)) %>% 
+  
+  # format
+  mutate(other_functional_area = case_when(
+    other_functional_area == "Central Monitor"         ~ "Central Monitoring",
+    other_functional_area == "Centralized Monitoring"  ~ "Central Monitoring",
+    other_functional_area == "Saas programmers"        ~ "SaaS programmers",
+    TRUE ~ as.character(other_functional_area)
+  )) 
+
+
+  
+
+# Question 04 ----
+q4_clean <- q4_raw %>% 
+  
+  # rename column
+  rename(functional_area = x4_which_functional_area_leads_trial_level_risk_based_approaches_to_quality_please_check_only_one) %>% 
+  
+  # select only `functional_area` col
+  select(functional_area) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  
+  # remove number formats (a., b.) 
+  mutate(functional_area = str_remove_all(string = functional_area, pattern = "[abcdefg]\\.")) %>% 
+  
+  # separate `functional_area`
+  separate_wider_delim(cols = functional_area, 
+                       delim = ", ", 
+                       names = c("C1","C2","C3","C4","C5","C6","C7"),
+                       too_few = "align_end") %>% 
+
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "temp_col",
+    values_to = "functional_area",
+    values_drop_na = TRUE, 
+  ) %>% 
+  
+  # select columns
+  select(response_id, functional_area) %>% 
+  
+  # Format `Others`
+  mutate(functional_area = case_when(
+    functional_area == "Other (Please specify below)" ~ "Other",
+    TRUE ~ as.character(functional_area)
+  )) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    response_id     = as_factor(response_id),
+    functional_area = factor(functional_area, 
+                             levels = c("Clinical Operations", 
+                                        "Data Management", 
+                                        "Biostatistics",
+                                        "Clinical Science", 
+                                        "Safety Science", 
+                                        "Quality Functions",
+                                        "Other")
+    ))
+
+
+# Question 04 (Others) ----
+q4_others <- q4_raw %>% 
+  
+  # rename column
+  rename(functional_area = x4_which_functional_area_leads_trial_level_risk_based_approaches_to_quality_please_check_only_one,
+         other_functional_area = other_3) %>% 
+  
+  # select only `others` col
+  select(other_functional_area) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  
+  # select columns
+  select(response_id, other_functional_area) %>% 
+  
+  # consolidate `other` category
+  mutate(other_functional_area = case_when(
+    other_functional_area == "Centralized Mointoring"                                      ~ "Central Monitoring",
+    other_functional_area == "Dedicated RBQM lead or Risk Manager"                         ~ "Risk Manager",
+    other_functional_area == "Dedicated Risk Managment Specialist"                         ~ "Risk Manager",
+    other_functional_area == "Each functional area has an oversight team to assess risk."  ~ "Oversight Team",
+    other_functional_area == "the study team have an RBQM working group and they decide who takes the lead in the group, generally its Operations but can be one of the other functions like biostats or clinical science "  ~ "RBQM working group",
+    TRUE ~ as.character(other_functional_area)
+  )) %>% 
+  
+  # factors
+  mutate(response_id = as_factor(response_id))
+
+
+# Question 05 ----
+q5_clean <- q5_raw %>% 
+  
+  # rename column
+  rename(trial_types = x5_are_there_any_trial_types_where_your_company_does_not_apply_risk_based_approaches_to_quality_please_select_all_that_apply_and_provide_comments_as_to_why_this_is_the_case) %>% 
+  
+  # select only `trial_types` col 
+  select(trial_types) %>%  
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  
+  # remove number formats (a., b.) 
+  mutate(trial_types = str_remove_all(string = trial_types, pattern = "[abcdefg]\\."))  %>% 
+  
+  # replace ", " with " | " in `Others`
+  # so it doesn't separate in the step below
+  mutate(
+    trial_types = str_replace_all(string = trial_types,
+                                  pattern     = "Registry, non-interventional",
+                                  replacement = "Registry | non-interventional")
+  ) %>% 
+  
+  # separate `trial_types`
+  separate_wider_delim(cols = trial_types, 
+                       delim = ", ", 
+                       names = c("C1","C2","C3"),
+                       too_few = "align_end")  %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "temp_col",
+    values_to = "trial_types",
+    values_drop_na = TRUE, 
+  ) %>% 
+  
+  # format
+  mutate(trial_types = case_when(
+    trial_types == "Other (Registry | non-interventional)"     ~ "Other",
+    trial_types == "Comment (Please comment why below)"        ~ "Comment why",
+    trial_types == "Post-marketing approval (interventional)"  ~ "Post-marketing approval",
+    TRUE ~ as.character(trial_types)
+  )) %>% 
+  
+  # select columns
+  select(response_id, trial_types) %>% 
+  
+  # filter out `comment why` 
+  filter(trial_types != "Comment why") %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    response_id = as_factor(response_id),
+    trial_types = factor(trial_types,
+                         levels = c("Phase I",
+                                    "Phase II",
+                                    "Biostatistics",
+                                    "Complex Design",
+                                    "Post-marketing approval",
+                                    "Other")
+    ))
+
+
+
+# Question 05 (others) ----
+q5_others <- q5_raw %>% 
+  
+  # rename column
+  rename(trial_types = x5_are_there_any_trial_types_where_your_company_does_not_apply_risk_based_approaches_to_quality_please_select_all_that_apply_and_provide_comments_as_to_why_this_is_the_case) %>% 
+  
+  # select only `comments` col 
+  select(comment_why) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  
+  # select columns
+  select(response_id, comment_why) %>% 
+  
+  # format
+  mutate(comment_why = str_to_sentence(comment_why))
+
+
 
 # Question 06 ----
 q6_clean <- q6_raw %>% 

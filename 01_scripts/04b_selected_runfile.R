@@ -39,7 +39,7 @@ source(here("01_scripts/02b_selected_data_wrangling.R"))
 source(here("01_scripts/03b_selected_data_visualization.R")) 
 
 # House keeping
-rm(q3_raw, q6_raw, q23_raw, q24_raw)
+rm(q3_raw, q4_raw, q6_raw, q23_raw, q24_raw)
 
 
 

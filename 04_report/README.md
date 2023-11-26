@@ -4,15 +4,20 @@
 
 ## Selected Questions
 
-| Question Number                | Status | Type     |
-|--------------------------------|--------|----------|
-| Q3b                            | done   | dot plot |
-| Q3b (Other category breakdown) | done   | table    |
-| Q6b                            | done   | dot plot |
-| Q23b                           | done   | dot plot |
-| Q24b                           | done   | dot plot |
-
-------------------------------------------------------------------------
+| Question Number                | Status     | Type     |
+|--------------------------------|------------|----------|
+| Q3                             | done       | dot plot |
+| Q3b (Other category breakdown) | done       | table    |
+| Q4                             | done       | dot plot |
+| Q4b (Other category breakdown) | done       | table    |
+| Q5                             | done       | dot plot |
+| Q5b (Other category breakdown) | done       | table    |
+| Q6                             | in-process |          |
+|                                |            |          |
+|                                |            |          |
+|                                |            |          |
+|                                |            |          |
+|                                |            |          |
 
 ## Initial Work (EDA)
 

@@ -46,8 +46,7 @@ showtext_auto(enable = TRUE)
 
 
 # Question 03 ----
-
-p3b <- q3_clean %>% 
+plot03 <- q3_clean %>% 
   
   ggplot(aes(x = response_id, y = functional_area, fill = functional_area)) +    
   
@@ -74,39 +73,90 @@ p3b <- q3_clean %>%
   )+
   
   # theme
-  theme_minimal()+
-  theme(
-    plot.title.position   = "plot",
-    plot.caption.position = "plot",
-    legend.position       = 'plot',
-    
-    plot.background       = element_rect(fill = bkg_col, color = bkg_col),
-    panel.background      = element_rect(fill = bkg_col, color = bkg_col),
-    
-    plot.margin           = margin(t = 10, r = 20, b = 10, l = 20),
-    
-    axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-    axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
-    
-    axis.text             = element_text(size = 10, color = text_col, family = 'text'),
-    
-    axis.line.x           = element_line(color = "grey80", linewidth = .4),
-    axis.line.y           = element_blank(),
-    
-    plot.title            = element_text(
-      family              = 'title',
-      color               = title_col,
-      face                = "bold",
-      size                = 14,  
-      lineheight          = 0.9, 
-      margin              = margin(b = 10)),
-  )
+  custom_theme()
+  
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot03.png", device = "png", plot = plot03,   
+       width = 6, height = 4, units = 'in', dpi = 320)  
+
+
+
+# Question 04 ----
+plot04 <- q4_clean %>% 
+  
+  ggplot(aes(x = response_id, y = functional_area, fill = functional_area)) +    
+  
+  # geoms
+  ggdist::geom_dots(smooth      = "bar", 
+                    layout      = "bin", 
+                    orientation = "y",
+                    position    = "identity", 
+                    dotsize     = 0.8,
+                    shape       = 22) +
+  
+  
+  # scale
+  scale_x_discrete() +                                
+  scale_y_discrete(expand = c(0.01, 0))+
+  urbnthemes::scale_color_discrete()+
+  coord_equal(clip = 'off')+
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "Functional Area",
+    title = "Q4: Which Functional Area leads trial level Risk-Based\nApproaches to Quality?"
+  )+
+  
+  # theme
+  custom_theme()
+
+  
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot04.png", device = "png", plot = plot04,   
+       width = 6, height = 4, units = 'in', dpi = 320)  
+
+
+
+# Question 05 ----
+plot05 <- q5_clean %>%
+  
+  ggplot(aes(x = response_id, y = trial_types, fill = trial_types)) +    
+  
+  # geoms
+  ggdist::geom_dots(smooth      = "bar", 
+                    layout      = "bin", 
+                    orientation = "y",
+                    position    = "identity", 
+                    dotsize     = 0.4,
+                    shape       = 22) +
+  
+  
+  # scale
+  scale_x_discrete()+                                 
+  scale_y_discrete(expand = c(0.01, 0))+
+  urbnthemes::scale_color_discrete()+
+  coord_equal(clip = 'off')+
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "Trial types",
+    title = "Q5: What are the trial types where your company does not\napply Risk-Based Approaches to Quality?"
+  )+
+  
+  # theme
+  custom_theme()
 
 
 
 # saving plot
 ggsave(path = here("02_img/"),
-       filename = "Q03b.png", device = "png", plot = p3b,   
+       filename = "plot05.png", device = "png", plot = plot05,   
        width = 6, height = 4, units = 'in', dpi = 320)  
 
 

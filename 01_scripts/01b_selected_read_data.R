@@ -17,11 +17,11 @@
 
 # 1. LOAD PACKAGES ---- 
 pacman::p_load(tidyverse, here, janitor, lubridate, scales, ggtext, showtext, data.table)
-pacman::p_load(ggdist,urbnthemes)
+pacman::p_load(ggdist, urbnthemes)
 
 
 # source helper functions
-#source("03_functions/01_helper_functions.R")
+source("03_functions/01_helper_functions.R")
 
 
 
@@ -43,6 +43,18 @@ raw_data <- fread(file = '00_data/IN/qtl_survey_response.csv') %>%
 q3_raw <- raw_data %>%
   select(x3_which_functional_area_s_are_involved_in_trial_level_risk_based_approaches_to_quality_1_please_check_all_that_apply_1_please_see_ich_e6_r2_section_5_0_and_ich_e8_r1,
          other_2)
+
+
+# Question 04 ----
+q4_raw <- raw_data %>%
+  select(x4_which_functional_area_leads_trial_level_risk_based_approaches_to_quality_please_check_only_one,
+         other_3)
+
+
+# Question 05 ----      
+q5_raw <- raw_data %>%
+  select(x5_are_there_any_trial_types_where_your_company_does_not_apply_risk_based_approaches_to_quality_please_select_all_that_apply_and_provide_comments_as_to_why_this_is_the_case,
+         comment_why)
 
 
 # Question 06 ----
