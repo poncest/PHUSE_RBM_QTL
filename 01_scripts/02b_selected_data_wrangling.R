@@ -77,7 +77,7 @@ q3_clean <- q3_raw %>%
                              ))
 
 
-# Question 03 (others) ----
+# |- others ----
 q3_others <- q3_raw %>% 
   
   # select only `others` col
@@ -172,7 +172,7 @@ q4_clean <- q4_raw %>%
     ))
 
 
-# Question 04 (Others) ----
+# |- others ----
 q4_others <- q4_raw %>% 
   
   # rename column
@@ -267,7 +267,7 @@ q5_clean <- q5_raw %>%
 
 
 
-# Question 05 (others) ----
+# |- others ----
 q5_others <- q5_raw %>% 
   
   # rename column
@@ -360,6 +360,258 @@ q6_clean <- q6_raw %>%
     stage_phase == "ph4"    ~ "Phase IV",
   )) 
   
+
+
+# Question 07 ----                    
+q7_clean <- q7_raw %>% 
+  
+  # rename columns
+  rename(
+   rbm_approach = x7_if_you_answered_yes_to_other_risk_based_approaches_used_in_question_6_please_identify_those_used_please_check_all_that_apply
+  ) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+  
+  # remove number formats (a., b.) 
+  mutate(rbm_approach = str_remove_all(string = rbm_approach, pattern = "[abcdefg]\\.")) %>% 
+  
+  # separate `rbm_approach`
+  separate_wider_delim(cols = rbm_approach, 
+                       delim = ", ",
+                       names = c("C1","C2","C3"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "temp_col",
+    values_to = "rbm_approach",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(rbm_approach != "") %>% 
+  
+  # remove `id` column
+  select(-temp_col) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    #response_id     = as_factor(response_id),                                
+    rbm_approach  = factor(rbm_approach, 
+                           levels = c("KRI's", 
+                                      "KPI's", 
+                                      "Team Tracking risk items",
+                                      "Other"
+                             )
+    )) 
+
+
+
+# Question 08  ----                    
+q8_clean <- q8_raw %>% 
+  
+  # rename columns
+  rename(
+    identification     = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_identification_of_ct_qs,
+    implementation     = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_overall_implementation_of_qb_d,
+    utilized           = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_qt_ls_utilized,
+    aligned            = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_qt_ls_aligned_with_ct_qs,
+    review             = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_qtl_review_processes,
+    frequency          = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_frequency_of_qtl_review,
+    communication      = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_communication_of_qtl_breaches,
+    corrective_actions = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_implementation_of_corrective_actions,
+    reporting          = x8_is_your_company_s_risk_based_approach_to_quality_applied_differently_depending_on_the_following_trial_atttributes_please_note_some_organizations_may_have_more_than_one_activity_that_is_tightly_integrated_across_multiple_elements_e_g_trial_size_and_phase_please_utilize_the_mixed_response_for_these_situations_reporting_significant_qtl_deviations_in_csr
+  ) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "activity",
+    values_to = "trial_attributes",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(trial_attributes != "") %>% 
+  
+  # separate `trial_attributes`
+  separate_wider_delim(cols = trial_attributes, 
+                       delim = ", ",
+                       names = c("C1","C2","C3", "C4"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = c(C1:C4),
+    names_to = "temp_col",
+    values_to = "trial_attributes",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove ((Tick if YES/Leave blank if NO)
+  mutate(trial_attributes = str_remove_all(string = trial_attributes, 
+                                           pattern = " \\(\\(Tick if YES/Leave blank if NO\\)")) %>% 
+  
+  # remove `temp_col` column
+  select(-temp_col) 
+
+
+# |- option 1  ---- 
+q8_option1 <- q8_clean %>% 
+  
+  # recode activity
+  mutate(activity = case_when(
+    activity == "identification"     ~ "Identification of CTQ’s",
+    activity == "implementation"     ~ "Overall Implementation of QbD",
+    activity == "utilized"           ~ "QTL’s Utilized",
+    activity == "aligned"            ~ "QTL’s Aligned with CTQ’s",
+    activity == "review"             ~ "QTL Review Processes",
+    activity == "frequency"          ~ "Frequency of QTL Review",
+    activity == "communication"      ~ "Communication of QTL Breaches",
+    activity == "corrective_actions" ~ "Implementation of Corrective Actions",
+    activity == "reporting"          ~ "Reporting Significant QTL Deviations in CSR"
+  )) %>% 
+  
+  
+  # truncate activity title (I want to use 2 cols for the plot)
+  mutate(activity = str_trunc(activity, width = 15, side = "right")) %>%  
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    activity  = factor(activity, 
+                       levels = c("Identificati...",
+                                  "Overall Impl...",
+                                  "QTL’s Utilized",
+                                  "QTL’s Aligne...",
+                                  "QTL Review P...",
+                                  "Frequency of...",
+                                  "Communicatio...",
+                                  "Implementati...",
+                                  "Reporting Si..."
+                       )
+    ))
+                       
+
+
+# |- option 2 ---- 
+q8_option2 <- q8_clean %>% 
+  
+  # recode activity
+  mutate(activity = case_when(
+    activity == "identification"     ~ "Identification of CTQ’s",
+    activity == "implementation"     ~ "Overall Implementation of QbD",
+    activity == "utilized"           ~ "QTL’s Utilized",
+    activity == "aligned"            ~ "QTL’s Aligned with CTQ’s",
+    activity == "review"             ~ "QTL Review Processes",
+    activity == "frequency"          ~ "Frequency of QTL Review",
+    activity == "communication"      ~ "Communication of QTL Breaches",
+    activity == "corrective_actions" ~ "Implementation of Corrective Actions",
+    activity == "reporting"          ~ "Reporting Significant QTL Deviations in CSR"
+  )) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    trial_attributes  = factor(trial_attributes, 
+                       levels = c("Trial Design",
+                                   "Trial Phase",
+                                   "Trial Size",
+                                   "Unable to Answer",
+                                   "Mixed Response",
+                                   "Not Utilized"
+                        )
+        ))
+
+
+# Question 10 ----
+q10_clean <- q10_raw %>% 
+  
+  # rename columns
+  rename(
+    identification     = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_identification_of_ct_qs,
+    implementation     = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_implementation_of_qb_d,
+    risk               = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_implementation_of_a_risk_strategy_3,
+    utilized           = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_qt_ls_utilized,
+    review             = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_qtl_review_processes,
+    aligned            = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_qt_ls_aligned_with_ct_qs,
+    frequency          = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_frequency_of_qtl_review,
+    communication      = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_communication_of_qtl_breaches,
+    corrective_actions = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_implementation_of_corrective_actions,
+    reporting          = x10_how_does_your_company_document_your_risk_based_approaches_to_quality_please_check_all_that_apply_the_goal_of_this_question_and_others_that_follow_with_similar_activities_regarding_ctq_s_qbd_is_to_understand_what_and_how_your_company_makes_links_if_any_from_these_activities_to_qtl_s_reporting_significant_qtl_deviations_in_csr
+  ) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "activity",
+    values_to = "documentation_type",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(documentation_type != "") %>% 
+  
+  # separate `documentation_type`
+  separate_wider_delim(cols = documentation_type, 
+                       delim = ", ",
+                       names = c("C1","C2","C3"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = c(C1:C3),
+    names_to = "temp_col",
+    values_to = "documentation_type",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove `temp_col` column
+  select(-temp_col) %>% 
+  
+  # format documentation_type
+  mutate(documentation_type = case_when(
+    documentation_type == "Part of a Protocol-Level Plan(e.g.,part of a Risk Mgmt Strategy Plan)"            ~ "Part of a Protocol",
+    documentation_type == "Separate Protocol- Level Plans (example Risk Mgmt Strategy Plan,Monitoring Plan)" ~ "Separate Protocol",
+    documentation_type == "Via Technology Solution(s)"                                                       ~ "Technology Solution",
+    TRUE                                                                                                     ~ as.character(documentation_type)
+  )) %>% 
+  
+  # recode activity
+  mutate(activity = case_when(
+    activity == "identification"     ~ "Identification of CTQ’s",
+    activity == "implementation"     ~ "Implementation of QbD",
+    activity == "risk"               ~ "Implementation of Risk Strategy",
+    activity == "utilized"           ~ "QTL’s Utilized",
+    activity == "review"             ~ "QTL Review Processes",
+    activity == "aligned"            ~ "QTL’s Aligned with CTQ’s",
+    activity == "frequency"          ~ "Frequency of QTL Review",
+    activity == "communication"      ~ "Communication of QTL Breaches",
+    activity == "corrective_actions" ~ "Implementation of Corrective Actions",
+    activity == "reporting"          ~ "Significant QTL Deviations in CSR"
+  )) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    documentation_type  = factor(documentation_type, 
+                               levels = c("Technology Solution",
+                                          "Separate Protocol",
+                                          "Part of a Protocol",
+                                          "Not Utilized",
+                                          "Other"
+                               )
+    ))
+
+
 
 
 # Question 23 ----

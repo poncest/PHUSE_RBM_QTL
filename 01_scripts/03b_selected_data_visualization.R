@@ -217,8 +217,7 @@ ggsave(path = here("02_img/"),
 
 
 
-## # Question 06 (Option 2) ---- 
-
+# Question 06 (Option 2) ---- 
 plot06_option2 <- q6_clean %>% 
   ggplot(aes(x = response_id, y = stage_phase, fill = stage_phase)) +
   
@@ -257,6 +256,234 @@ plot06_option2 <- q6_clean %>%
 ggsave(path = here("02_img/"),
        filename = "plot06_option2.png", device = "png", plot = plot06_option2,   
        width = 8, height = 10, units = 'in', dpi = 320)  
+
+
+
+
+# Question 07 ----
+plot07 <- q7_clean %>% 
+  
+  ggplot(aes(x = response_id, y = rbm_approach, fill = rbm_approach)) +    
+  
+  # geoms
+  ggdist::geom_dots(smooth      = "bar", 
+                    layout      = "bin", 
+                    orientation = "y",
+                    position    = "identity", 
+                    dotsize     = 0.7,
+                    shape       = 22) +
+  
+  
+  # scale
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 15)) +                              
+  scale_y_discrete(expand = c(0.01, 0))+
+  urbnthemes::scale_color_discrete()+
+  coord_equal(clip = 'off')+
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "RBM Approach",
+    title = "Q7: If you answered Yes to Other Risk Based Approaches used\nin Q6, please identify those used?"
+  )+
+  
+  # theme
+  custom_theme()+
+  theme(
+    plot.title = element_text(
+    margin     = margin(b = 25)
+    ))
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot07.png", device = "png", plot = plot07,   
+       width = 6, height = 5, units = 'in', dpi = 320) 
+
+
+
+
+# Question 08 ---- 
+
+# |- figure size ---- 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 11,
+  units  = "in",
+  dpi    = 320) 
+
+# |- color palette ---- 
+col_palette <- c("#1696d2", "#fdbf11", "#000000","#d2d2d2", "#ec008b", "#55b748",
+                 "#5c5859", "#db2b27", "purple", "cyan") 
+
+
+### |-  option 1 ----
+plot08_option1 <- q8_option1 %>% 
+           
+  ggplot(aes(x = response_id, y = activity, fill = activity)) +
+  
+  # geoms
+  ggdist::geom_dots(layout      = "bin",
+                    orientation = "x",
+                    position    = "identity",
+                    dotsize     = 0.5,
+                    shape       = 22) +
+
+  
+  # scale
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 15)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
+  scale_fill_manual(values = col_palette)+
+  
+  # facet
+  facet_wrap(~ factor(trial_attributes, levels = c("Trial Design", "Trial Phase", "Trial Size",
+                                                   "Not Utilized", "Mixed Response", "Unable to Answer")), 
+             ncol = 2, 
+             scales = "free_x")+  
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "Activity",
+    title = "Q8: Is your company’s Risk Based Approach to quality applied differently\ndepending on the following trial attributes?"
+    )+
+  
+  # theme
+  custom_theme_2()+
+  theme(panel.spacing.x = unit(2, 'lines'))
+
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot08_option1.png", device = "png", plot = plot08_option1,   
+       width = 10, height = 11, units = 'in', dpi = 320)  
+
+
+
+
+### |-  option 2 ----
+plot08_option2 <- q8_option2 %>% 
+  
+  ggplot(aes(x = response_id, y = trial_attributes, fill = trial_attributes)) +
+  
+  # geoms
+  ggdist::geom_dots(layout      = "bin",
+                    orientation = "x",
+                    position    = "identity",
+                    dotsize     = 0.5,
+                    shape       = 22) +
+  
+  # scale
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 15)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
+  urbnthemes::scale_color_discrete()+
+  
+  # facet
+  facet_wrap(~ factor(activity, 
+                      levels = c("Identification of CTQ’s", 
+                                 "Overall Implementation of QbD",
+                                 "QTL’s Utilized",
+                                 "QTL’s Aligned with CTQ’s",
+                                 "QTL Review Processes",
+                                 "Frequency of QTL Review",
+                                 "Communication of QTL Breaches",
+                                 "Implementation of Corrective Actions",
+                                 "Reporting Significant QTL Deviations in CSR")), 
+             ncol = 2, 
+             scales = "free_x")+   
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "Trial Attributes",
+    title = "Q8: Is your company’s Risk Based Approach to quality applied differently\ndepending on the following trial attributes?"
+  )+
+  
+  # theme
+  custom_theme_2()+
+  theme(panel.spacing.x = unit(2, 'lines'))
+
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot08_option2.png", device = "png", plot = plot08_option2,   
+       width = 10, height = 11, units = 'in', dpi = 320)  
+
+
+
+# Question 10 ---- 
+plot10 <- q10_clean %>% 
+  
+  ggplot(aes(x = response_id, y = documentation_type, fill = documentation_type)) +
+  
+  # geoms
+  ggdist::geom_dots(layout      = "bin",
+                    orientation = "x",
+                    position    = "identity",
+                    dotsize     = 0.5,
+                    shape       = 22) +
+  
+  # scale
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 15)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
+  urbnthemes::scale_color_discrete()+
+  
+  # facet
+  facet_wrap(~ factor(activity, 
+                      levels = c("Identification of CTQ’s",
+                                 "Implementation of QbD",
+                                 "Implementation of Risk Strategy",
+                                 "QTL’s Utilized",
+                                 "QTL Review Processes",
+                                 "QTL’s Aligned with CTQ’s",
+                                 "Frequency of QTL Review",
+                                 "Communication of QTL Breaches",
+                                 "Implementation of Corrective Actions",
+                                 "Significant QTL Deviations in CSR"
+                                 )), 
+             ncol = 2, 
+             scales = "free_x")+   
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "Docyumentation Type",
+    title = "Q10: How does your company document your Risk-Based Approaches to Quality?"
+  )+
+  
+  # theme
+  custom_theme_2()+
+  theme(panel.spacing.x = unit(2, 'lines'))
+
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot10.png", device = "png", plot = plot10,   
+       width = 10, height = 11, units = 'in', dpi = 320)  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
