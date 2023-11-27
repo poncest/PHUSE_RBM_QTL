@@ -1,6 +1,14 @@
-# Phuse Risk Base Monitoring
+# Phuse Risk Base Monitoring - Quality Tolerance Limits (RBM-QTL)
 
-## Quality Tolerance Limits
+### Project Goal
+
+-   Generate the necessary figures to support the publication of the RBM-QTL white paper.
+
+### How do you generate the figures?
+
+-   Proceed to run the **`04b_selected_runfile.R`** file in the `01_scripts` folder.
+
+### Additional Information
 
 -   Additional information can be found [HERE](https://advance.phuse.global/display/WEL/Quality+Tolerance+Limits).
 
@@ -10,6 +18,6 @@
 
 ------------------------------------------------------------------------
 
-# Folder Structure
+### Folder Structure
 
 ![](02_img/folder_tree_stucture.png "tree")
