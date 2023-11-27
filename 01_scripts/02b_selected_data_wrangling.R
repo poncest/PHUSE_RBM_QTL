@@ -287,7 +287,7 @@ q5_others <- q5_raw %>%
 
 
 
-# Question 06 ----
+# Question 06 ----                    
 q6_clean <- q6_raw %>% 
   
   # rename columns
@@ -340,7 +340,7 @@ q6_clean <- q6_raw %>%
   
   # specify factors levels (as per questionnaire)
   mutate(
-    response_id     = as_factor(response_id),
+    #response_id     = as_factor(response_id),                                
     rbm_approaches  = factor(rbm_approaches, 
                              levels = c("CTQ Factors", 
                                         "QbD Processes", 

@@ -162,7 +162,7 @@ ggsave(path = here("02_img/"),
 
 
 
-# Question 06 ----
+# Question 06 (Option 1) ----
 
 # |- figure size ---- 
 camcorder::gg_record( 
@@ -174,156 +174,94 @@ camcorder::gg_record(
   dpi    = 320) 
 
 
-p6b <- q6_clean %>% 
+
+plot06_option1 <- q6_clean %>% 
   ggplot(aes(x = response_id, y = rbm_approaches, fill = rbm_approaches)) +    
   
   # geoms
   ggdist::geom_dots(smooth      = "bar", 
                     layout      = "bin", 
-                    orientation = "y",
+                    orientation = "x",
                     position    = "identity", 
                     dotsize     = 0.8,
                     shape       = 22) +
   
   # scale
-  scale_x_discrete() +                                
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 15)) +
+  
   scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
-  coord_equal(clip = 'off')+
-  
-  #facet
-  facet_wrap(~ stage_phase, ncol = 1)+
+  #coord_equal(clip = 'off')+
+
+  # facet
+  facet_wrap(~ stage_phase, ncol = 1, scales = "free")+  
   
   # labs
   labs(
     x = "Response Number",
-    y = "RBM Approaches",
-    title = "Q6: Which aspects of Risk-Based Approaches to Quality\ndoes your company apply to the following Trial?"
+    y = "Risk-Based Monitoring Approach",
+    title = "Q6: Which aspects of Risk-Based Approaches to Quality does your\ncompany apply to the following Trial?"
   )+
   
   # theme
-  theme_minimal()+
-  theme(
-    plot.title.position   = "plot",
-    plot.caption.position = "plot",
-    legend.position       = 'plot',
-    
-    plot.background       = element_rect(fill = bkg_col, color = bkg_col),
-    panel.background      = element_rect(fill = bkg_col, color = bkg_col),
-    
-    plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
-    
-    axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-    axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
-    
-    axis.text             = element_text(size = 10, color = text_col, family = 'text'),
-    
-    axis.line.x           = element_line(color = "grey80", linewidth = .4),
-    axis.line.y           = element_blank(),
-    
-    strip.text            = element_textbox(size = 12,
-                                            face   = 'bold',
-                                            color  = text_col,
-                                            hjust  = 0.5,
-                                            halign = 0.5,
-                                            fill   = "transparent"),
-
-    plot.title            = element_text(
-      family              = 'title',
-      color               = title_col,
-      face                = "bold",
-      size                = 14,  
-      lineheight          = 0.9, 
-      margin              = margin(b = 10)),
-  )
-
+  custom_theme_2()
+  
+  
 
 # saving plot
 ggsave(path = here("02_img/"),
-       filename = "Q06b.png", device = "png", plot = p6b,   
+       filename = "plot06_option1.png", device = "png", plot = plot06_option1,   
        width = 8, height = 10, units = 'in', dpi = 320)  
 
 
 
 
-## # Question 06 (Alternative) ---- 
-## This one might be a better option
+## # Question 06 (Option 2) ---- 
 
-p6b_02 <- q6_clean %>% 
-  ggplot(aes(x = response_id, y = stage_phase, fill = stage_phase))+
+plot06_option2 <- q6_clean %>% 
+  ggplot(aes(x = response_id, y = stage_phase, fill = stage_phase)) +
   
   # geoms
   ggdist::geom_dots(smooth      = "bar", 
                     layout      = "bin", 
-                    orientation = "y",
+                    orientation = "x",
                     position    = "identity", 
                     dotsize     = 0.8,
                     shape       = 22) +
   
   # scale
-  scale_x_discrete() +                                
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 15)) +
+  
   scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
-  coord_equal(clip = 'off')+
+  #coord_equal(clip = 'off')+
   
-  #facet
-  facet_wrap(~ rbm_approaches, ncol = 1)+
+  # facet
+  facet_wrap(~ rbm_approaches, ncol = 1, scales = "free")+  
   
   # labs
   labs(
     x = "Response Number",
-    y = "RBM Approaches",
-    title = "Q6: Which aspects of Risk-Based Approaches to Quality\ndoes your company apply to the following Trial?"
+    y = "Trial Type",
+    title = "Q6: Which aspects of Risk-Based Approaches to Quality does your\ncompany apply to the following Trial?"
   )+
   
   # theme
-  theme_minimal()+
-  theme(
-    plot.title.position   = "plot",
-    plot.caption.position = "plot",
-    legend.position       = 'plot',
-    
-    plot.background       = element_rect(fill = bkg_col, color = bkg_col),
-    panel.background      = element_rect(fill = bkg_col, color = bkg_col),
-    
-    plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
-    
-    axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-    axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
-    
-    axis.text             = element_text(size = 10, color = text_col, family = 'text'),
-    
-    axis.line.x           = element_line(color = "grey80", linewidth = .4),
-    axis.line.y           = element_blank(),
-    
-    strip.text            = element_textbox(size = 12,
-                                            face   = 'bold',
-                                            color  = text_col,
-                                            hjust  = 0.5,
-                                            halign = 0.5,
-                                            fill   = "transparent"),
-    
-    plot.title            = element_text(
-      family              = 'title',
-      color               = title_col,
-      face                = "bold",
-      size                = 14,  
-      lineheight          = 0.9, 
-      margin              = margin(b = 10)),
-  )
+  custom_theme_2()
+
 
 
 # saving plot
 ggsave(path = here("02_img/"),
-       filename = "Q06b_02.png", device = "png", plot = p6b_02,   
+       filename = "plot06_option2.png", device = "png", plot = plot06_option2,   
        width = 8, height = 10, units = 'in', dpi = 320)  
 
 
 
 
 # Question 23 ----
-## (Alternative) ---- 
-## This one might be a better option
 
 # |- figure size ---- 
 camcorder::gg_record( 

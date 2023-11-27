@@ -12,9 +12,9 @@
 | Q4b (Other category breakdown) | done       | table    |
 | Q5                             | done       | dot plot |
 | Q5b (Other category breakdown) | done       | table    |
-| Q6                             | in-process |          |
-|                                |            |          |
-|                                |            |          |
+| Q6 option 1                    | done       | dot plot |
+| Q6 option 2                    | done       | dot plot |
+| Q7                             | in-process |          |
 |                                |            |          |
 |                                |            |          |
 |                                |            |          |
