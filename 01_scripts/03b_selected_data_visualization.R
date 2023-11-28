@@ -29,18 +29,14 @@ camcorder::gg_record(
 # |- resolution ---- 
 showtext_opts(dpi = 320, regular.wt = 300, bold.wt = 800)
 
-
-
-# Question 01 ----
-
 ### |- plot aesthetics ---- 
 bkg_col         <- '#fdfdff' 
 text_col        <- "gray20"
 title_col       <- "gray20"
 
 ### |-  fonts ----
-font_add_google("Lato", family = "title")                           
-font_add_google("Lato", family ="text")  
+font_add('00_fonts/Inter-Regular.ttf', family = "title") 
+font_add('00_fonts/Inter-Regular.ttf', family = "text") 
 showtext_auto(enable = TRUE)  
 
 
@@ -137,8 +133,10 @@ plot05 <- q5_clean %>%
   
   
   # scale
-  scale_x_discrete()+                                 
-  scale_y_discrete(expand = c(0.01, 0))+
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 15)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
   coord_equal(clip = 'off')+
   
@@ -150,7 +148,11 @@ plot05 <- q5_clean %>%
   )+
   
   # theme
-  custom_theme()
+  custom_theme()+
+    theme(
+      plot.title = element_text(
+        margin     = margin(b = 25)
+      ))
 
 
 
@@ -179,7 +181,7 @@ plot06_option1 <- q6_clean %>%
   ggplot(aes(x = response_id, y = rbm_approaches, fill = rbm_approaches)) +    
   
   # geoms
-  ggdist::geom_dots(smooth      = "bar", 
+  ggdist::geom_dots( 
                     layout      = "bin", 
                     orientation = "x",
                     position    = "identity", 
@@ -188,7 +190,7 @@ plot06_option1 <- q6_clean %>%
   
   # scale
   scale_x_continuous(breaks = seq(1, 15, by = 1), 
-                     limits = c(1, 15)) +
+                     limits = c(1, 16)) +
   
   scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
@@ -201,7 +203,7 @@ plot06_option1 <- q6_clean %>%
   labs(
     x = "Response Number",
     y = "Risk-Based Monitoring Approach",
-    title = "Q6: Which aspects of Risk-Based Approaches to Quality does your\ncompany apply to the following Trial?"
+    title = "Q6: Which aspects of Risk-Based Approaches to Quality does\nyour company apply to the following Trial?"
   )+
   
   # theme
@@ -222,7 +224,7 @@ plot06_option2 <- q6_clean %>%
   ggplot(aes(x = response_id, y = stage_phase, fill = stage_phase)) +
   
   # geoms
-  ggdist::geom_dots(smooth      = "bar", 
+  ggdist::geom_dots( 
                     layout      = "bin", 
                     orientation = "x",
                     position    = "identity", 
@@ -231,7 +233,7 @@ plot06_option2 <- q6_clean %>%
   
   # scale
   scale_x_continuous(breaks = seq(1, 15, by = 1), 
-                     limits = c(1, 15)) +
+                     limits = c(1, 16)) +
   
   scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
@@ -244,7 +246,7 @@ plot06_option2 <- q6_clean %>%
   labs(
     x = "Response Number",
     y = "Trial Type",
-    title = "Q6: Which aspects of Risk-Based Approaches to Quality does your\ncompany apply to the following Trial?"
+    title = "Q6: Which aspects of Risk-Based Approaches to Quality does\nyour company apply to the following Trial?"
   )+
   
   # theme
@@ -285,7 +287,7 @@ plot07 <- q7_clean %>%
   labs(
     x = "Response Number",
     y = "RBM Approach",
-    title = "Q7: If you answered Yes to Other Risk Based Approaches used\nin Q6, please identify those used?"
+    title = "Q7: If you answered Yes to Other Risk Based Approaches\nused in Q6, please identify those used?"
   )+
   
   # theme
@@ -317,7 +319,7 @@ camcorder::gg_record(
 
 # |- color palette ---- 
 col_palette <- c("#1696d2", "#fdbf11", "#000000","#d2d2d2", "#ec008b", "#55b748",
-                 "#5c5859", "#db2b27", "purple", "cyan") 
+                 "#5c5859", "#db2b27", "purple", "cyan")
 
 
 ### |-  option 1 ----
@@ -335,7 +337,7 @@ plot08_option1 <- q8_option1 %>%
   
   # scale
   scale_x_continuous(breaks = seq(1, 15, by = 1), 
-                     limits = c(1, 15)) +
+                     limits = c(1, 16)) +
   
   scale_y_discrete(expand = c(0.01, 0.5))+
   scale_fill_manual(values = col_palette)+
@@ -376,12 +378,12 @@ plot08_option2 <- q8_option2 %>%
   ggdist::geom_dots(layout      = "bin",
                     orientation = "x",
                     position    = "identity",
-                    dotsize     = 0.5,
+                    dotsize     = 0.6,
                     shape       = 22) +
   
   # scale
   scale_x_continuous(breaks = seq(1, 15, by = 1), 
-                     limits = c(1, 15)) +
+                     limits = c(1, 16)) +
   
   scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
@@ -426,15 +428,16 @@ plot10 <- q10_clean %>%
   ggplot(aes(x = response_id, y = documentation_type, fill = documentation_type)) +
   
   # geoms
-  ggdist::geom_dots(layout      = "bin",
+  ggdist::geom_dots(#smooth = "bar",
+                    layout      = "bin",
                     orientation = "x",
                     position    = "identity",
-                    dotsize     = 0.5,
+                    dotsize     = 0.6,
                     shape       = 22) +
   
   # scale
   scale_x_continuous(breaks = seq(1, 15, by = 1), 
-                     limits = c(1, 15)) +
+                     limits = c(1, 16)) +
   
   scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
@@ -471,19 +474,124 @@ plot10 <- q10_clean %>%
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot10.png", device = "png", plot = plot10,   
-       width = 10, height = 11, units = 'in', dpi = 320)  
+       width = 10, height = 10, units = 'in', dpi = 320)  
 
 
 
+# Question 18 ---- 
+
+# |- figure size ---- 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 8,
+  units  = "in",
+  dpi    = 320) 
+
+
+plot18 <- q18_clean %>% 
+  
+  ggplot(aes(x = response_id, y = qtl_utilization, fill = qtl_utilization)) +
+  
+  # geoms
+  ggdist::geom_dots(layout      = "bin",
+                    orientation = "x",
+                    position    = "identity",
+                    dotsize     = 0.6,
+                    shape       = 22) +
+  
+  # scale
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 16)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
+  urbnthemes::scale_color_discrete()+
+  
+  # facet
+  facet_wrap(~ factor(characteristic, 
+                      levels = c("QMS – Health Authority Inspection",
+                                 "QMS – Continuous Improvement",
+                                 "QMS - Submissions",
+                                 "QMS – Senior Management Review",
+                                 "QMS – Quality Management Oversight ",
+                                 "Quality by Design Processes",
+                                 "Critical to Quality Processes",
+                                 "Other"
+                      )), 
+             ncol = 2, 
+             scales = "free_x")+   
+    
+  # labs
+  labs(
+    x = "Response Number",
+    y = "Documentation Type",
+    title = "Q18: How are QTL’s governed / utilized at your company?"
+  )+
+  
+  # theme
+  custom_theme_2()+
+  theme(panel.spacing.x = unit(2, 'lines'))
 
 
 
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot18.png", device = "png", plot = plot18,   
+       width = 10, height = 8, units = 'in', dpi = 320)  
 
 
 
+# Question 19 ---- 
+plot19 <- q19_clean %>% 
+  
+  ggplot(aes(x = response_id, y = action_type, fill = action_type)) +
+  
+  # geoms
+  ggdist::geom_dots(layout      = "bin",
+                    orientation = "x",
+                    position    = "identity",
+                    dotsize     = 0.6,
+                    shape       = 22) +
+  
+  # scale
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 16)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
+  urbnthemes::scale_color_discrete()+
+  
+  # facet
+  facet_wrap(~ factor(possible_action, 
+                    levels = c("Protocol Amendment",
+                               "Change in QTL threshold",
+                               "Change in QTL parameter metric",
+                               "Change in QTL statistical distribution",
+                               "Change in QTL statistical methodology",
+                               "Change to trial monitoring strategy",
+                               "Instructions provided to sites",
+                               "Instructions provided to vendors",
+                               "Other"  
+                      )),
+             ncol = 2, 
+             scales = "free_x")+
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "Action Type",
+    title = "Q19: What types of actions has your company typically taken, or plan to take,\nin response to a QTL breach?"
+  )+
+  
+  # theme
+  custom_theme_2()+
+  theme(panel.spacing.x = unit(2, 'lines'))
 
 
-
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot19.png", device = "png", plot = plot19,   
+       width = 10, height = 8, units = 'in', dpi = 320)  
 
 
 
@@ -494,89 +602,80 @@ ggsave(path = here("02_img/"),
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
-  width  = 9,
-  height = 6,
+  width  = 10,
+  height = 10,
   units  = "in",
   dpi    = 320) 
 
 
-p23_02 <- q23_clean %>% 
+plot23 <- q23_clean %>% 
   
   # filter out Others
   filter(!str_detect(parameters, "Other\\d+")) %>% 
   
-  ggplot(aes(x = response_id, 
-             y = factor(parameters),
-             fill = status                     
-             ))+                                      
+  ggplot(aes(x = response_id, y = status, fill = status))+                                      
   
   # geoms
-  ggdist::geom_dots(smooth      = "discrete", 
-                    layout      = "bin", 
-                    orientation = "y",
-                    position    = "identity", 
-                    dotsize     = 0.8,
+  ggdist::geom_dots(orientation = "x",
+                    layout      = "bin",                
+                    position    = "identity",
+                    dotsize     = 0.6,
                     shape       = 22) +
   
+  
   # scale
-  scale_x_discrete() +                               
-  scale_y_discrete(expand = c(0.01, 0.1))+
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 16)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
-  coord_equal(clip = 'off')+
   
   # facet
-  #facet_wrap(~ status, ncol = 1)+
+  facet_wrap(~ factor(parameters, 
+                      levels = c( "PD – I/E Criteria",
+                                  "PD – Study Conduct",
+                                  "PD – Other",
+                                  "Primary Endpoint Assessment",
+                                  "Secondary Endpoint Assessment",
+                                  "Investigational Product – Compliance",
+                                  "Investigational Product - Other",
+                                  "Randomization Failure",
+                                  "Lost to Follow Up",
+                                  "Informed Consent",
+                                  "AE/SAE - Reporting",
+                                  "Censored Data – Statistical analysis",
+                                  "Disposition – Early Termination",
+                                  "Repeated Measures for FIH/Early Phase trials",
+                                  "Stratification",
+                                  "Other1",
+                                  "Other2",
+                                  "Other3"
+                      )),
+             ncol = 2, 
+             scales = "free_x")+ 
   
   # labs
   labs(
     x = "Response Number",
-    y = "TransCelerate Parameters",
-    title = "Q23: Indicate the possible/potential Parameters for QTLs (as defined by TransCelerate)\nthat are currently in use or are planned to be used.",
+    y = "Status",
+    title = "Q23: Indicate the possible/potential Parameters for QTLs (as defined by\nTransCelerate) that are currently in use or are planned to be used.",
     fill  = "Status"
   )+
   
   # theme
-  theme_minimal() +
-  theme(
-    
-    plot.title.position   = "plot",              
-    plot.caption.position = "plot",          
-    
-    legend.position       = c(0.95, 1.1),
-    legend.justification  = c("right", "top"),
-    legend.box.just       = "right",
-    legend.margin         = margin(6, 6, 6, 6),
-    legend.direction      = 'horizontal',
-    legend.text           = element_text(size = 12),
-
-    plot.background       = element_rect(fill = bkg_col, color = bkg_col),
-    panel.background      = element_rect(fill = bkg_col, color = bkg_col),
-    
-    plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
-    
-    axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-    axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
-    
-    axis.text             = element_text(size = 10, color = text_col, family = 'text'),
-    
-    axis.line.x           = element_line(color = "grey80", linewidth = .4),
-    axis.line.y           = element_blank(),
-
-    plot.title            = element_text(
-      family              = 'title',
-      color               = title_col,
-      face                = "bold",
-      size                = 14,  
-      lineheight          = 0.9, 
-      margin              = margin(b = 30)),
-  )
+  custom_theme_2()+
+  theme(panel.spacing.x = unit(2, 'lines'))
 
 
 
 # saving plot
 ggsave(path = here("02_img/"),
-       filename = "Q23b_02.png", device = "png", plot = p23_02,   
-       width = 9, height = 6, units = 'in', dpi = 320)  
+       filename = "plot23.png", device = "png", plot = plot23,   
+       width = 10, height = 10, units = 'in', dpi = 320) 
+
+
+
+
 
 
 

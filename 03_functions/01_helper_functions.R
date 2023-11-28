@@ -182,15 +182,15 @@ custom_theme <- function(base_size = 12) {
       plot.background       = element_rect(fill = bkg_col, color = bkg_col),
       panel.background      = element_rect(fill = bkg_col, color = bkg_col),
       
-      plot.margin           = margin(t = 10, r = 20, b = 10, l = 20),
+      plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
       
-      axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-      axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
-      
+      axis.title            = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
       axis.text             = element_text(size = 10, color = text_col, family = 'text'),
       
       axis.line.x           = element_line(color = "grey80", linewidth = .4),
       axis.line.y           = element_blank(),
+      
+      panel.grid.minor.x    = element_blank(),
       
       plot.title            = element_text(
         family              = 'title',
@@ -204,7 +204,7 @@ custom_theme <- function(base_size = 12) {
 } 
 
 
-# theme with facets
+9# theme with facets
 custom_theme_2 <- function(base_size = 12) {
   
   # Theme
@@ -219,16 +219,17 @@ custom_theme_2 <- function(base_size = 12) {
       
       plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
       
-      axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-      axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
-      
+      axis.title            = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
       axis.text             = element_text(size = 10, color = text_col, family = 'text'),
       
       axis.line.x           = element_line(color = "grey80", linewidth = .4),
       axis.line.y           = element_blank(),
       
+      panel.grid.minor.x    = element_blank(),
+      
       strip.text            = element_textbox(size = 12,
                                               face   = 'bold',
+                                              family = 'text',
                                               color  = text_col,
                                               hjust  = 0.5,
                                               halign = 0.5,

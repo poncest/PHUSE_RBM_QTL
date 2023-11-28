@@ -73,8 +73,7 @@ q3_clean <- q3_raw %>%
                                         "Clinical Science", 
                                         "Safety Science", 
                                         "Quality Functions",
-                                        "Other")
-                             ))
+                                        "Other")))
 
 
 # |- others ----
@@ -168,8 +167,7 @@ q4_clean <- q4_raw %>%
                                         "Clinical Science", 
                                         "Safety Science", 
                                         "Quality Functions",
-                                        "Other")
-    ))
+                                        "Other")))
 
 
 # |- others ----
@@ -255,15 +253,14 @@ q5_clean <- q5_raw %>%
   
   # specify factors levels (as per questionnaire)
   mutate(
-    response_id = as_factor(response_id),
+    #response_id = as_factor(response_id),
     trial_types = factor(trial_types,
                          levels = c("Phase I",
                                     "Phase II",
                                     "Biostatistics",
                                     "Complex Design",
                                     "Post-marketing approval",
-                                    "Other")
-    ))
+                                    "Other")))
 
 
 
@@ -405,8 +402,7 @@ q7_clean <- q7_raw %>%
                                       "KPI's", 
                                       "Team Tracking risk items",
                                       "Other"
-                             )
-    )) 
+                             ))) 
 
 
 
@@ -495,8 +491,7 @@ q8_option1 <- q8_clean %>%
                                   "Communicatio...",
                                   "Implementati...",
                                   "Reporting Si..."
-                       )
-    ))
+                       )))
                        
 
 
@@ -525,8 +520,7 @@ q8_option2 <- q8_clean %>%
                                    "Unable to Answer",
                                    "Mixed Response",
                                    "Not Utilized"
-                        )
-        ))
+                        )))
 
 
 # Question 10 ----
@@ -608,12 +602,177 @@ q10_clean <- q10_raw %>%
                                           "Part of a Protocol",
                                           "Not Utilized",
                                           "Other"
-                               )
-    ))
+                               )))
 
 
 
+# Question 18 ----
+q18_clean <- q18_raw %>% 
+  
+  # rename columns
+  rename(
+    health      = x18_how_are_qtl_s_governed_utilized_at_your_company_please_check_all_that_apply_formally_integrated_in_qms_health_authority_inspection,
+    continous   = x18_how_are_qtl_s_governed_utilized_at_your_company_please_check_all_that_apply_formally_integrated_in_qms_continuous_improvement_e_g_future_protocol_development_process_improvement_activities,
+    submissions = x18_how_are_qtl_s_governed_utilized_at_your_company_please_check_all_that_apply_formally_integrated_in_qms_submissions,
+    management  = x18_how_are_qtl_s_governed_utilized_at_your_company_please_check_all_that_apply_formally_integrated_in_qms_senior_management_review,
+    oversight   = x18_how_are_qtl_s_governed_utilized_at_your_company_please_check_all_that_apply_formally_integrated_in_qms_quality_management_oversight_e_g_gcp_quality_councils_committees,
+    design      = x18_how_are_qtl_s_governed_utilized_at_your_company_please_check_all_that_apply_formally_integrated_with_quality_by_design_processes,
+    quality     = x18_how_are_qtl_s_governed_utilized_at_your_company_please_check_all_that_apply_formally_integrated_with_critical_to_quality_processes,
+    other       = x18_how_are_qtl_s_governed_utilized_at_your_company_please_check_all_that_apply_other_please_specify_below,
+  ) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "characteristic",
+    values_to = "qtl_utilization",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(qtl_utilization != "") %>% 
+  
+  # separate `qtl_utilization`
+  separate_wider_delim(cols = qtl_utilization, 
+                       delim = ", ",
+                       names = c("C1","C2"),
+                       too_few = "align_start")  %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = c(C1:C2),
+    names_to = "temp_col",
+    values_to = "qtl_utilization",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove `temp_col` column
+  select(-temp_col) %>% 
+  
+  # recode characteristic
+  mutate(characteristic = case_when(
+    characteristic == "health"       ~ "QMS – Health Authority Inspection",
+    characteristic == "continous"    ~ "QMS – Continuous Improvement",
+    characteristic == "submissions"  ~ "QMS - Submissions",
+    characteristic == "management"   ~ "QMS – Senior Management Review",
+    characteristic == "oversight"    ~ "QMS – Quality Management Oversight ",
+    characteristic == "design"       ~ "Quality by Design Processes",
+    characteristic == "quality"      ~ "Critical to Quality Processes",
+    characteristic == "other"        ~ "Other"
+    )) %>%   
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    qtl_utilization = factor(qtl_utilization, 
+                             levels = c("In Use",
+                                        "Planned",
+                                        "Not In Use and Not Planned",
+                                        "Not Known",
+                                        "Comments")))
 
+
+
+# Question 19 ----
+q19_clean <- q19_raw %>% 
+  
+  # rename columns
+  rename(
+    protocol     = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_protocol_amendment,
+    threshold    = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_change_in_qtl_threshold_s_resetting,
+    parameter    = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_change_in_qtl_parameter_metric,
+    distribution = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_change_in_qtl_statistical_distribution,
+    methodology  = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_change_in_qtl_statistical_methodology,
+    monitoring   = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_change_to_trial_monitoring_strategy,
+    sites        = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_instruction_s_provided_to_sites,
+    vendors      = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_instruction_s_provided_to_vendors_service_providers_or_otherwise,
+    others       = x19_what_types_of_actions_has_your_company_typically_taken_or_plan_to_take_in_response_to_a_qtl_breach_please_provide_one_response_per_possible_action_other_please_specify_below,
+    comments     = your_response_and_possible_action_comments
+  ) %>% 
+  
+  # deselect comments column
+  select(-comments) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>%  
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "possible_action",
+    values_to = "action_type",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove empty rows
+  filter(action_type != "") %>% 
+  
+  # separate `action_type`
+  separate_wider_delim(cols = action_type, 
+                       delim = ", ",
+                       names = c("C1","C2","C3"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = c(C1:C3),
+    names_to = "temp_col",
+    values_to = "action_type",
+    values_drop_na = TRUE,
+  )  %>% 
+  
+  # remove `temp_col` column
+  select(-temp_col) %>% 
+  
+  # format 
+  mutate(action_type = case_when(
+    action_type == "Not Applicable(e.g.,Do not use this action)" ~ "Not Applicable",
+    action_type == "For Primary Breach"                          ~ "Primary Breach",
+    action_type == "For Secondary Breach"                        ~ "Secondary Breach",
+    TRUE                                                         ~ as.character(action_type)
+  )) %>% 
+
+  # recode possible_action
+  mutate(possible_action = case_when(
+    possible_action == "protocol"     ~ "Protocol Amendment",
+    possible_action == "threshold"    ~ "Change in QTL threshold",
+    possible_action == "parameter"    ~ "Change in QTL parameter metric",
+    possible_action == "distribution" ~ "Change in QTL statistical distribution",
+    possible_action == "methodology"  ~ "Change in QTL statistical methodology",
+    possible_action == "monitoring"   ~ "Change to trial monitoring strategy",
+    possible_action == "sites"        ~ "Instructions provided to sites",
+    possible_action == "vendors"      ~ "Instructions provided to vendors",
+    possible_action == "others"       ~ "Other"
+  )) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    action_type = factor(action_type, 
+                             levels = c("Primary Breach",
+                                        "Secondary Breach",
+                                        "Not Applicable")))
+
+
+# |- others ----
+q19_comments <- q19_raw %>% 
+  
+  # rename columns
+  rename(comments     = your_response_and_possible_action_comments) %>% 
+  
+  # select comments column
+  select(comments) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) 
+
+
+
+  
 # Question 23 ----
 q23_clean <- q23_raw %>% 
   
@@ -656,21 +815,20 @@ q23_clean <- q23_raw %>%
   
   # specify factors levels (as per questionnaire)
   mutate(
-    response_id = as_factor(response_id),
+    #response_id = as_factor(response_id),
     status      = factor(status, 
                          levels = c(
                            "Currently in Use",
                            "Planned to Use",
                            "Perceived Value",
                            "Not Considered a QTL"
-                        )
-    )) %>% 
+                        ))) %>% 
   
   # recode `parameters` column
   mutate(parameters = case_when(
-    parameters == "pd_ie"      ~ "Protocol Deviation – Inclusion/Exclusion Criteria",
-    parameters == "pd_sc"      ~ "Protocol Deviation – Study Conduct",
-    parameters == "pd_other"   ~ "Protocol Deviation - Other",
+    parameters == "pd_ie"      ~ "PD – I/E Criteria",
+    parameters == "pd_sc"      ~ "PD – Study Conduct",
+    parameters == "pd_other"   ~ "PD – Other",
     parameters == "pea"        ~ "Primary Endpoint Assessment",
     parameters == "sea"        ~ "Secondary Endpoint Assessment",
     parameters == "ip_comp"    ~ "Investigational Product – Compliance",
@@ -679,9 +837,9 @@ q23_clean <- q23_raw %>%
     parameters == "lfu"        ~ "Lost to Follow Up",
     parameters == "ic"         ~ "Informed Consent",
     parameters == "ae_sea_rep" ~ "AE/SAE - Reporting",
-    parameters == "cd"         ~ "Censored Data – Trial participants censored for primary objective statistical analysis",
+    parameters == "cd"         ~ "Censored Data – For primary objective statistical analysis",
     parameters == "disp"       ~ "Disposition – Early Termination from Study Drug",
-    parameters == "rmt"        ~ "Repeated Measures Timepoints for FIH / Early Phase trials",
+    parameters == "rmt"        ~ "Repeated Measures Timepoints for FIH/Early Phase trials",
     parameters == "strat"      ~ "Stratification",
     parameters == "other1"     ~ "Other1",
     parameters == "other2"     ~ "Other2",
@@ -695,9 +853,9 @@ q23_clean <- q23_raw %>%
   mutate(
     parameters = factor(parameters, 
                         levels = c(
-                          "Protocol Deviation – Inclusion/Exclusion Criteria",
-                          "Protocol Deviation – Study Conduct",
-                          "Protocol Deviation - Other",
+                          "PD – I/E Criteria",
+                          "PD – Study Conduct",
+                          "PD – Other",
                           "Primary Endpoint Assessment",
                           "Secondary Endpoint Assessment",
                           "Investigational Product – Compliance",
@@ -706,17 +864,25 @@ q23_clean <- q23_raw %>%
                           "Lost to Follow Up",
                           "Informed Consent",
                           "AE/SAE - Reporting",
-                          "Censored Data – Trial participants censored for primary objective statistical analysis",
-                          "Disposition – Early Termination from Study Drug",
-                          "Repeated Measures Timepoints for FIH / Early Phase trials",
+                          "Censored Data – Statistical analysis",
+                          "Disposition – Early Termination",
+                          "Repeated Timepoints for FIH/Early Phase trials",
                           "Stratification",
                           "Other1",
                           "Other2",
                           "Other3"
-                         )
-    )) 
+                         ))) 
  
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
 # Question 24 ----
 q24_clean <- q24_raw %>% 
   
