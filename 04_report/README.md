@@ -1,28 +1,32 @@
 # Figure Tracker:
 
-------------------------------------------------------------------------
-
 ## Selected Questions
 
-| Question Number                 | Status  | Type     |
-|---------------------------------|---------|----------|
-| Q3                              | done    | dot plot |
-| Q3b (Other category breakdown)  | done    | table    |
-| Q4                              | done    | dot plot |
-| Q4b (Other category breakdown)  | done    | table    |
-| Q5                              | done    | dot plot |
-| Q5b (Other category breakdown)  | done    | table    |
-| Q6 option 1                     | done    | dot plot |
-| Q6 option 2                     | done    | dot plot |
-| Q7                              | done    | dot plot |
-| Q8 option 1                     | done    | dot plot |
-| Q8 option 2                     | done    | dot plot |
-| Q10                             | done    | dot plot |
-| Q18                             |  done   | dot plot |
-| Q19                             | done    | dot plot |
-| Q19b (Other category breakdown) | done    | table    |
-| Q23                             | done    | dot plot |
-| Q25                             | pending |          |
+| Question Number                   | Status        | Type     |
+|-----------------------------------|---------------|----------|
+| Q3                                | done          | dot plot |
+| Q3b (Other category breakdown)    | done          | table    |
+| Q4                                | done          | dot plot |
+| Q4b (Other category breakdown)    | done          | table    |
+| Q5                                | done          | dot plot |
+| Q5b (Other category breakdown)    | done          | table    |
+| Q6 option 1                       | done          | dot plot |
+| Q6 option 2                       | done          | dot plot |
+| Q7                                | done          | dot plot |
+| Q8 option 1                       | done          | dot plot |
+| Q8 option 2                       | done          | dot plot |
+| Q10                               | done          | dot plot |
+| Q18                               | done          | dot plot |
+| Q19                               | done          | dot plot |
+| Q19b (Other category breakdown)   | done          | table    |
+| Q20.3                             | done          | dot plot |
+| Q20.3b (Other category breakdown) | done          | table    |
+| Q23 - status                      | done          | dot plot |
+| Q23 - rate scale                  | done          | dot plot |
+| Q23b (Other category breakdown)   | done          | table    |
+| Q24 - status                      |  ---- pending |          |
+| Q24 - rate scale                  |  ---- pending |          |
+| Q24b (Other category breakdown)   |  ---- pending |          |
 
 ## Initial Work (EDA)
 
