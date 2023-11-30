@@ -204,7 +204,7 @@ custom_theme <- function(base_size = 12) {
 } 
 
 
-9# theme with facets
+# theme with facets
 custom_theme_2 <- function(base_size = 12) {
   
   # Theme

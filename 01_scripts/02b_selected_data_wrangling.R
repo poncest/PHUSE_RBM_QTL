@@ -772,9 +772,93 @@ q19_comments <- q19_raw %>%
 
 
 
+
+# Question 20.3 ----
+q20.3_clean <- q20.3_raw %>% 
+  
+  # rename columns
+  rename(
+    csr   = x20_3_if_qtl_primary_limit_breaches_are_evaluated_for_importance_how_do_you_determine_as_to_whether_they_should_be_reported_in_the_csr,
+    other = other_6
+  ) %>% 
+  
+  # deselect Others column
+  select(-other) %>% 
+
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+  
+  # separate `action_type`
+  separate_wider_delim(cols = csr, 
+                       delim = ", ",
+                       names = c("C1","C2","C3","C4"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = c(C1:C4),
+    names_to = "temp_col",
+    values_to = "csr",
+    values_drop_na = TRUE,
+  )  %>% 
+  
+  # remove `temp_col` column
+  select(-temp_col) %>% 
+  
+  # remove empty rows
+  filter(csr != "") %>% 
+  
+  # format 
+  mutate(
+    csr = case_when(
+      csr == "Other (Please specify below)" ~ "Other",
+      TRUE                                  ~ as.character(csr)
+      )) %>%
+  
+  # format
+  mutate(
+    csr         = str_to_sentence(csr),
+    response_id = as_factor(response_id)
+  ) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    csr = factor(csr,
+                 levels = c("Against pre-defined criteria",
+                            "Via statistical methodology",
+                            "By study team",
+                            "Unknown",
+                            "Other")))
+
+
+# |- others ----
+q20.3_other <- q20.3_raw %>% 
+  
+  # rename columns
+  rename(
+    csr   = x20_3_if_qtl_primary_limit_breaches_are_evaluated_for_importance_how_do_you_determine_as_to_whether_they_should_be_reported_in_the_csr,
+    other = other_6
+  ) %>% 
+  
+  # select other column
+  select(other) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) 
+
+
+
   
 # Question 23 ----
+
+# |- status ----
+
 q23_clean <- q23_raw %>% 
+  
+  # remove comments columns
+  select(-c(other_1 , other_2_2)) %>% 
   
     # rename columns
     rename(
@@ -805,86 +889,112 @@ q23_clean <- q23_raw %>%
   # pivot longer
   pivot_longer(
     cols = -c(response_id),
-    names_to = "parameters",
+    names_to = "transcelerate_parameters",
     values_to = "status",
     values_drop_na = TRUE,
   ) %>% 
   
+  # separate `status`
+  separate_wider_delim(cols = status, 
+                       delim = ", ",
+                       names = c("C1","C2"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = c(C1:C2),
+    names_to = "temp_col",
+    values_to = "status",
+    values_drop_na = TRUE,
+  )  %>% 
+  
   # remove empty rows
   filter(status != "") %>% 
   
-  # specify factors levels (as per questionnaire)
-  mutate(
-    #response_id = as_factor(response_id),
-    status      = factor(status, 
-                         levels = c(
-                           "Currently in Use",
-                           "Planned to Use",
-                           "Perceived Value",
-                           "Not Considered a QTL"
-                        ))) %>% 
+  # remove `temp_col` column
+  select(-temp_col) %>% 
   
   # recode `parameters` column
-  mutate(parameters = case_when(
-    parameters == "pd_ie"      ~ "PD – I/E Criteria",
-    parameters == "pd_sc"      ~ "PD – Study Conduct",
-    parameters == "pd_other"   ~ "PD – Other",
-    parameters == "pea"        ~ "Primary Endpoint Assessment",
-    parameters == "sea"        ~ "Secondary Endpoint Assessment",
-    parameters == "ip_comp"    ~ "Investigational Product – Compliance",
-    parameters == "ip_other"   ~ "Investigational Product - Other",
-    parameters == "rf"         ~ "Randomization Failure",
-    parameters == "lfu"        ~ "Lost to Follow Up",
-    parameters == "ic"         ~ "Informed Consent",
-    parameters == "ae_sea_rep" ~ "AE/SAE - Reporting",
-    parameters == "cd"         ~ "Censored Data – For primary objective statistical analysis",
-    parameters == "disp"       ~ "Disposition – Early Termination from Study Drug",
-    parameters == "rmt"        ~ "Repeated Measures Timepoints for FIH/Early Phase trials",
-    parameters == "strat"      ~ "Stratification",
-    parameters == "other1"     ~ "Other1",
-    parameters == "other2"     ~ "Other2",
-    parameters == "other3"     ~ "Other3",
+  mutate(transcelerate_parameters = case_when(
+    transcelerate_parameters == "pd_ie"      ~ "PD – I/E Criteria",
+    transcelerate_parameters == "pd_sc"      ~ "PD – Study Conduct",
+    transcelerate_parameters == "pd_other"   ~ "PD – Other",
+    transcelerate_parameters == "pea"        ~ "Primary Endpoint Assessment",
+    transcelerate_parameters == "sea"        ~ "Secondary Endpoint Assessment",
+    transcelerate_parameters == "ip_comp"    ~ "Investigational Product – Compliance",
+    transcelerate_parameters == "ip_other"   ~ "Investigational Product - Other",
+    transcelerate_parameters == "rf"         ~ "Randomization Failure",
+    transcelerate_parameters == "lfu"        ~ "Lost to Follow Up",
+    transcelerate_parameters == "ic"         ~ "Informed Consent",
+    transcelerate_parameters == "ae_sea_rep" ~ "AE/SAE - Reporting",
+    transcelerate_parameters == "cd"         ~ "Censored Data – Statistical analysis",
+    transcelerate_parameters == "disp"       ~ "Disposition – Early Termination",
+    transcelerate_parameters == "rmt"        ~ "Repeated Timepoints for FIH/Early Phase trials",
+    transcelerate_parameters == "strat"      ~ "Stratification",
+    transcelerate_parameters == "other1"     ~ "Other1",
+    transcelerate_parameters == "other2"     ~ "Other2",
+    transcelerate_parameters == "other3"     ~ "Other3",
   )) %>% 
-  
-  # drop NA
-  filter(!is.na(status)) %>% 
 
   # specify factors levels (as per questionnaire)
   mutate(
-    parameters = factor(parameters, 
-                        levels = c(
-                          "PD – I/E Criteria",
-                          "PD – Study Conduct",
-                          "PD – Other",
-                          "Primary Endpoint Assessment",
-                          "Secondary Endpoint Assessment",
-                          "Investigational Product – Compliance",
-                          "Investigational Product - Other",
-                          "Randomization Failure",
-                          "Lost to Follow Up",
-                          "Informed Consent",
-                          "AE/SAE - Reporting",
-                          "Censored Data – Statistical analysis",
-                          "Disposition – Early Termination",
-                          "Repeated Timepoints for FIH/Early Phase trials",
-                          "Stratification",
-                          "Other1",
-                          "Other2",
-                          "Other3"
-                         ))) 
+    transcelerate_parameters = factor(transcelerate_parameters, 
+                                      levels = c(
+                                        "PD – I/E Criteria",
+                                        "PD – Study Conduct",
+                                        "PD – Other",
+                                        "Primary Endpoint Assessment",
+                                        "Secondary Endpoint Assessment",
+                                        "Investigational Product – Compliance",
+                                        "Investigational Product - Other",
+                                        "Randomization Failure",
+                                        "Lost to Follow Up",
+                                        "Informed Consent",
+                                        "AE/SAE - Reporting",
+                                        "Censored Data – Statistical analysis", 
+                                        "Disposition – Early Termination",      
+                                        "Repeated Timepoints for FIH/Early Phase trials",
+                                        "Stratification",
+                                        "Other1",
+                                        "Other2",
+                                        "Other3"
+                                       )),
+    status = factor(status, 
+                   levels = c(
+                     "Currently in Use",
+                     "Planned to Use",
+                     "Under Consideration",
+                     "Not Considered a QTL"
+                   ))) 
  
 
+
+# |- others ----
+q23_comments <- q23_raw  %>% 
   
+  # rename columns
+  rename(
+    comments_1 = other_1,
+    comments_2 = other_2_2
+    ) %>% 
   
+  # select comments column
+  select(starts_with("comments_")) %>% 
   
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
   
-  
-  
-  
-  
-  
-# Question 24 ----
-q24_clean <- q24_raw %>% 
+  # format
+  mutate(
+    comments_1 = str_to_sentence(comments_1),
+    comments_2 = str_to_sentence(comments_2)
+  )
+
+
+
+# |- rate ----
+q23_rate_clean <- q23_rate_raw %>% 
   
   # rename columns
   rename(
@@ -915,73 +1025,206 @@ q24_clean <- q24_raw %>%
   # pivot longer
   pivot_longer(
     cols = -c(response_id),
-    names_to = "parameters",
-    values_to = "scale",
+    names_to = "transcelerate_parameters",
+    values_to = "rate_scale",
     values_drop_na = TRUE,
   ) %>% 
   
-  # remove empty rows
-  filter(scale != "") %>% 
+  # remove `digit-` (1-, 2-, 3-)
+  mutate(rate_scale = str_remove_all(string = rate_scale, pattern = "\\d+-")) %>% 
+
+  # separate `status`
+  separate_wider_delim(cols = rate_scale,
+                       delim = ", ",
+                       names = c("C1","C2"),
+                       too_few = "align_start") %>% 
+
+  # pivot longer
+  pivot_longer(
+    cols = c(C1:C2),
+    names_to = "temp_col",
+    values_to = "rate_scale",
+    values_drop_na = TRUE,
+  )  %>%
   
-  # remove digits from scale (1-, 2-)
-  mutate(scale = str_remove_all(string = scale, pattern = "\\d+-")) %>% 
+  # remove empty rows
+  filter(rate_scale != "") %>% 
+  
+  # remove `temp_col` column
+  select(-temp_col) %>% 
   
   # recode `parameters` column
-  mutate(parameters = case_when(
-    parameters == "pd_ie"      ~ "Protocol Deviation – Inclusion/Exclusion Criteria",
-    parameters == "pd_sc"      ~ "Protocol Deviation – Study Conduct",
-    parameters == "pd_other"   ~ "Protocol Deviation - Other",
-    parameters == "pea"        ~ "Primary Endpoint Assessment",
-    parameters == "sea"        ~ "Secondary Endpoint Assessment",
-    parameters == "ip_comp"    ~ "Investigational Product – Compliance",
-    parameters == "ip_other"   ~ "Investigational Product - Other",
-    parameters == "rf"         ~ "Randomization Failure",
-    parameters == "lfu"        ~ "Lost to Follow Up",
-    parameters == "ic"         ~ "Informed Consent",
-    parameters == "ae_sea_rep" ~ "AE/SAE - Reporting",
-    parameters == "cd"         ~ "Censored Data – Trial participants censored for primary objective statistical analysis",
-    parameters == "disp"       ~ "Disposition – Early Termination from Study Drug",
-    parameters == "rmt"        ~ "Repeated Measures Timepoints for FIH / Early Phase trials",
-    parameters == "strat"      ~ "Stratification",
-    parameters == "other1"     ~ "Other1",
-    parameters == "other2"     ~ "Other2",
-    parameters == "other3"     ~ "Other3",
+  mutate(transcelerate_parameters = case_when(
+    transcelerate_parameters == "pd_ie"      ~ "PD – I/E Criteria",
+    transcelerate_parameters == "pd_sc"      ~ "PD – Study Conduct",
+    transcelerate_parameters == "pd_other"   ~ "PD – Other",
+    transcelerate_parameters == "pea"        ~ "Primary Endpoint Assessment",
+    transcelerate_parameters == "sea"        ~ "Secondary Endpoint Assessment",
+    transcelerate_parameters == "ip_comp"    ~ "Investigational Product – Compliance",
+    transcelerate_parameters == "ip_other"   ~ "Investigational Product - Other",
+    transcelerate_parameters == "rf"         ~ "Randomization Failure",
+    transcelerate_parameters == "lfu"        ~ "Lost to Follow Up",
+    transcelerate_parameters == "ic"         ~ "Informed Consent",
+    transcelerate_parameters == "ae_sea_rep" ~ "AE/SAE - Reporting",
+    transcelerate_parameters == "cd"         ~ "Censored Data – Statistical analysis",
+    transcelerate_parameters == "disp"       ~ "Disposition – Early Termination",
+    transcelerate_parameters == "rmt"        ~ "Repeated Timepoints for FIH/Early Phase trials",
+    transcelerate_parameters == "strat"      ~ "Stratification",
+    transcelerate_parameters == "other1"     ~ "Other1",
+    transcelerate_parameters == "other2"     ~ "Other2",
+    transcelerate_parameters == "other3"     ~ "Other3",
   )) %>% 
   
   # specify factors levels (as per questionnaire)
   mutate(
-    response_id = as_factor(response_id),
-    parameters = factor(parameters, 
-                        levels = c(
-                          "Protocol Deviation – Inclusion/Exclusion Criteria",
-                          "Protocol Deviation – Study Conduct",
-                          "Protocol Deviation - Other",
-                          "Primary Endpoint Assessment",
-                          "Secondary Endpoint Assessment",
-                          "Investigational Product – Compliance",
-                          "Investigational Product - Other",
-                          "Randomization Failure",
-                          "Lost to Follow Up",
-                          "Informed Consent",
-                          "AE/SAE - Reporting",
-                          "Censored Data – Trial participants censored for primary objective statistical analysis",
-                          "Disposition – Early Termination from Study Drug",
-                          "Repeated Measures Timepoints for FIH / Early Phase trials",
-                          "Stratification",
-                          "Other1",
-                          "Other2",
-                          "Other3"
-                          ),
-                        ),
-    scale = factor(scale, 
+    transcelerate_parameters = factor(transcelerate_parameters, 
+                                      levels = c(
+                                        "PD – I/E Criteria",
+                                        "PD – Study Conduct",
+                                        "PD – Other",
+                                        "Primary Endpoint Assessment",
+                                        "Secondary Endpoint Assessment",
+                                        "Investigational Product – Compliance",
+                                        "Investigational Product - Other",
+                                        "Randomization Failure",
+                                        "Lost to Follow Up",
+                                        "Informed Consent",
+                                        "AE/SAE - Reporting",
+                                        "Censored Data – Statistical analysis", 
+                                        "Disposition – Early Termination",      
+                                        "Repeated Timepoints for FIH/Early Phase trials",
+                                        "Stratification",
+                                        "Other1",
+                                        "Other2",
+                                        "Other3"
+                                      )),
+    rate_scale = factor(rate_scale, 
                         levels = c(
                           "Low",
                           "Medium",
-                          "Medium, High",
                           "High"
-                          ),
-                    )
-  )
+                         ))) %>% 
+  
+  # summary
+  group_by(transcelerate_parameters, rate_scale ) %>% 
+  bar_summary_2() %>% 
+  ungroup() %>%  
+  
+  # reorder
+  # mutate(rbm_approaches = reorder_within(rbm_approaches, count, stage_phase)) %>% 
+  
+  # add labels
+  mutate(
+    bar_axis  = str_glue("{ transcelerate_parameters } ({ count })"),
+    bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
+  ) 
+  
+
+
+
+
+  
+  
+# Question 24 ----
+q24_clean <- q24_raw %>% 
+  
+  # rename columns
+  rename(
+    crf          = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_crf_transcription_errors,
+    completeness = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_tmf_completeness,
+    quality      = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_tmf_quality,
+    vendor       = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_vendor_oversight,
+    ae_sae       = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_ae_sae_management,
+    entry        = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_data_entry_timeliness,
+    processing   = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_data_processing_querying,
+    asset        = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_asset_compound_specific,
+    ta           = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_therapeutic_area_specific,
+    is           = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_indication_specific,
+    ps           = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_protocol_specific,
+    other_1      = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_other_1_please_specify_below,
+    other_2      = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_other_2_please_specify_below,
+    other_3      = x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_other_3_please_specify_below,
+  ) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "parameters",
+    values_to = "status",
+    values_drop_na = TRUE,
+  ) %>%  
+  
+  # remove empty rows
+  filter(status != "") %>% 
+  
+  # separate `status`
+  separate_wider_delim(cols = status, 
+                       delim = ", ",
+                       names = c("C1","C2"),
+                       too_few = "align_start") %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = c(C1:C2),
+    names_to = "temp_col",
+    values_to = "status",
+    values_drop_na = TRUE,
+  )  %>% 
+  
+  # remove `temp_col` column
+  select(-temp_col) %>% 
+  
+  # recode `parameters` column
+  mutate(parameters = case_when(
+    parameters == "crf"          ~ "CRF Transcription Errors",
+    parameters == "completeness" ~ "TMF – Completeness",
+    parameters == "quality"      ~ "TMF – Quality",
+    parameters == "vendor"       ~ "Vendor Oversight",
+    parameters == "ae_sae"       ~ "AE/SAE – Management",
+    parameters == "entry"        ~ "Data Entry Timeliness",
+    parameters == "processing"   ~ "Data Processing – Querying",
+    parameters == "asset"        ~ "Asset/Compound Specific",
+    parameters == "ta"           ~ "Therapeutic Area Specific",
+    parameters == "is"           ~ "Indication Specific",
+    parameters == "ps"           ~ "Protocol Specific",
+    parameters == "other_1"      ~ "Other1",
+    parameters == "other_2"      ~ "Other2",
+    parameters == "other_3"      ~ "Other3"
+  )) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    parameters = factor(parameters, 
+                        levels = c(
+                          "CRF Transcription Errors",
+                          "TMF – Completeness",
+                          "TMF – Quality",
+                          "Vendor Oversight",
+                          "AE/SAE – Management",
+                          "Data Entry Timeliness",
+                          "Data Processing – Querying",
+                          "Asset/Compound Specific",
+                          "Therapeutic Area Specific",
+                          "Indication Specific",
+                          "Protocol Specific",
+                          "Other1",
+                          "Other2",
+                          "Other3"
+                          )),
+    status = factor(status, 
+                        levels = c(
+                          "Currently in Use ",
+                          "Planned to Use",
+                          "Under Consideration",
+                          "Not Considered a QTL"
+                          )))
+
+
+
 
 
 

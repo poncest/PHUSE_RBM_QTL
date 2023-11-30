@@ -595,8 +595,62 @@ ggsave(path = here("02_img/"),
 
 
 
+# Question 20.3 ----
+
+# |- figure size ---- 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 6,
+  height = 3,
+  units  = "in",
+  dpi    = 320) 
+
+plot20.3 <- q20.3_clean %>% 
+  
+  ggplot(aes(x = response_id, y = csr, fill = csr)) +     
+  
+  # geoms
+  ggdist::geom_dots(smooth      = "bar", 
+                    layout      = "bin", 
+                    orientation = "y",
+                    position    = "identity", 
+                    dotsize     = 0.6,
+                    shape       = 22) +
+  
+  
+  # scale
+  scale_x_discrete() +                                
+  scale_y_discrete(expand = c(0.01, 0))+
+  urbnthemes::scale_color_discrete()+
+  coord_equal(clip = 'off')+
+  
+  # labs
+  labs(
+    x = "Response Number",
+    y = "Method",
+    title = "Q20.3: If QTL Primary Limit Breaches are evaluated for importance,\nhow do you determine as to whether they should be reported in the CSR?"
+  )+
+  
+  # theme
+  custom_theme()+
+  theme(
+    plot.title  = element_text(
+      size      = 12,  
+      margin    = margin(b = 25)
+    ))
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot20.3.png", device = "png", plot = plot20.3,   
+       width = 6, height = 3, units = 'in', dpi = 320)  
+
+
 
 # Question 23 ----
+
+# |- status ---- 
 
 # |- figure size ---- 
 camcorder::gg_record( 
@@ -608,10 +662,10 @@ camcorder::gg_record(
   dpi    = 320) 
 
 
-plot23 <- q23_clean %>% 
+plot23_status <- q23_clean %>% 
   
   # filter out Others
-  filter(!str_detect(parameters, "Other\\d+")) %>% 
+  filter(!str_detect(transcelerate_parameters, "Other\\d+")) %>% 
   
   ggplot(aes(x = response_id, y = status, fill = status))+                                      
   
@@ -619,7 +673,7 @@ plot23 <- q23_clean %>%
   ggdist::geom_dots(orientation = "x",
                     layout      = "bin",                
                     position    = "identity",
-                    dotsize     = 0.6,
+                    dotsize     = 0.8,
                     shape       = 22) +
   
   
@@ -631,8 +685,9 @@ plot23 <- q23_clean %>%
   urbnthemes::scale_color_discrete()+
   
   # facet
-  facet_wrap(~ factor(parameters, 
-                      levels = c( "PD – I/E Criteria",
+  facet_wrap(~ factor(transcelerate_parameters, 
+                      levels = c( 
+                                  "PD – I/E Criteria",
                                   "PD – Study Conduct",
                                   "PD – Other",
                                   "Primary Endpoint Assessment",
@@ -643,42 +698,127 @@ plot23 <- q23_clean %>%
                                   "Lost to Follow Up",
                                   "Informed Consent",
                                   "AE/SAE - Reporting",
-                                  "Censored Data – Statistical analysis",
-                                  "Disposition – Early Termination",
-                                  "Repeated Measures for FIH/Early Phase trials",
+                                  "Censored Data – Statistical analysis", 
+                                  "Disposition – Early Termination",      
+                                  "Repeated Timepoints for FIH/Early Phase trials",
                                   "Stratification",
                                   "Other1",
                                   "Other2",
                                   "Other3"
                       )),
              ncol = 2, 
-             scales = "free_x")+ 
+             scales = "free_x")+
   
   # labs
   labs(
     x = "Response Number",
     y = "Status",
-    title = "Q23: Indicate the possible/potential Parameters for QTLs (as defined by\nTransCelerate) that are currently in use or are planned to be used.",
+    title = "Q23: Indicate the possible/potential Parameters for QTLs (as defined by TransCelerate)\nthat are currently in use or are planned to be used.",
     fill  = "Status"
   )+
   
   # theme
   custom_theme_2()+
-  theme(panel.spacing.x = unit(2, 'lines'))
+  theme(
+    plot.title  = element_text(size = 16),
+    panel.spacing.x = unit(2, 'lines'))
 
 
 
 # saving plot
 ggsave(path = here("02_img/"),
-       filename = "plot23.png", device = "png", plot = plot23,   
+       filename = "plot23_status.png", device = "png", plot = plot23_status,   
        width = 10, height = 10, units = 'in', dpi = 320) 
 
 
 
+# |- rate ----
+
+# |- figure size ---- 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 10,
+  units  = "in",
+  dpi    = 320) 
+
+
+plot23_rate <- q23_rate_clean %>% 
+  
+  # filter out Others
+  filter(!str_detect(transcelerate_parameters, "Other\\d+")) %>% 
+  
+  ggplot(aes(x = rate_scale, y = pct, fill = rate_scale))+                                      
+  
+  # geoms
+  geom_col()+
+  geom_text(aes(label = bar_label),
+            hjust  = 0.5,
+            vjust  = -0.5,
+            family ='text', 
+            color  = "gray20",
+            size   = 4) +
+  
+  # scale
+  scale_x_discrete(expand = c(0.01, 0.5)) +
+  scale_y_continuous(breaks = seq(0, .06, by = .02), 
+                     limits = c(0, .06), 
+                     labels = percent_format()
+                     )+
+
+  urbnthemes::scale_color_discrete()+
+  
+  # facet
+  facet_wrap(~ factor(transcelerate_parameters, 
+                      levels = c( 
+                        "PD – I/E Criteria",
+                        "PD – Study Conduct",
+                        "PD – Other",
+                        "Primary Endpoint Assessment",
+                        "Secondary Endpoint Assessment",
+                        "Investigational Product – Compliance",
+                        "Investigational Product - Other",
+                        "Randomization Failure",
+                        "Lost to Follow Up",
+                        "Informed Consent",
+                        "AE/SAE - Reporting",
+                        "Censored Data – Statistical analysis", 
+                        "Disposition – Early Termination",      
+                        "Repeated Timepoints for FIH/Early Phase trials",
+                        "Stratification",
+                        "Other1",
+                        "Other2",
+                        "Other3"
+                      )),
+             ncol = 3, 
+             scales = "free_x")+
+  
+  # labs
+  labs(
+    x = "Scale",
+    y = "Percentage",
+    title = "Q23: Rate on a scale of Low, Medium, or High the perceived value of the Parameter\n(as defined by TransCelerate). ",
+    fill  = "Status"
+  )+
+  
+  # theme
+  custom_theme_2()+
+  theme(
+    plot.title      = element_text(size = 16),
+    axis.text.y     = element_blank(),
+    axis.ticks.y    = element_blank(),
+    panel.grid      = element_blank(),
+    panel.spacing.x = unit(2, 'lines'))
 
 
 
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot23_rate.png", device = "png", plot = plot23_rate,   
+       width = 10, height = 10, units = 'in', dpi = 320) 
 
+           
 
 # Question 24 ----
 
