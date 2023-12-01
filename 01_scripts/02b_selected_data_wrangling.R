@@ -1121,9 +1121,6 @@ q23_rate_clean <- q23_rate_raw %>%
   
 
 
-
-
-  
   
 # Question 24 ----
 q24_clean <- q24_raw %>% 
@@ -1153,10 +1150,10 @@ q24_clean <- q24_raw %>%
   # pivot longer
   pivot_longer(
     cols = -c(response_id),
-    names_to = "parameters",
+    names_to = "additional_parameters",
     values_to = "status",
     values_drop_na = TRUE,
-  ) %>%  
+  ) %>% 
   
   # remove empty rows
   filter(status != "") %>% 
@@ -1179,45 +1176,45 @@ q24_clean <- q24_raw %>%
   select(-temp_col) %>% 
   
   # recode `parameters` column
-  mutate(parameters = case_when(
-    parameters == "crf"          ~ "CRF Transcription Errors",
-    parameters == "completeness" ~ "TMF – Completeness",
-    parameters == "quality"      ~ "TMF – Quality",
-    parameters == "vendor"       ~ "Vendor Oversight",
-    parameters == "ae_sae"       ~ "AE/SAE – Management",
-    parameters == "entry"        ~ "Data Entry Timeliness",
-    parameters == "processing"   ~ "Data Processing – Querying",
-    parameters == "asset"        ~ "Asset/Compound Specific",
-    parameters == "ta"           ~ "Therapeutic Area Specific",
-    parameters == "is"           ~ "Indication Specific",
-    parameters == "ps"           ~ "Protocol Specific",
-    parameters == "other_1"      ~ "Other1",
-    parameters == "other_2"      ~ "Other2",
-    parameters == "other_3"      ~ "Other3"
+  mutate(additional_parameters = case_when(
+    additional_parameters == "crf"          ~ "CRF Transcription Errors",
+    additional_parameters == "completeness" ~ "TMF – Completeness",
+    additional_parameters == "quality"      ~ "TMF – Quality",
+    additional_parameters == "vendor"       ~ "Vendor Oversight",
+    additional_parameters == "ae_sae"       ~ "AE/SAE – Management",
+    additional_parameters == "entry"        ~ "Data Entry Timeliness",
+    additional_parameters == "processing"   ~ "Data Processing – Querying",
+    additional_parameters == "asset"        ~ "Asset/Compound Specific",
+    additional_parameters == "ta"           ~ "Therapeutic Area Specific",
+    additional_parameters == "is"           ~ "Indication Specific",
+    additional_parameters == "ps"           ~ "Protocol Specific",
+    additional_parameters == "other_1"      ~ "Other1",
+    additional_parameters == "other_2"      ~ "Other2",
+    additional_parameters == "other_3"      ~ "Other3"
   )) %>% 
   
   # specify factors levels (as per questionnaire)
   mutate(
-    parameters = factor(parameters, 
-                        levels = c(
-                          "CRF Transcription Errors",
-                          "TMF – Completeness",
-                          "TMF – Quality",
-                          "Vendor Oversight",
-                          "AE/SAE – Management",
-                          "Data Entry Timeliness",
-                          "Data Processing – Querying",
-                          "Asset/Compound Specific",
-                          "Therapeutic Area Specific",
-                          "Indication Specific",
-                          "Protocol Specific",
-                          "Other1",
-                          "Other2",
-                          "Other3"
-                          )),
+    additional_parameters = factor(additional_parameters, 
+                            levels = c(
+                              "CRF Transcription Errors",
+                              "TMF – Completeness",
+                              "TMF – Quality",
+                              "Vendor Oversight",
+                              "AE/SAE – Management",
+                              "Data Entry Timeliness",
+                              "Data Processing – Querying",
+                              "Asset/Compound Specific",
+                              "Therapeutic Area Specific",
+                              "Indication Specific",
+                              "Protocol Specific",
+                              "Other1",
+                              "Other2",
+                              "Other3"
+                              )),
     status = factor(status, 
                         levels = c(
-                          "Currently in Use ",
+                          "Currently in Use",
                           "Planned to Use",
                           "Under Consideration",
                           "Not Considered a QTL"
@@ -1225,6 +1222,118 @@ q24_clean <- q24_raw %>%
 
 
 
+# |- others ----
+q24_comments <- q24_raw  %>% 
+  
+  # select other column
+  select(other_1_2) %>% 
+  
+  # rename columns
+  rename(comments = other_1_2) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything())  
+  
 
+
+
+# |- rate ----
+
+q24_rate_clean <- q24_rate_raw %>% 
+  
+  # rename columns
+  rename(
+    crf          = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_crf_transcription_errors,
+    completeness = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_tmf_completeness,
+    quality      = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_tmf_quality,
+    vendor       = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_vendor_oversight,
+    ae_sae       = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_ae_sae_management,
+    entry        = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_data_entry_timeliness,
+    processing   = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_data_processing_querying,
+    asset        = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_asset_compound_specific,
+    ta           = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_therapeutic_area_specific,
+    is           = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_indication_specific,
+    ps           = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_protocol_specific,
+    other_1      = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_other_1,
+    other_2      = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_other_2,
+    other_3      = x26_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_used_other_3
+  ) %>% 
+  
+  # add `response_id` column
+  mutate(response_id = row_number()) %>% 
+  select(response_id, everything()) %>% 
+  
+  # pivot longer
+  pivot_longer(
+    cols = -c(response_id),
+    names_to = "additional_parameters",
+    values_to = "rate_scale",
+    values_drop_na = TRUE,
+  ) %>% 
+  
+  # remove `digit-` (1-, 2-, 3-)
+  mutate(rate_scale = str_remove_all(string = rate_scale, pattern = "\\d+-")) %>% 
+  
+  # remove empty rows
+  filter(rate_scale != "") %>% 
+  
+  # recode `parameters` column
+  mutate(additional_parameters = case_when(
+    additional_parameters == "crf"          ~ "CRF Transcription Errors",
+    additional_parameters == "completeness" ~ "TMF – Completeness",
+    additional_parameters == "quality"      ~ "TMF – Quality",
+    additional_parameters == "vendor"       ~ "Vendor Oversight",
+    additional_parameters == "ae_sae"       ~ "AE/SAE – Management",
+    additional_parameters == "entry"        ~ "Data Entry Timeliness",
+    additional_parameters == "processing"   ~ "Data Processing – Querying",
+    additional_parameters == "asset"        ~ "Asset/Compound Specific",
+    additional_parameters == "ta"           ~ "Therapeutic Area Specific",
+    additional_parameters == "is"           ~ "Indication Specific",
+    additional_parameters == "ps"           ~ "Protocol Specific",
+    additional_parameters == "other_1"      ~ "Other1",
+    additional_parameters == "other_2"      ~ "Other2",
+    additional_parameters == "other_3"      ~ "Other3"
+  )) %>% 
+  
+  # specify factors levels (as per questionnaire)
+  mutate(
+    additional_parameters = factor(additional_parameters, 
+                                   levels = c(
+                                     "CRF Transcription Errors",
+                                     "TMF – Completeness",
+                                     "TMF – Quality",
+                                     "Vendor Oversight",
+                                     "AE/SAE – Management",
+                                     "Data Entry Timeliness",
+                                     "Data Processing – Querying",
+                                     "Asset/Compound Specific",
+                                     "Therapeutic Area Specific",
+                                     "Indication Specific",
+                                     "Protocol Specific",
+                                     "Other1",
+                                     "Other2",
+                                     "Other3"
+                                   )),
+    rate_scale = factor(rate_scale, 
+                        levels = c(
+                          "Low",
+                          "Medium",
+                          "High"
+                        ))) %>% 
+  
+  # summary
+  group_by(additional_parameters, rate_scale ) %>% 
+  bar_summary_2() %>% 
+  ungroup() %>%  
+  
+  # reorder
+  # mutate(rbm_approaches = reorder_within(rbm_approaches, count, stage_phase)) %>% 
+  
+  # add labels
+  mutate(
+    bar_axis  = str_glue("{ additional_parameters } ({ count })"),
+    bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
+  ) 
 
 

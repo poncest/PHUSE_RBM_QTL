@@ -676,7 +676,6 @@ plot23_status <- q23_clean %>%
                     dotsize     = 0.8,
                     shape       = 22) +
   
-  
   # scale
   scale_x_continuous(breaks = seq(1, 15, by = 1), 
                      limits = c(1, 16)) +
@@ -822,94 +821,166 @@ ggsave(path = here("02_img/"),
 
 # Question 24 ----
 
-## (Alternative) ---- 
+# |- status ---- 
 
 # |- figure size ---- 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
-  width  = 9,
-  height = 6,
+  width  = 10,
+  height = 10,
   units  = "in",
   dpi    = 320) 
 
 
-p24_02 <- q24_clean %>% 
+plot24_status <- q24_clean %>% 
   
   # filter out Others
-  filter(!str_detect(parameters, "Other\\d+")) %>% 
+  filter(!str_detect(additional_parameters, "Other\\d+")) %>% 
   
-  ggplot(aes(x = response_id, 
-             y = factor(parameters),
-             fill = scale                     
-  ))+                                      
+  ggplot(aes(x = response_id, y = status, fill = status))+                                      
   
   # geoms
-  ggdist::geom_dots(smooth      = "discrete", 
-                    layout      = "bin", 
-                    orientation = "y",
-                    position    = "identity", 
+  ggdist::geom_dots(orientation = "x",
+                    layout      = "bin",                
+                    position    = "identity",
                     dotsize     = 0.8,
                     shape       = 22) +
   
   # scale
-  scale_x_discrete() +                               
-  scale_y_discrete(expand = c(0.01, 0.1))+
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 16)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
-  coord_equal(clip = 'off')+
   
   # facet
-  # facet_wrap(~ scale, ncol = 1)+
+  facet_wrap(~ factor(additional_parameters, 
+                      levels = c( 
+                      "CRF Transcription Errors",
+                      "TMF – Completeness",
+                      "TMF – Quality",
+                      "Vendor Oversight",
+                      "AE/SAE – Management",
+                      "Data Entry Timeliness",
+                      "Data Processing – Querying",
+                      "Asset/Compound Specific",
+                      "Therapeutic Area Specific",
+                      "Indication Specific",
+                      "Protocol Specific",
+                      "Other1",
+                      "Other2",
+                      "Other3"
+                      )),
+             ncol = 2, 
+             scales = "free_x")+
   
   # labs
   labs(
     x = "Response Number",
-    y = "TransCelerate Parameters",
-    title = "Q24: Rate the Parameters for QTLs (as defined by TransCelerate)",
-    fill  = "Scale"
+    y = "Status",
+    title = "Q24: Please indicate if any of the below Additional Parameters are also considered\nas Parameters for QTLs, whether they are currently in use or are planned to be used.",
+    fill  = "Status"
   )+
   
   # theme
-  theme_minimal() +
+  custom_theme_2()+
   theme(
-    
-    plot.title.position   = "plot",              
-    plot.caption.position = "plot",          
-    
-    legend.position       = c(0.95, 1.1),
-    legend.justification  = c("right", "top"),
-    legend.box.just       = "right",
-    legend.margin         = margin(6, 6, 6, 6),
-    legend.direction      = 'horizontal',
-    legend.text           = element_text(size = 12),
-    
-    plot.background       = element_rect(fill = bkg_col, color = bkg_col),
-    panel.background      = element_rect(fill = bkg_col, color = bkg_col),
-    
-    plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
-    
-    axis.title.x          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-    axis.title.y          = element_text(size = 12, face = 'bold', color = text_col, margin = margin(r = 12), family = 'text'),
-    
-    axis.text             = element_text(size = 10, color = text_col, family = 'text'),
-    
-    axis.line.x           = element_line(color = "grey80", linewidth = .4),
-    axis.line.y           = element_blank(),
-    
-    plot.title            = element_text(
-      family              = 'title',
-      color               = title_col,
-      face                = "bold",
-      size                = 14,  
-      lineheight          = 0.9, 
-      margin              = margin(b = 30)),
-  )
+    plot.title  = element_text(size = 17),
+    panel.spacing.x = unit(2, 'lines'))
 
 
 
 # saving plot
 ggsave(path = here("02_img/"),
-       filename = "Q24b_02.png", device = "png", plot = p24_02,   
-       width = 9, height = 6, units = 'in', dpi = 320)  
+       filename = "plot24_status.png", device = "png", plot = plot24_status,   
+       width = 10, height = 10, units = 'in', dpi = 320) 
+
+
+
+# |- rate ----
+
+# |- figure size ---- 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 10,
+  units  = "in",
+  dpi    = 320) 
+
+
+plot24_rate <- q24_rate_clean %>% 
+  
+  # filter out Others
+  filter(!str_detect(additional_parameters, "Other\\d+")) %>% 
+  
+  ggplot(aes(x = rate_scale, y = pct, fill = rate_scale))+                                      
+  
+  # geoms
+  geom_col()+
+  geom_text(aes(label = bar_label),
+            hjust  = 0.5,
+            vjust  = -0.5,
+            family ='text', 
+            color  = "gray20",
+            size   = 4) +
+  
+  # scale
+  scale_x_discrete(expand = c(0.01, 0.5)) +
+  
+  xlim("Low","Medium","High")+
+  
+  scale_y_continuous(breaks = seq(0, .08, by = .02), 
+                     limits = c(0, .08), 
+                     labels = percent_format()
+  )+
+  
+  urbnthemes::scale_color_discrete()+
+  
+  # facet
+  facet_wrap(~ factor(additional_parameters, 
+                      levels = c( 
+                        "CRF Transcription Errors",
+                        "TMF – Completeness",
+                        "TMF – Quality",
+                        "Vendor Oversight",
+                        "AE/SAE – Management",
+                        "Data Entry Timeliness",
+                        "Data Processing – Querying",
+                        "Asset/Compound Specific",
+                        "Therapeutic Area Specific",
+                        "Indication Specific",
+                        "Protocol Specific",
+                        "Other1",
+                        "Other2",
+                        "Other3"
+                      )),
+             ncol = 3, 
+             scales = "free_x")+
+  
+  # labs
+  labs(
+    x = "Scale",
+    y = "Percentage",
+    title = "Q24: Rate on a scale of Low, Medium, or High the perceived value of the Additional Parameter",
+    fill  = "Status"
+  )+
+  
+  # theme
+  custom_theme_2()+
+  theme(
+    plot.title      = element_text(size = 16),
+    axis.text.y     = element_blank(),
+    axis.ticks.y    = element_blank(),
+    panel.grid      = element_blank(),
+    panel.spacing.x = unit(2, 'lines'))
+
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot24_rate.png", device = "png", plot = plot24_rate,   
+       width = 10, height = 10, units = 'in', dpi = 320) 
 
 
