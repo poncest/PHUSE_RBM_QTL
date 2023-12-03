@@ -22,10 +22,12 @@
 | Q20.3                             | done   | dot plot |
 | Q20.3b (Other category breakdown) | done   | table    |
 | Q23 - status                      | done   | dot plot |
-| Q23 - rate scale                  | done   | bar plot |
+| Q23 option 1- rate scale          | done   | bar plot |
+| Q23 option 2- rate scale          | done   | bar plot |
 | Q23b (Other category breakdown)   | done   | table    |
 | Q24 - status                      | done   | dot plot |
-| Q24 - rate scale                  | done   | bar plot |
+| Q24 option 1- rate scale          | done   | bar plot |
+| Q24 option 2- rate scale          | done   | bar plot |
 | Q24b (Other category breakdown)   | done   | table    |
 
 ## Initial Work (EDA)
