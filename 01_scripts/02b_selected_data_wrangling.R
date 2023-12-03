@@ -1239,7 +1239,6 @@ q24_comments <- q24_raw  %>%
 
 
 # |- rate ----
-
 q24_rate_clean <- q24_rate_raw %>% 
   
   # rename columns
@@ -1335,5 +1334,5 @@ q24_rate_clean <- q24_rate_raw %>%
     bar_axis  = str_glue("{ additional_parameters } ({ count })"),
     bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
   ) 
-
+ 
 

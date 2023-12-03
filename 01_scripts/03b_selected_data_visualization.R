@@ -17,7 +17,7 @@
 
 # 1. VISUALIZATION ----
 
-# |- figure size ---- 
+# |- figure size ----
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -166,7 +166,7 @@ ggsave(path = here("02_img/"),
 
 # Question 06 (Option 1) ----
 
-# |- figure size ---- 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -308,7 +308,7 @@ ggsave(path = here("02_img/"),
 
 # Question 08 ---- 
 
-# |- figure size ---- 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -480,7 +480,7 @@ ggsave(path = here("02_img/"),
 
 # Question 18 ---- 
 
-# |- figure size ---- 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -597,7 +597,7 @@ ggsave(path = here("02_img/"),
 
 # Question 20.3 ----
 
-# |- figure size ---- 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -652,7 +652,7 @@ ggsave(path = here("02_img/"),
 
 # |- status ---- 
 
-# |- figure size ---- 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -733,7 +733,7 @@ ggsave(path = here("02_img/"),
 
 # |- rate ----
 
-# |- figure size ---- 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -743,7 +743,8 @@ camcorder::gg_record(
   dpi    = 320) 
 
 
-plot23_rate <- q23_rate_clean %>% 
+# |- option 1 ---- 
+plot23_rate_option1 <- q23_rate_clean %>% 
   
   # filter out Others
   filter(!str_detect(transcelerate_parameters, "Other\\d+")) %>% 
@@ -761,8 +762,8 @@ plot23_rate <- q23_rate_clean %>%
   
   # scale
   scale_x_discrete(expand = c(0.01, 0.5)) +
-  scale_y_continuous(breaks = seq(0, .06, by = .02), 
-                     limits = c(0, .06), 
+  scale_y_continuous(breaks = seq(0, .08, by = .02), 
+                     limits = c(0, .08), 
                      labels = percent_format()
                      )+
 
@@ -814,16 +815,98 @@ plot23_rate <- q23_rate_clean %>%
 
 # saving plot
 ggsave(path = here("02_img/"),
-       filename = "plot23_rate.png", device = "png", plot = plot23_rate,   
+       filename = "plot23_rate_option1.png", device = "png", plot = plot23_rate_option1,   
        width = 10, height = 10, units = 'in', dpi = 320) 
 
-           
+
+
+# |- option 2 ---- 
+
+# |- figure size 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 10,
+  units  = "in",
+  dpi    = 320) 
+
+
+
+plot23_rate_option2 <- q23_rate_clean %>% 
+  
+  # filter out Others
+  filter(!str_detect(transcelerate_parameters, "Other\\d+")) %>% 
+  
+  # factors
+  mutate(rate_scale = factor(rate_scale,
+                             levels = c(
+                               "Low",
+                               "Medium",
+                               "High"
+                             ))) %>% 
+  
+  ggplot(aes(x = transcelerate_parameters, y = pct, fill = rate_scale))+                                    
+  
+  # geoms
+  geom_col( position  = "stack")+
+  
+  geom_text(aes(label = bar_label),
+            #position  = position_stack(vjust = .5),
+            hjust     = -0.15,
+            family    = 'text',
+            size      = 4,
+            color     = "gray20"
+  )+ 
+  
+  geom_hline(yintercept = 0, linewidth = .4, color = 'gray80')+
+  
+  # scale
+  scale_x_discrete(expand = c(0.01, 0.5)) +
+  scale_y_continuous(breaks = seq(0, .08, by = .02), 
+                     limits = c(0, .08), 
+                     labels = percent_format())+
+  
+  urbnthemes::scale_color_discrete()+
+  coord_flip(clip = "off")+
+  
+  # facet
+  facet_grid(~rate_scale)+
+  
+  # labs
+  labs(
+    x = "Transcelerate Parameters",
+    y = "Percentage",
+    title = "Q23: Rate on a scale of Low, Medium, or High the perceived value of the Parameter\n(as defined by TransCelerate). ",
+    fill  = "Status"
+  )+
+  
+  # theme
+  custom_theme_2()+
+  theme(
+    plot.title      = element_text(size = 16),
+    axis.text.x     = element_blank(),
+    axis.ticks.x    = element_blank(),
+    axis.line.x     = element_blank(),
+    panel.grid      = element_blank(),
+    
+    panel.spacing.x = unit(2, 'lines'),
+    strip.text      = element_textbox(hjust  = 0,halign = 0 )
+  )
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot23_rate_option2.png", device = "png", plot = plot23_rate_option2,   
+       width = 10, height = 10, units = 'in', dpi = 320) 
+
+
 
 # Question 24 ----
 
 # |- status ---- 
 
-# |- figure size ---- 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -900,7 +983,7 @@ ggsave(path = here("02_img/"),
 
 # |- rate ----
 
-# |- figure size ---- 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
@@ -910,7 +993,8 @@ camcorder::gg_record(
   dpi    = 320) 
 
 
-plot24_rate <- q24_rate_clean %>% 
+# |- option 1 ---- 
+plot24_rate_option1 <- q24_rate_clean %>% 
   
   # filter out Others
   filter(!str_detect(additional_parameters, "Other\\d+")) %>% 
@@ -980,7 +1064,77 @@ plot24_rate <- q24_rate_clean %>%
 
 # saving plot
 ggsave(path = here("02_img/"),
-       filename = "plot24_rate.png", device = "png", plot = plot24_rate,   
+       filename = "plot24_rate_option1.png", device = "png", plot = plot24_rate_option1,   
        width = 10, height = 10, units = 'in', dpi = 320) 
+
+
+# |- option 2 ---- 
+plot24_rate_option2 <- q24_rate_clean %>% 
+  
+  # filter out Others
+  filter(!str_detect(additional_parameters, "Other\\d+")) %>% 
+  
+  # factors
+  mutate(rate_scale = factor(rate_scale,
+                             levels = c(
+                               "Low",
+                               "Medium",
+                               "High"
+                             ))) %>% 
+  
+  ggplot(aes(x = additional_parameters, y = pct, fill = rate_scale))+                                    
+  
+  # geoms
+  geom_col( position  = "stack")+
+  
+  geom_text(aes(label = bar_label),
+            #position  = position_stack(vjust = .5),
+            hjust     = -0.15,
+            family    = 'text',
+            size      = 4,
+            color     = "gray20"
+  )+ 
+  
+  geom_hline(yintercept = 0, linewidth = .4, color = 'gray80')+
+  
+  # scale
+  scale_x_discrete(expand = c(0.01, 0.5)) +
+  scale_y_continuous(breaks = seq(0, .08, by = .02), 
+                     limits = c(0, .08), 
+                     labels = percent_format())+
+  
+  urbnthemes::scale_color_discrete()+
+  coord_flip(clip = "off")+
+  
+  # facet
+  facet_grid(~rate_scale)+
+  
+  # labs
+  labs(
+    x = "Additional Parameters",
+    y = "Percentage",
+    title = "Q24: Rate on a scale of Low, Medium, or High the perceived value of the Additional Parameter",
+    fill  = "Status"
+  )+
+  
+  # theme
+  custom_theme_2()+
+  theme(
+    plot.title      = element_text(size = 16),
+    axis.text.x     = element_blank(),
+    axis.ticks.x    = element_blank(),
+    axis.line.x     = element_blank(),
+    panel.grid      = element_blank(),
+    
+    panel.spacing.x = unit(2, 'lines'),
+    strip.text      = element_textbox(hjust  = 0,halign = 0 )
+  )
+
+
+# saving plot
+ggsave(path = here("02_img/"),
+       filename = "plot24_rate_option2.png", device = "png", plot = plot24_rate_option2,   
+       width = 10, height = 10, units = 'in', dpi = 320)
+
 
 

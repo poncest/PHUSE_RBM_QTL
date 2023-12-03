@@ -149,8 +149,6 @@ q20.3_raw <- raw_data %>%
   )
 
 
-
-
 # Question 23 ----      
 
 # |- status ----
@@ -227,7 +225,7 @@ q24_raw <- raw_data %>%
     x25_please_indicate_if_any_of_the_below_additional_parameters_are_also_considered_as_parameters_for_qt_ls_please_rate_on_a_scale_of_1_low_2_medium_or_3_high_the_perceived_value_of_the_parameter_question_26_disclaimer_this_is_not_considered_a_definitive_list_of_potential_parameters_and_may_be_interpreted_differently_between_responders_other_3_please_specify_below,
     other_1_2
     )
-
+ 
 
 
 # |- rate ----
