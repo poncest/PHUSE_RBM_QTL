@@ -1032,13 +1032,13 @@ q23_rate_clean <- q23_rate_raw %>%
   
   # remove `digit-` (1-, 2-, 3-)
   mutate(rate_scale = str_remove_all(string = rate_scale, pattern = "\\d+-")) %>% 
-
+  
   # separate `status`
   separate_wider_delim(cols = rate_scale,
                        delim = ", ",
                        names = c("C1","C2"),
                        too_few = "align_start") %>% 
-
+  
   # pivot longer
   pivot_longer(
     cols = c(C1:C2),
@@ -1103,15 +1103,26 @@ q23_rate_clean <- q23_rate_raw %>%
                           "Low",
                           "Medium",
                           "High"
-                         ))) %>% 
+                        ))) %>% 
   
-  # summary
-  group_by(transcelerate_parameters, rate_scale ) %>% 
-  bar_summary_2() %>% 
-  ungroup() %>%  
+  # counts by parameters and rate
+  group_by(transcelerate_parameters, rate_scale) %>% 
+  summarise(
+    count   = n(),
+    .groups = "drop",
+  ) %>% 
+  ungroup() %>% 
   
-  # reorder
-  # mutate(rbm_approaches = reorder_within(rbm_approaches, count, stage_phase)) %>% 
+  # calculate percent by each parameter
+  group_by(transcelerate_parameters) %>% 
+  mutate(
+    pct = count / sum(count),
+    total_count = sum(count)
+  ) %>% 
+  ungroup() %>% 
+  
+  # arrange
+  arrange(desc(count)) %>% 
   
   # add labels
   mutate(
@@ -1319,20 +1330,32 @@ q24_rate_clean <- q24_rate_raw %>%
                           "Low",
                           "Medium",
                           "High"
-                        ))) %>% 
+                        ))) %>%  
   
-  # summary
-  group_by(additional_parameters, rate_scale ) %>% 
-  bar_summary_2() %>% 
-  ungroup() %>%  
+  # counts by parameters and rate
+  group_by(additional_parameters, rate_scale) %>% 
   
-  # reorder
-  # mutate(rbm_approaches = reorder_within(rbm_approaches, count, stage_phase)) %>% 
+  summarise(
+    count   = n(),
+    .groups = "drop",
+  ) %>% 
+  ungroup() %>% 
+  
+  # calculate percent by each parameter
+  group_by(additional_parameters) %>% 
+  mutate(
+    pct = count / sum(count),
+    total_count = sum(count)
+  ) %>% 
+  ungroup() %>% 
+  
+  # arrange
+  arrange(desc(count)) %>% 
   
   # add labels
   mutate(
     bar_axis  = str_glue("{ additional_parameters } ({ count })"),
     bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
   ) 
- 
+
 

@@ -857,14 +857,15 @@ plot23_rate_option2 <- q23_rate_clean %>%
             family    = 'text',
             size      = 4,
             color     = "gray20"
-  )+ 
+  )+
   
   geom_hline(yintercept = 0, linewidth = .4, color = 'gray80')+
   
   # scale
   scale_x_discrete(expand = c(0.01, 0.5)) +
-  scale_y_continuous(breaks = seq(0, .08, by = .02), 
-                     limits = c(0, .08), 
+  
+  scale_y_continuous(breaks = seq(0, 1, by = .25), 
+                     limits = c(0, 1), 
                      labels = percent_format())+
   
   urbnthemes::scale_color_discrete()+
@@ -1099,8 +1100,9 @@ plot24_rate_option2 <- q24_rate_clean %>%
   
   # scale
   scale_x_discrete(expand = c(0.01, 0.5)) +
-  scale_y_continuous(breaks = seq(0, .08, by = .02), 
-                     limits = c(0, .08), 
+  
+  scale_y_continuous(breaks = seq(0, 1, by = .25), 
+                     limits = c(0, 1), 
                      labels = percent_format())+
   
   urbnthemes::scale_color_discrete()+
