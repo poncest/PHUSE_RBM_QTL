@@ -819,7 +819,7 @@ q20.3_clean <- q20.3_raw %>%
   # format
   mutate(
     csr         = str_to_sentence(csr),
-    response_id = as_factor(response_id)
+    #response_id = as_factor(response_id)
   ) %>% 
   
   # specify factors levels (as per questionnaire)

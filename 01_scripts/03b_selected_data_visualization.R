@@ -30,7 +30,7 @@ camcorder::gg_record(
 showtext_opts(dpi = 320, regular.wt = 300, bold.wt = 800)
 
 ### |- plot aesthetics ---- 
-bkg_col         <- '#fdfdff' 
+bkg_col         <- 'white' 
 text_col        <- "gray20"
 title_col       <- "gray20"
 
@@ -51,7 +51,7 @@ plot03 <- q3_clean %>%
                     layout      = "bin", 
                     orientation = "y",
                     position    = "identity", 
-                    dotsize     = 0.8,
+                    dotsize     = 0.6,
                     shape       = 22) +
 
 
@@ -65,7 +65,7 @@ plot03 <- q3_clean %>%
   labs(
     x = "Response Number",
     y = "Functional Area",
-    title = "Q3: Which Functional Area(s) are involved in trial level\nRisk-Based Approaches to Quality?"
+    title = "Q3: Which Functional Area(s) are involved in trial level Risk-Based Approaches to Quality?"
   )+
   
   # theme
@@ -89,7 +89,7 @@ plot04 <- q4_clean %>%
                     layout      = "bin", 
                     orientation = "y",
                     position    = "identity", 
-                    dotsize     = 0.8,
+                    dotsize     = 0.6,
                     shape       = 22) +
   
   
@@ -103,7 +103,7 @@ plot04 <- q4_clean %>%
   labs(
     x = "Response Number",
     y = "Functional Area",
-    title = "Q4: Which Functional Area leads trial level Risk-Based\nApproaches to Quality?"
+    title = "Q4: Which Functional Area leads trial level Risk-Based Approaches to Quality?"
   )+
   
   # theme
@@ -119,6 +119,16 @@ ggsave(path = here("02_img/"),
 
 
 # Question 05 ----
+# |- figure size ----
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 6,
+  height = 3,
+  units  = "in",
+  dpi    = 320) 
+
+
 plot05 <- q5_clean %>%
   
   ggplot(aes(x = response_id, y = trial_types, fill = trial_types)) +    
@@ -128,7 +138,7 @@ plot05 <- q5_clean %>%
                     layout      = "bin", 
                     orientation = "y",
                     position    = "identity", 
-                    dotsize     = 0.4,
+                    dotsize     = 0.3,
                     shape       = 22) +
   
   
@@ -144,14 +154,14 @@ plot05 <- q5_clean %>%
   labs(
     x = "Response Number",
     y = "Trial types",
-    title = "Q5: What are the trial types where your company does not\napply Risk-Based Approaches to Quality?"
+    title = "Q5: What are the trial types where your company does not apply Risk-Based Approaches\nto Quality?"
   )+
   
   # theme
   custom_theme()+
     theme(
       plot.title = element_text(
-        margin     = margin(b = 25)
+      margin     = margin(b = 25)
       ))
 
 
@@ -159,7 +169,7 @@ plot05 <- q5_clean %>%
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot05.png", device = "png", plot = plot05,   
-       width = 6, height = 4, units = 'in', dpi = 320)  
+       width = 6, height = 3, units = 'in', dpi = 320)  
 
 
 
@@ -185,7 +195,7 @@ plot06_option1 <- q6_clean %>%
                     layout      = "bin", 
                     orientation = "x",
                     position    = "identity", 
-                    dotsize     = 0.8,
+                    dotsize     = 0.6,
                     shape       = 22) +
   
   # scale
@@ -220,6 +230,17 @@ ggsave(path = here("02_img/"),
 
 
 # Question 06 (Option 2) ---- 
+
+# |- figure size 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 8,
+  units  = "in",
+  dpi    = 320) 
+
+
 plot06_option2 <- q6_clean %>% 
   ggplot(aes(x = response_id, y = stage_phase, fill = stage_phase)) +
   
@@ -228,7 +249,7 @@ plot06_option2 <- q6_clean %>%
                     layout      = "bin", 
                     orientation = "x",
                     position    = "identity", 
-                    dotsize     = 0.8,
+                    dotsize     = 0.6,
                     shape       = 22) +
   
   # scale
@@ -240,29 +261,45 @@ plot06_option2 <- q6_clean %>%
   #coord_equal(clip = 'off')+
   
   # facet
-  facet_wrap(~ rbm_approaches, ncol = 1, scales = "free")+  
+  facet_wrap(~ rbm_approaches, ncol = 2, scales = "free_x")+  
   
   # labs
   labs(
     x = "Response Number",
     y = "Trial Type",
-    title = "Q6: Which aspects of Risk-Based Approaches to Quality does\nyour company apply to the following Trial?"
+    title = "Q6: Which aspects of Risk-Based Approaches to Quality does your company apply to the following Trial?"
   )+
   
   # theme
-  custom_theme_2()
+  custom_theme_2()+
+    theme(
+      axis.title.x = element_text(size = rel(1.2)),
+      axis.title.y = element_text(size = rel(1.2)),
+      axis.text   = element_text(size = rel(1.1)), 
+      panel.spacing.x = unit(2, 'lines')
+      )
 
 
 
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot06_option2.png", device = "png", plot = plot06_option2,   
-       width = 8, height = 10, units = 'in', dpi = 320)  
+       width = 10, height = 8, units = 'in', dpi = 320)  
 
 
 
 
 # Question 07 ----
+# |- figure size ----
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 6,
+  height = 5,
+  units  = "in",
+  dpi    = 320) 
+
+
 plot07 <- q7_clean %>% 
   
   ggplot(aes(x = response_id, y = rbm_approach, fill = rbm_approach)) +    
@@ -272,7 +309,7 @@ plot07 <- q7_clean %>%
                     layout      = "bin", 
                     orientation = "y",
                     position    = "identity", 
-                    dotsize     = 0.7,
+                    dotsize     = 0.6,
                     shape       = 22) +
   
   
@@ -287,21 +324,22 @@ plot07 <- q7_clean %>%
   labs(
     x = "Response Number",
     y = "RBM Approach",
-    title = "Q7: If you answered Yes to Other Risk Based Approaches\nused in Q6, please identify those used?"
+    title = "Q7: If you answered Yes to Other Risk Based Approaches used in Q6, please identify\nthose used?"
   )+
   
   # theme
   custom_theme()+
   theme(
-    plot.title = element_text(
-    margin     = margin(b = 25)
-    ))
+    plot.title  = element_text(margin = margin(b = 25)),
+    axis.title.x = element_text(size = rel(.8)),
+    axis.title.y = element_text(size = rel(.8)),
+    )
 
 
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot07.png", device = "png", plot = plot07,   
-       width = 6, height = 5, units = 'in', dpi = 320) 
+       width = 6, height = 3, units = 'in', dpi = 320) 
 
 
 
@@ -331,7 +369,7 @@ plot08_option1 <- q8_option1 %>%
   ggdist::geom_dots(layout      = "bin",
                     orientation = "x",
                     position    = "identity",
-                    dotsize     = 0.5,
+                    dotsize     = 0.6,
                     shape       = 22) +
 
   
@@ -370,6 +408,16 @@ ggsave(path = here("02_img/"),
 
 
 ### |-  option 2 ----
+# |- figure size 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 11,
+  units  = "in",
+  dpi    = 320)
+
+
 plot08_option2 <- q8_option2 %>% 
   
   ggplot(aes(x = response_id, y = trial_attributes, fill = trial_attributes)) +
@@ -406,12 +454,17 @@ plot08_option2 <- q8_option2 %>%
   labs(
     x = "Response Number",
     y = "Trial Attributes",
-    title = "Q8: Is your company’s Risk Based Approach to quality applied differently\ndepending on the following trial attributes?"
+    title = "Q8: Is your company’s Risk Based Approach to quality applied differently depending on the following trial attributes?"
   )+
   
   # theme
   custom_theme_2()+
-  theme(panel.spacing.x = unit(2, 'lines'))
+  theme(
+    axis.title.x = element_text(size = rel(1.3)),
+    axis.title.y = element_text(size = rel(1.3)),
+    axis.text   = element_text(size = rel(1.)), 
+    panel.spacing.x = unit(2, 'lines')
+  )
 
 
 
@@ -423,6 +476,15 @@ ggsave(path = here("02_img/"),
 
 
 # Question 10 ---- 
+# |- figure size 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 11,
+  units  = "in",
+  dpi    = 320)
+
 plot10 <- q10_clean %>% 
   
   ggplot(aes(x = response_id, y = documentation_type, fill = documentation_type)) +
@@ -461,20 +523,25 @@ plot10 <- q10_clean %>%
   # labs
   labs(
     x = "Response Number",
-    y = "Docyumentation Type",
+    y = "Documentation Type",
     title = "Q10: How does your company document your Risk-Based Approaches to Quality?"
   )+
   
   # theme
   custom_theme_2()+
-  theme(panel.spacing.x = unit(2, 'lines'))
+  theme(
+    axis.title.x = element_text(size = rel(1.3)),
+    axis.title.y = element_text(size = rel(1.3)),
+    axis.text   = element_text(size = rel(1.1)), 
+    panel.spacing.x = unit(2, 'lines')
+  )
 
 
 
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot10.png", device = "png", plot = plot10,   
-       width = 10, height = 10, units = 'in', dpi = 320)  
+       width = 11, height = 10, units = 'in', dpi = 320)  
 
 
 
@@ -484,13 +551,13 @@ ggsave(path = here("02_img/"),
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
-  width  = 10,
+  width  = 11,
   height = 8,
   units  = "in",
   dpi    = 320) 
 
 
-plot18 <- q18_clean %>% 
+plot18 <- q18_clean %>%
   
   ggplot(aes(x = response_id, y = qtl_utilization, fill = qtl_utilization)) +
   
@@ -529,21 +596,35 @@ plot18 <- q18_clean %>%
     title = "Q18: How are QTL’s governed / utilized at your company?"
   )+
   
-  # theme
-  custom_theme_2()+
-  theme(panel.spacing.x = unit(2, 'lines'))
+    # theme
+    custom_theme_2()+
+    theme(
+      axis.title.x = element_text(size = rel(1.2)),
+      axis.title.y = element_text(size = rel(1.2)),
+      axis.text   = element_text(size = rel(1.)), 
+      panel.spacing.x = unit(2, 'lines')
+    )
 
 
 
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot18.png", device = "png", plot = plot18,   
-       width = 10, height = 8, units = 'in', dpi = 320)  
+       width = 11, height = 8, units = 'in', dpi = 320)  
 
 
 
 # Question 19 ---- 
-plot19 <- q19_clean %>% 
+# |- figure size 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 11,
+  height = 8,
+  units  = "in",
+  dpi    = 320) 
+
+plot19 <- q19_clean %>%
   
   ggplot(aes(x = response_id, y = action_type, fill = action_type)) +
   
@@ -580,18 +661,23 @@ plot19 <- q19_clean %>%
   labs(
     x = "Response Number",
     y = "Action Type",
-    title = "Q19: What types of actions has your company typically taken, or plan to take,\nin response to a QTL breach?"
+    title = "Q19: What types of actions has your company typically taken, or plan to take, in response to a QTL breach?"
   )+
   
   # theme
   custom_theme_2()+
-  theme(panel.spacing.x = unit(2, 'lines'))
+  theme(
+    axis.title.x = element_text(size = rel(1.2)),
+    axis.title.y = element_text(size = rel(1.2)),
+    axis.text   = element_text(size = rel(1.)), 
+    panel.spacing.x = unit(2, 'lines')
+  )
 
 
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot19.png", device = "png", plot = plot19,   
-       width = 10, height = 8, units = 'in', dpi = 320)  
+       width = 11, height = 8, units = 'in', dpi = 320)  
 
 
 
@@ -602,7 +688,7 @@ camcorder::gg_record(
   dir    = here::here("temp_plots"), 
   device = "png",
   width  = 6,
-  height = 3,
+  height = 5,
   units  = "in",
   dpi    = 320) 
 
@@ -620,8 +706,10 @@ plot20.3 <- q20.3_clean %>%
   
   
   # scale
-  scale_x_discrete() +                                
-  scale_y_discrete(expand = c(0.01, 0))+
+  scale_x_continuous(breaks = seq(1, 15, by = 1), 
+                     limits = c(1, 16)) +
+  
+  scale_y_discrete(expand = c(0.01, 0.5))+
   urbnthemes::scale_color_discrete()+
   coord_equal(clip = 'off')+
   
@@ -635,16 +723,17 @@ plot20.3 <- q20.3_clean %>%
   # theme
   custom_theme()+
   theme(
-    plot.title  = element_text(
-      size      = 12,  
-      margin    = margin(b = 25)
-    ))
+    plot.title  = element_text(margin = margin(b = 10)),
+    axis.title.x = element_text(size = rel(.9)),
+    axis.title.y = element_text(size = rel(.9)),
+    axis.text   = element_text(size = rel(.8))
+  )
 
 
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot20.3.png", device = "png", plot = plot20.3,   
-       width = 6, height = 3, units = 'in', dpi = 320)  
+       width = 6, height = 5, units = 'in', dpi = 320)  
 
 
 
@@ -656,8 +745,8 @@ ggsave(path = here("02_img/"),
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
-  width  = 10,
-  height = 10,
+  width  = 12,
+  height = 12,
   units  = "in",
   dpi    = 320) 
 
@@ -712,22 +801,25 @@ plot23_status <- q23_clean %>%
   labs(
     x = "Response Number",
     y = "Status",
-    title = "Q23: Indicate the possible/potential Parameters for QTLs (as defined by TransCelerate)\nthat are currently in use or are planned to be used.",
+    title = "Q23: Indicate the possible/potential Parameters for QTLs (as defined by TransCelerate) that are currently in use or are planned to be used.",
     fill  = "Status"
   )+
   
   # theme
   custom_theme_2()+
   theme(
-    plot.title  = element_text(size = 16),
-    panel.spacing.x = unit(2, 'lines'))
+    axis.title.x    = element_text(size = rel(1.2)),
+    axis.title.y    = element_text(size = rel(1.2)),
+    axis.text       = element_text(size = rel(1.)), 
+    panel.spacing.x = unit(2, 'lines')
+  )
 
 
 
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot23_status.png", device = "png", plot = plot23_status,   
-       width = 10, height = 10, units = 'in', dpi = 320) 
+       width = 12, height = 12, units = 'in', dpi = 320) 
 
 
 
@@ -761,9 +853,12 @@ plot23_rate_option1 <- q23_rate_clean %>%
             size   = 4) +
   
   # scale
-  scale_x_discrete(expand = c(0.01, 0.5)) +
-  scale_y_continuous(breaks = seq(0, .08, by = .02), 
-                     limits = c(0, .08), 
+  scale_x_discrete(expand = c(0.01, 0.5), 
+                   limits = c("Low","Medium","High"),
+                   ) +
+
+  scale_y_continuous(breaks = seq(0, 1, by = .25), 
+                     limits = c(0, 1), 
                      labels = percent_format()
                      )+
 
@@ -805,7 +900,9 @@ plot23_rate_option1 <- q23_rate_clean %>%
   # theme
   custom_theme_2()+
   theme(
-    plot.title      = element_text(size = 16),
+    axis.title.x    = element_text(size = rel(1.2)),
+    axis.title.y    = element_text(size = rel(1.2)),
+    axis.text       = element_text(size = rel(1.)), 
     axis.text.y     = element_blank(),
     axis.ticks.y    = element_blank(),
     panel.grid      = element_blank(),
@@ -882,10 +979,13 @@ plot23_rate_option2 <- q23_rate_clean %>%
     fill  = "Status"
   )+
   
-  # theme
+   # theme
   custom_theme_2()+
   theme(
-    plot.title      = element_text(size = 16),
+    axis.title.x    = element_text(size = rel(1.3)),
+    axis.title.y    = element_text(size = rel(1.3)),
+    axis.text.y     = element_text(size = rel(1.1)), 
+    
     axis.text.x     = element_blank(),
     axis.ticks.x    = element_blank(),
     axis.line.x     = element_blank(),
@@ -908,11 +1008,12 @@ ggsave(path = here("02_img/"),
 # |- status ---- 
 
 # |- figure size 
+# |- figure size 
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
-  width  = 10,
-  height = 10,
+  width  = 12,
+  height = 12,
   units  = "in",
   dpi    = 320) 
 
@@ -970,15 +1071,17 @@ plot24_status <- q24_clean %>%
   # theme
   custom_theme_2()+
   theme(
-    plot.title  = element_text(size = 17),
-    panel.spacing.x = unit(2, 'lines'))
-
+    axis.title.x    = element_text(size = rel(1.3)),
+    axis.title.y    = element_text(size = rel(1.3)),
+    axis.text       = element_text(size = rel(1.1)), 
+    panel.spacing.x = unit(2, 'lines')
+  )
 
 
 # saving plot
 ggsave(path = here("02_img/"),
        filename = "plot24_status.png", device = "png", plot = plot24_status,   
-       width = 10, height = 10, units = 'in', dpi = 320) 
+       width = 12, height = 12, units = 'in', dpi = 320) 
 
 
 
@@ -1012,9 +1115,9 @@ plot24_rate_option1 <- q24_rate_clean %>%
             size   = 4) +
   
   # scale
-  scale_x_discrete(expand = c(0.01, 0.5)) +
-  
-  xlim("Low","Medium","High")+
+  scale_x_discrete(expand = c(0.01, 0.5), 
+                   limits = c("Low","Medium","High"),
+                   ) +
   
   scale_y_continuous(breaks = seq(0, .08, by = .02), 
                      limits = c(0, .08), 
@@ -1070,6 +1173,15 @@ ggsave(path = here("02_img/"),
 
 
 # |- option 2 ---- 
+# |- figure size 
+camcorder::gg_record( 
+  dir    = here::here("temp_plots"), 
+  device = "png",
+  width  = 10,
+  height = 10,
+  units  = "in",
+  dpi    = 320) 
+
 plot24_rate_option2 <- q24_rate_clean %>% 
   
   # filter out Others
@@ -1118,11 +1230,14 @@ plot24_rate_option2 <- q24_rate_clean %>%
     title = "Q24: Rate on a scale of Low, Medium, or High the perceived value of the Additional Parameter",
     fill  = "Status"
   )+
-  
+
   # theme
   custom_theme_2()+
   theme(
-    plot.title      = element_text(size = 16),
+    axis.title.x    = element_text(size = rel(1.3)),
+    axis.title.y    = element_text(size = rel(1.3)),
+    axis.text.y     = element_text(size = rel(1.1)), 
+    
     axis.text.x     = element_blank(),
     axis.ticks.x    = element_blank(),
     axis.line.x     = element_blank(),
@@ -1131,6 +1246,8 @@ plot24_rate_option2 <- q24_rate_clean %>%
     panel.spacing.x = unit(2, 'lines'),
     strip.text      = element_textbox(hjust  = 0,halign = 0 )
   )
+    
+
 
 
 # saving plot

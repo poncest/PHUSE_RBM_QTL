@@ -184,8 +184,10 @@ custom_theme <- function(base_size = 12) {
       
       plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
       
-      axis.title            = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-      axis.text             = element_text(size = 10, color = text_col, family = 'text'),
+      axis.title.x          = element_text(margin = margin(10, 0, 0, 0), size = rel(1), color = text_col, family = 'text'),
+      axis.title.y          = element_text(margin = margin(0, 10, 0, 0), size = rel(1), color = text_col, family = 'text'),
+      
+      axis.text             = element_text(size = rel(.9), color = text_col, family = 'text'),
       
       axis.line.x           = element_line(color = "grey80", linewidth = .4),
       axis.line.y           = element_blank(),
@@ -193,10 +195,10 @@ custom_theme <- function(base_size = 12) {
       panel.grid.minor.x    = element_blank(),
       
       plot.title            = element_text(
+        size                = rel(.8),
         family              = 'title',
         color               = title_col,
         face                = "bold",
-        size                = 14,  
         lineheight          = 0.9, 
         margin              = margin(b = 10))
     )
@@ -219,15 +221,17 @@ custom_theme_2 <- function(base_size = 12) {
       
       plot.margin           = margin(t = 10, r = 10, b = 10, l = 10),
       
-      axis.title            = element_text(size = 12, face = 'bold', color = text_col, margin = margin(t = 12), family = 'text'), 
-      axis.text             = element_text(size = 10, color = text_col, family = 'text'),
+      axis.title.x          = element_text(margin = margin(10, 0, 0, 0), size = rel(1), color = text_col, family = 'text'),
+      axis.title.y          = element_text(margin = margin(0, 10, 0, 0), size = rel(1), color = text_col, family = 'text'),
+      
+      axis.text             = element_text(size = rel(.9), color = text_col, family = 'text'),
       
       axis.line.x           = element_line(color = "grey80", linewidth = .4),
       axis.line.y           = element_blank(),
       
       panel.grid.minor.x    = element_blank(),
       
-      strip.text            = element_textbox(size = 12,
+      strip.text            = element_textbox(size = rel(1),
                                               face   = 'bold',
                                               family = 'text',
                                               color  = text_col,
@@ -236,10 +240,10 @@ custom_theme_2 <- function(base_size = 12) {
                                               fill   = "transparent"),
       
       plot.title            = element_text(
+        size                = rel(.8),
         family              = 'title',
         color               = title_col,
         face                = "bold",
-        size                = 18,  
         lineheight          = 0.9, 
         margin              = margin(b = 10)),
     )

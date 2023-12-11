@@ -6,13 +6,13 @@
 
 ### How do you generate the figures?
 
--   Proceed to run the `04b_selected_runfile.R` file in the `01_scripts` folder.
+-   Please navigate to the `01_scripts` folder and execute the `04b_selected_runfile.R` script.
 
 ### Additional Information
 
 -   More information can be found [HERE](https://advance.phuse.global/display/WEL/Quality+Tolerance+Limits).
 
--   A list of Figures and Traker can be found [HERE](https://github.com/poncest/PHUSE_RBM_QTL/tree/main/04_report).
+-   A list of Figures and Tracker can be found [HERE](https://github.com/poncest/PHUSE_RBM_QTL/tree/main/04_report).
 
 ------------------------------------------------------------------------
 
