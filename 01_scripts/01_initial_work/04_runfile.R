@@ -19,20 +19,17 @@
 ## Reference: -- https://advance.phuse.global/display/WEL/Quality+Tolerance+Limits
 
 
-# 1. LOAD PACKAGES ---- 
-pacman::p_load(here)
-
 
 ## Run Files -- Initial Work
 
 # Read data
-source(here("01_scripts/01_read_data.R"))
+source(here::here("01_scripts/01_initial_work/01_read_data.R"))
 
 # Data wrangling 
-source(here("01_scripts/02_data_wrangling.R"))
+source(here::here("01_scripts/01_initial_work/02_data_wrangling.R"))
 
 # Generate output (table or visual)
-source(here("01_scripts/03_data_visualization.R")) 
+source(here::here("01_scripts/01_initial_work/03_data_visualization.R")) 
 
 # House keeping
 rm(q1_raw, q2_raw, q3_raw, q4_raw, q5_raw, q6_raw, q7_raw, q8_raw, q9_raw, q10_raw)

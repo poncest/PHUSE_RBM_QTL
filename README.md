@@ -6,7 +6,10 @@
 
 ### How do you generate the figures?
 
--   Please navigate to the `01_scripts` folder and execute the `04b_selected_runfile.R` script.
+-   Initial Work:
+    -   Please navigate to the `01_scripts/01_initial_work` folder and execute the `04_runfile.R` script.
+-   Selected Figures:
+    -   Please navigate to the `01_scripts/02_selected_figures` folder and execute the `04b_selected_runfile.R` script.
 
 ### Additional Information
 

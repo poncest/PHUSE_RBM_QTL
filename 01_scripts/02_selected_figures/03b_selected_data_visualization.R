@@ -73,7 +73,7 @@ plot03 <- q3_clean %>%
   
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot03.png", device = "png", plot = plot03,   
        width = 6, height = 4, units = 'in', dpi = 320)  
 
@@ -112,7 +112,7 @@ plot04 <- q4_clean %>%
   
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot04.png", device = "png", plot = plot04,   
        width = 6, height = 4, units = 'in', dpi = 320)  
 
@@ -167,7 +167,7 @@ plot05 <- q5_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot05.png", device = "png", plot = plot05,   
        width = 6, height = 3, units = 'in', dpi = 320)  
 
@@ -222,7 +222,7 @@ plot06_option1 <- q6_clean %>%
   
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot06_option1.png", device = "png", plot = plot06_option1,   
        width = 8, height = 10, units = 'in', dpi = 320)  
 
@@ -282,7 +282,7 @@ plot06_option2 <- q6_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot06_option2.png", device = "png", plot = plot06_option2,   
        width = 10, height = 8, units = 'in', dpi = 320)  
 
@@ -337,7 +337,7 @@ plot07 <- q7_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot07.png", device = "png", plot = plot07,   
        width = 6, height = 3, units = 'in', dpi = 320) 
 
@@ -400,7 +400,7 @@ plot08_option1 <- q8_option1 %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot08_option1.png", device = "png", plot = plot08_option1,   
        width = 10, height = 11, units = 'in', dpi = 320)  
 
@@ -469,7 +469,7 @@ plot08_option2 <- q8_option2 %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot08_option2.png", device = "png", plot = plot08_option2,   
        width = 10, height = 11, units = 'in', dpi = 320)  
 
@@ -539,7 +539,7 @@ plot10 <- q10_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot10.png", device = "png", plot = plot10,   
        width = 11, height = 10, units = 'in', dpi = 320)  
 
@@ -608,7 +608,7 @@ plot18 <- q18_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot18.png", device = "png", plot = plot18,   
        width = 11, height = 8, units = 'in', dpi = 320)  
 
@@ -675,7 +675,7 @@ plot19 <- q19_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot19.png", device = "png", plot = plot19,   
        width = 11, height = 8, units = 'in', dpi = 320)  
 
@@ -731,7 +731,7 @@ plot20.3 <- q20.3_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot20.3.png", device = "png", plot = plot20.3,   
        width = 6, height = 5, units = 'in', dpi = 320)  
 
@@ -817,7 +817,7 @@ plot23_status <- q23_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot23_status.png", device = "png", plot = plot23_status,   
        width = 12, height = 12, units = 'in', dpi = 320) 
 
@@ -911,7 +911,7 @@ plot23_rate_option1 <- q23_rate_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot23_rate_option1.png", device = "png", plot = plot23_rate_option1,   
        width = 10, height = 10, units = 'in', dpi = 320) 
 
@@ -997,7 +997,7 @@ plot23_rate_option2 <- q23_rate_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot23_rate_option2.png", device = "png", plot = plot23_rate_option2,   
        width = 10, height = 10, units = 'in', dpi = 320) 
 
@@ -1079,7 +1079,7 @@ plot24_status <- q24_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot24_status.png", device = "png", plot = plot24_status,   
        width = 12, height = 12, units = 'in', dpi = 320) 
 
@@ -1119,10 +1119,10 @@ plot24_rate_option1 <- q24_rate_clean %>%
                    limits = c("Low","Medium","High"),
                    ) +
   
-  scale_y_continuous(breaks = seq(0, .08, by = .02), 
-                     limits = c(0, .08), 
+  scale_y_continuous(breaks = seq(0, 1, by = .25), 
+                     limits = c(0, 1), 
                      labels = percent_format()
-  )+
+                     )+
   
   urbnthemes::scale_color_discrete()+
   
@@ -1167,7 +1167,7 @@ plot24_rate_option1 <- q24_rate_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot24_rate_option1.png", device = "png", plot = plot24_rate_option1,   
        width = 10, height = 10, units = 'in', dpi = 320) 
 
@@ -1251,7 +1251,7 @@ plot24_rate_option2 <- q24_rate_clean %>%
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/02_selected_figures/"),
        filename = "plot24_rate_option2.png", device = "png", plot = plot24_rate_option2,   
        width = 10, height = 10, units = 'in', dpi = 320)
 

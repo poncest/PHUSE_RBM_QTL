@@ -64,7 +64,7 @@ p1
   
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/01_initial_work/"),
        filename = "Q01.png", device = "png", plot = p1,   
        width = 6, height = 5, units = 'in', dpi = 320)  
 
@@ -108,7 +108,7 @@ p2
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/01_initial_work/"),
        filename = "Q02.png", device = "png", plot = p2,   
        width = 6, height = 5, units = 'in', dpi = 320)  
 
@@ -140,7 +140,7 @@ p3
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/01_initial_work/"),
        filename = "Q03.png", device = "png", plot = p3,   
        width = 6, height = 6, units = 'in', dpi = 320)  
 
@@ -222,7 +222,7 @@ p4
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/01_initial_work/"),
        filename = "Q04.png", device = "png", plot = p4,   
        width = 6, height = 5, units = 'in', dpi = 320)  
 
@@ -255,7 +255,7 @@ p5
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/01_initial_work/"),
        filename = "Q05.png", device = "png", plot = p5,   
        width = 6, height = 5, units = 'in', dpi = 320)  
 
@@ -315,7 +315,7 @@ p6
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/01_initial_work/"),
        filename = "Q06.png", device = "png", plot = p6,   
        width = 8.5, height = 8, units = 'in', dpi = 320)  
 
@@ -382,7 +382,7 @@ p8
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/01_initial_work/"),
        filename = "Q08.png", device = "png", plot = p8,   
        width = 9, height = 9, units = 'in', dpi = 320)  
 
@@ -451,7 +451,7 @@ p10
 
 
 # saving plot
-ggsave(path = here("02_img/"),
+ggsave(path = here("02_img/01_initial_work/"),
        filename = "Q10.png", device = "png", plot = p10,   
        width = 9, height = 9, units = 'in', dpi = 320)  
 

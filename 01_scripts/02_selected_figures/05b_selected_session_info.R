@@ -1,6 +1,9 @@
 
+session_info <- sessioninfo::session_info(include_base = TRUE) 
+session_info
 
-sessioninfo::session_info(include_base = TRUE) 
+# if needed
+writeLines(capture.output(print(session_info)), "session_info.txt")
 
 # ─ Session info ────────────────────────────────────────────────────────
 # setting  value
