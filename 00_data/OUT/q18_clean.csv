@@ -1,0 +1,91 @@
+response_id,characteristic,qtl_utilization
+1,QMS – Health Authority Inspection,Not In Use and Not Planned
+1,QMS – Continuous Improvement,In Use
+1,QMS - Submissions,Not In Use and Not Planned
+1,QMS – Senior Management Review,Not In Use and Not Planned
+1,QMS – Quality Management Oversight ,Planned
+1,Quality by Design Processes,In Use
+1,Critical to Quality Processes,In Use
+2,QMS – Health Authority Inspection,Not Known
+3,QMS – Health Authority Inspection,In Use
+3,QMS – Continuous Improvement,Not In Use and Not Planned
+3,QMS - Submissions,Not In Use and Not Planned
+3,QMS – Senior Management Review,Not In Use and Not Planned
+3,QMS – Quality Management Oversight ,Not In Use and Not Planned
+3,Quality by Design Processes,Not In Use and Not Planned
+3,Critical to Quality Processes,Not In Use and Not Planned
+3,Other,Not Known
+4,QMS – Health Authority Inspection,Not Known
+4,QMS – Continuous Improvement,Not In Use and Not Planned
+4,QMS - Submissions,Not Known
+4,QMS – Senior Management Review,Not Known
+4,QMS – Quality Management Oversight ,Not Known
+4,Quality by Design Processes,Not In Use and Not Planned
+4,Critical to Quality Processes,Not In Use and Not Planned
+5,QMS – Health Authority Inspection,In Use
+5,QMS – Continuous Improvement,Planned
+5,QMS – Continuous Improvement,Comments
+5,QMS - Submissions,In Use
+5,QMS – Senior Management Review,In Use
+5,QMS – Quality Management Oversight ,In Use
+5,Quality by Design Processes,In Use
+5,Critical to Quality Processes,In Use
+7,QMS – Health Authority Inspection,Planned
+7,QMS – Health Authority Inspection,Not In Use and Not Planned
+7,QMS – Continuous Improvement,Planned
+7,QMS - Submissions,In Use
+7,QMS – Senior Management Review,Not In Use and Not Planned
+7,QMS – Quality Management Oversight ,Planned
+7,Quality by Design Processes,Not In Use and Not Planned
+7,Critical to Quality Processes,In Use
+8,QMS – Health Authority Inspection,In Use
+8,QMS – Continuous Improvement,In Use
+8,QMS - Submissions,In Use
+8,QMS – Senior Management Review,In Use
+8,QMS – Quality Management Oversight ,Not Known
+8,Quality by Design Processes,In Use
+8,Critical to Quality Processes,In Use
+9,QMS – Health Authority Inspection,Not Known
+9,QMS – Continuous Improvement,Not Known
+9,QMS - Submissions,Not Known
+9,QMS – Senior Management Review,Not Known
+9,QMS – Quality Management Oversight ,Not Known
+9,Quality by Design Processes,Not Known
+9,Critical to Quality Processes,Planned
+10,QMS – Health Authority Inspection,Not In Use and Not Planned
+10,QMS – Continuous Improvement,In Use
+10,QMS – Continuous Improvement,Not In Use and Not Planned
+10,QMS - Submissions,Not In Use and Not Planned
+10,QMS – Senior Management Review,Not In Use and Not Planned
+10,QMS – Quality Management Oversight ,In Use
+10,Quality by Design Processes,In Use
+10,Critical to Quality Processes,In Use
+11,QMS – Health Authority Inspection,In Use
+11,QMS – Continuous Improvement,In Use
+11,QMS - Submissions,In Use
+11,QMS – Senior Management Review,In Use
+11,QMS – Quality Management Oversight ,In Use
+11,Quality by Design Processes,In Use
+11,Critical to Quality Processes,In Use
+12,QMS – Health Authority Inspection,Planned
+12,QMS – Continuous Improvement,Planned
+12,QMS - Submissions,Planned
+12,QMS – Senior Management Review,Planned
+12,QMS – Quality Management Oversight ,Planned
+12,Quality by Design Processes,Planned
+12,Critical to Quality Processes,In Use
+12,Other,Comments
+13,QMS – Health Authority Inspection,Planned
+13,QMS – Continuous Improvement,Planned
+13,QMS - Submissions,Planned
+13,QMS – Senior Management Review,Planned
+13,QMS – Quality Management Oversight ,In Use
+13,Quality by Design Processes,In Use
+13,Critical to Quality Processes,In Use
+15,QMS – Health Authority Inspection,Not Known
+15,QMS – Continuous Improvement,Planned
+15,QMS - Submissions,Not Known
+15,QMS – Senior Management Review,Not Known
+15,QMS – Quality Management Oversight ,Not Known
+15,Quality by Design Processes,In Use
+15,Critical to Quality Processes,In Use

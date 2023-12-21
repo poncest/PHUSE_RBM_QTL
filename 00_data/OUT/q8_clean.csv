@@ -1,0 +1,187 @@
+response_id,activity,trial_attributes
+1,utilized,Trial Design
+1,utilized,Trial Phase
+1,utilized,Trial Size
+1,aligned,Trial Design
+1,aligned,Trial Phase
+1,aligned,Trial Size
+1,review,Trial Design
+1,review,Trial Phase
+1,review,Trial Size
+1,frequency,Trial Design
+1,frequency,Trial Phase
+1,frequency,Trial Size
+1,communication,Trial Design
+1,communication,Trial Phase
+1,communication,Trial Size
+1,corrective_actions,Trial Design
+1,corrective_actions,Trial Phase
+1,corrective_actions,Trial Size
+1,reporting,Trial Design
+1,reporting,Trial Phase
+1,reporting,Trial Size
+2,identification,Unable to Answer
+2,implementation,Unable to Answer
+2,utilized,Trial Size
+2,aligned,Trial Size
+2,review,Trial Size
+2,frequency,Trial Size
+2,communication,Mixed Response
+2,corrective_actions,Mixed Response
+2,reporting,Mixed Response
+3,identification,Not Utilized
+3,implementation,Not Utilized
+3,utilized,Trial Design
+3,utilized,Trial Phase
+3,utilized,Trial Size
+3,aligned,Not Utilized
+3,review,Trial Phase
+3,frequency,Trial Phase
+3,communication,Trial Design
+3,communication,Trial Phase
+3,communication,Trial Size
+3,corrective_actions,Trial Design
+3,corrective_actions,Trial Phase
+3,corrective_actions,Trial Size
+3,reporting,Trial Design
+3,reporting,Trial Phase
+3,reporting,Trial Size
+4,identification,Not Utilized
+4,implementation,Mixed Response
+4,utilized,Trial Design
+4,utilized,Trial Phase
+4,utilized,Trial Size
+4,aligned,Not Utilized
+4,review,Mixed Response
+4,frequency,Mixed Response
+4,communication,Mixed Response
+4,corrective_actions,Trial Design
+4,corrective_actions,Trial Phase
+4,corrective_actions,Trial Size
+4,reporting,Trial Design
+4,reporting,Trial Phase
+4,reporting,Trial Size
+5,identification,Trial Design
+5,identification,Trial Phase
+5,identification,Trial Size
+5,implementation,Trial Design
+5,implementation,Trial Phase
+5,implementation,Trial Size
+5,utilized,Trial Design
+5,utilized,Trial Phase
+5,utilized,Trial Size
+5,aligned,Trial Design
+5,aligned,Trial Phase
+5,aligned,Trial Size
+5,review,Trial Design
+5,review,Trial Phase
+5,review,Trial Size
+5,frequency,Trial Design
+5,frequency,Trial Phase
+5,frequency,Trial Size
+5,frequency,Not Utilized
+5,communication,Trial Design
+5,communication,Trial Phase
+5,communication,Trial Size
+5,communication,Not Utilized
+5,corrective_actions,Trial Design
+5,corrective_actions,Trial Phase
+5,corrective_actions,Trial Size
+5,reporting,Trial Design
+5,reporting,Trial Phase
+5,reporting,Trial Size
+5,reporting,Not Utilized
+6,identification,Not Utilized
+6,implementation,Not Utilized
+6,utilized,Not Utilized
+6,aligned,Not Utilized
+6,review,Not Utilized
+6,frequency,Not Utilized
+6,communication,Not Utilized
+6,corrective_actions,Not Utilized
+6,reporting,Not Utilized
+7,identification,Trial Design
+7,implementation,Trial Design
+7,utilized,Trial Design
+7,utilized,Trial Phase
+7,utilized,Trial Size
+7,aligned,Mixed Response
+7,review,Trial Design
+7,review,Trial Phase
+7,review,Trial Size
+7,frequency,Mixed Response
+7,communication,Mixed Response
+7,corrective_actions,Unable to Answer
+7,reporting,Mixed Response
+8,identification,Trial Phase
+8,identification,Trial Size
+8,utilized,Trial Phase
+8,utilized,Trial Size
+8,frequency,Trial Design
+8,frequency,Trial Phase
+8,frequency,Trial Size
+9,identification,Unable to Answer
+9,implementation,Unable to Answer
+9,utilized,Unable to Answer
+9,aligned,Unable to Answer
+9,review,Unable to Answer
+9,frequency,Unable to Answer
+9,communication,Unable to Answer
+9,corrective_actions,Unable to Answer
+9,reporting,Unable to Answer
+10,identification,Trial Design
+10,implementation,Trial Design
+10,utilized,Trial Design
+10,aligned,Trial Design
+10,review,Trial Design
+10,frequency,Trial Design
+10,communication,Trial Design
+10,corrective_actions,Trial Design
+10,reporting,Trial Design
+11,identification,Mixed Response
+11,implementation,Unable to Answer
+11,utilized,Trial Phase
+11,aligned,Trial Phase
+11,review,Trial Phase
+11,frequency,Trial Size
+11,communication,Trial Phase
+11,communication,Trial Size
+11,corrective_actions,Trial Size
+11,reporting,Trial Phase
+11,reporting,Trial Size
+12,identification,Trial Design
+12,identification,Trial Phase
+12,implementation,Not Utilized
+12,utilized,Trial Design
+12,utilized,Trial Phase
+12,aligned,Trial Design
+12,review,Trial Design
+12,review,Trial Phase
+12,frequency,Trial Design
+12,communication,Unable to Answer
+12,corrective_actions,Trial Design
+12,corrective_actions,Trial Phase
+12,reporting,Unable to Answer
+13,utilized,Trial Design
+13,review,Trial Size
+13,frequency,Trial Design
+14,identification,Trial Phase
+14,implementation,Unable to Answer
+14,utilized,Unable to Answer
+14,aligned,Unable to Answer
+14,review,Unable to Answer
+14,frequency,Unable to Answer
+14,communication,Unable to Answer
+14,corrective_actions,Unable to Answer
+14,reporting,Unable to Answer
+15,identification,Mixed Response
+15,implementation,Trial Design
+15,implementation,Trial Phase
+15,implementation,Trial Size
+15,utilized,Trial Design
+15,utilized,Trial Phase
+15,utilized,Trial Size
+15,utilized,Mixed Response
+15,aligned,Trial Design
+15,aligned,Trial Phase
+15,frequency,Trial Design

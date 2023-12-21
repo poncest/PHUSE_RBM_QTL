@@ -1,0 +1,30 @@
+additional_parameters,rate_scale,count,pct,total_count,bar_axis,bar_label
+Therapeutic Area Specific,Medium,7,0.7,10,Therapeutic Area Specific (7),70%
+Indication Specific,Medium,7,0.7,10,Indication Specific (7),70%
+TMF – Completeness,Low,6,0.75,8,TMF – Completeness (6),75%
+TMF – Quality,Low,6,0.75,8,TMF – Quality (6),75%
+Vendor Oversight,Low,6,0.75,8,Vendor Oversight (6),75%
+AE/SAE – Management,Low,6,0.6666666666666666,9,AE/SAE – Management (6),67%
+Protocol Specific,High,6,0.6,10,Protocol Specific (6),60%
+Asset/Compound Specific,Medium,5,0.5,10,Asset/Compound Specific (5),50%
+CRF Transcription Errors,Low,4,0.5,8,CRF Transcription Errors (4),50%
+CRF Transcription Errors,Medium,4,0.5,8,CRF Transcription Errors (4),50%
+Data Entry Timeliness,Low,4,0.5,8,Data Entry Timeliness (4),50%
+Data Processing – Querying,Low,4,0.5,8,Data Processing – Querying (4),50%
+Protocol Specific,Medium,4,0.4,10,Protocol Specific (4),40%
+AE/SAE – Management,High,3,0.3333333333333333,9,AE/SAE – Management (3),33%
+Asset/Compound Specific,Low,3,0.3,10,Asset/Compound Specific (3),30%
+Therapeutic Area Specific,High,3,0.3,10,Therapeutic Area Specific (3),30%
+Indication Specific,High,3,0.3,10,Indication Specific (3),30%
+TMF – Completeness,Medium,2,0.25,8,TMF – Completeness (2),25%
+TMF – Quality,Medium,2,0.25,8,TMF – Quality (2),25%
+Data Entry Timeliness,Medium,2,0.25,8,Data Entry Timeliness (2),25%
+Data Entry Timeliness,High,2,0.25,8,Data Entry Timeliness (2),25%
+Data Processing – Querying,Medium,2,0.25,8,Data Processing – Querying (2),25%
+Data Processing – Querying,High,2,0.25,8,Data Processing – Querying (2),25%
+Asset/Compound Specific,High,2,0.2,10,Asset/Compound Specific (2),20%
+Vendor Oversight,Medium,1,0.125,8,Vendor Oversight (1),12%
+Vendor Oversight,High,1,0.125,8,Vendor Oversight (1),12%
+Other1,Low,1,1,1,Other1 (1),100%
+Other2,Low,1,1,1,Other2 (1),100%
+Other3,Low,1,1,1,Other3 (1),100%

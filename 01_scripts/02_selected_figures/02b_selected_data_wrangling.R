@@ -75,6 +75,9 @@ q3_clean <- q3_raw %>%
                                         "Quality Functions",
                                         "Other")))
 
+write_csv(x = q3_clean, 
+          file = "00_data/OUT/q3_clean.csv")
+
 
 # |- others ----
 q3_others <- q3_raw %>% 
@@ -116,6 +119,8 @@ q3_others <- q3_raw %>%
     TRUE ~ as.character(other_functional_area)
   )) 
 
+write_csv(x = q3_others, 
+          file = "00_data/OUT/q3_others.csv")
 
   
 
@@ -169,6 +174,9 @@ q4_clean <- q4_raw %>%
                                         "Quality Functions",
                                         "Other")))
 
+write_csv(x = q4_clean, 
+          file = "00_data/OUT/q4_clean.csv")
+
 
 # |- others ----
 q4_others <- q4_raw %>% 
@@ -198,6 +206,9 @@ q4_others <- q4_raw %>%
   
   # factors
   mutate(response_id = as_factor(response_id))
+
+write_csv(x = q4_others, 
+          file = "00_data/OUT/q4_others.csv")
 
 
 # Question 05 ----
@@ -262,6 +273,9 @@ q5_clean <- q5_raw %>%
                                     "Post-marketing approval",
                                     "Other")))
 
+write_csv(x = q5_clean, 
+          file = "00_data/OUT/q5_clean.csv")
+
 
 
 # |- others ----
@@ -281,6 +295,10 @@ q5_others <- q5_raw %>%
   
   # format
   mutate(comment_why = str_to_sentence(comment_why))
+
+
+write_csv(x = q5_others, 
+          file = "00_data/OUT/q5_others.csv")
 
 
 
@@ -358,6 +376,9 @@ q6_clean <- q6_raw %>%
   )) 
   
 
+write_csv(x = q6_clean, 
+          file = "00_data/OUT/q6_clean.csv")
+
 
 # Question 07 ----                    
 q7_clean <- q7_raw %>% 
@@ -403,6 +424,9 @@ q7_clean <- q7_raw %>%
                                       "Team Tracking risk items",
                                       "Other"
                              ))) 
+
+write_csv(x = q7_clean, 
+          file = "00_data/OUT/q7_clean.csv")
 
 
 
@@ -459,6 +483,11 @@ q8_clean <- q8_raw %>%
   select(-temp_col) 
 
 
+write_csv(x = q8_clean, 
+          file = "00_data/OUT/q8_clean.csv")
+
+
+
 # |- option 1  ---- 
 q8_option1 <- q8_clean %>% 
   
@@ -492,6 +521,10 @@ q8_option1 <- q8_clean %>%
                                   "Implementati...",
                                   "Reporting Si..."
                        )))
+
+
+write_csv(x = q8_option1, 
+          file = "00_data/OUT/q8_option1.csv")
                        
 
 
@@ -521,6 +554,11 @@ q8_option2 <- q8_clean %>%
                                    "Mixed Response",
                                    "Not Utilized"
                         )))
+
+
+write_csv(x = q8_option2, 
+          file = "00_data/OUT/q8_option2.csv")
+
 
 
 # Question 10 ----
@@ -605,6 +643,10 @@ q10_clean <- q10_raw %>%
                                )))
 
 
+write_csv(x = q10_clean, 
+          file = "00_data/OUT/q10_clean.csv")
+
+
 
 # Question 18 ----
 q18_clean <- q18_raw %>% 
@@ -673,6 +715,10 @@ q18_clean <- q18_raw %>%
                                         "Not In Use and Not Planned",
                                         "Not Known",
                                         "Comments")))
+
+
+write_csv(x = q18_clean, 
+          file = "00_data/OUT/q18_clean.csv")
 
 
 
@@ -757,6 +803,10 @@ q19_clean <- q19_raw %>%
                                         "Not Applicable")))
 
 
+write_csv(x = q19_clean, 
+          file = "00_data/OUT/q19_clean.csv")
+
+
 # |- others ----
 q19_comments <- q19_raw %>% 
   
@@ -769,6 +819,11 @@ q19_comments <- q19_raw %>%
   # add `response_id` column
   mutate(response_id = row_number()) %>% 
   select(response_id, everything()) 
+
+
+
+write_csv(x = q19_comments, 
+          file = "00_data/OUT/q19_comments.csv")
 
 
 
@@ -832,6 +887,10 @@ q20.3_clean <- q20.3_raw %>%
                             "Other")))
 
 
+write_csv(x = q20.3_clean, 
+          file = "00_data/OUT/q20.3_clean.csv")
+
+
 # |- others ----
 q20.3_other <- q20.3_raw %>% 
   
@@ -849,6 +908,8 @@ q20.3_other <- q20.3_raw %>%
   select(response_id, everything()) 
 
 
+write_csv(x = q20.3_other, 
+          file = "00_data/OUT/q20.3_other.csv")
 
   
 # Question 23 ----
@@ -966,6 +1027,11 @@ q23_clean <- q23_raw %>%
                      "Under Consideration",
                      "Not Considered a QTL"
                    ))) 
+
+
+
+write_csv(x = q23_clean, 
+          file = "00_data/OUT/q23_clean.csv")
  
 
 
@@ -991,6 +1057,10 @@ q23_comments <- q23_raw  %>%
     comments_2 = str_to_sentence(comments_2)
   )
 
+
+
+write_csv(x = q23_comments, 
+          file = "00_data/OUT/q23_comments.csv")
 
 
 # |- rate ----
@@ -1131,6 +1201,9 @@ q23_rate_clean <- q23_rate_raw %>%
   ) 
   
 
+write_csv(x = q23_rate_clean, 
+          file = "00_data/OUT/q23_rate_clean.csv")
+
 
   
 # Question 24 ----
@@ -1232,6 +1305,9 @@ q24_clean <- q24_raw %>%
                           )))
 
 
+write_csv(x = q24_clean, 
+          file = "00_data/OUT/q24_clean.csv")
+
 
 # |- others ----
 q24_comments <- q24_raw  %>% 
@@ -1246,6 +1322,9 @@ q24_comments <- q24_raw  %>%
   mutate(response_id = row_number()) %>% 
   select(response_id, everything())  
   
+
+write_csv(x = q24_comments, 
+          file = "00_data/OUT/q24_comments.csv")
 
 
 

@@ -1,0 +1,136 @@
+response_id,additional_parameters,status
+1,CRF Transcription Errors,Not Considered a QTL
+1,TMF – Completeness,Not Considered a QTL
+1,TMF – Quality,Not Considered a QTL
+1,Vendor Oversight,Not Considered a QTL
+1,AE/SAE – Management,Not Considered a QTL
+1,Data Entry Timeliness,Currently in Use
+1,Data Processing – Querying,Currently in Use
+1,Asset/Compound Specific,Under Consideration
+1,Therapeutic Area Specific,Under Consideration
+1,Indication Specific,Under Consideration
+1,Protocol Specific,Currently in Use
+3,CRF Transcription Errors,Not Considered a QTL
+3,TMF – Completeness,Not Considered a QTL
+3,TMF – Quality,Not Considered a QTL
+3,Vendor Oversight,Not Considered a QTL
+3,AE/SAE – Management,Under Consideration
+3,Data Entry Timeliness,Not Considered a QTL
+3,Data Processing – Querying,Not Considered a QTL
+3,Asset/Compound Specific,Under Consideration
+3,Therapeutic Area Specific,Under Consideration
+3,Indication Specific,Under Consideration
+3,Protocol Specific,Under Consideration
+3,Other1,Not Considered a QTL
+3,Other2,Not Considered a QTL
+3,Other3,Not Considered a QTL
+4,CRF Transcription Errors,Not Considered a QTL
+4,TMF – Completeness,Not Considered a QTL
+4,TMF – Quality,Not Considered a QTL
+4,Vendor Oversight,Not Considered a QTL
+4,Data Entry Timeliness,Not Considered a QTL
+5,CRF Transcription Errors,Not Considered a QTL
+5,TMF – Completeness,Not Considered a QTL
+5,TMF – Quality,Not Considered a QTL
+5,Vendor Oversight,Not Considered a QTL
+5,AE/SAE – Management,Currently in Use
+5,Data Entry Timeliness,Not Considered a QTL
+5,Data Processing – Querying,Not Considered a QTL
+5,Asset/Compound Specific,Not Considered a QTL
+5,Therapeutic Area Specific,Under Consideration
+5,Therapeutic Area Specific,Not Considered a QTL
+5,Indication Specific,Under Consideration
+5,Protocol Specific,Under Consideration
+7,CRF Transcription Errors,Not Considered a QTL
+7,TMF – Completeness,Not Considered a QTL
+7,TMF – Quality,Not Considered a QTL
+7,Vendor Oversight,Not Considered a QTL
+7,AE/SAE – Management,Not Considered a QTL
+7,Data Entry Timeliness,Not Considered a QTL
+7,Data Processing – Querying,Not Considered a QTL
+7,Asset/Compound Specific,Not Considered a QTL
+7,Therapeutic Area Specific,Not Considered a QTL
+7,Indication Specific,Not Considered a QTL
+7,Protocol Specific,Currently in Use
+8,CRF Transcription Errors,Not Considered a QTL
+8,TMF – Completeness,Not Considered a QTL
+8,TMF – Quality,Not Considered a QTL
+8,Vendor Oversight,Not Considered a QTL
+8,AE/SAE – Management,Not Considered a QTL
+8,Data Entry Timeliness,Not Considered a QTL
+8,Data Processing – Querying,Not Considered a QTL
+8,Asset/Compound Specific,Currently in Use
+8,Therapeutic Area Specific,Currently in Use
+8,Indication Specific,Currently in Use
+8,Protocol Specific,Currently in Use
+9,CRF Transcription Errors,Planned to Use
+9,TMF – Completeness,Not Considered a QTL
+9,TMF – Quality,Not Considered a QTL
+9,Vendor Oversight,Not Considered a QTL
+9,AE/SAE – Management,Not Considered a QTL
+9,Data Entry Timeliness,Not Considered a QTL
+9,Data Processing – Querying,Not Considered a QTL
+9,Asset/Compound Specific,Not Considered a QTL
+9,Therapeutic Area Specific,Planned to Use
+9,Indication Specific,Planned to Use
+9,Protocol Specific,Planned to Use
+9,Other1,Not Considered a QTL
+9,Other2,Not Considered a QTL
+9,Other3,Not Considered a QTL
+10,CRF Transcription Errors,Currently in Use
+10,TMF – Completeness,Planned to Use
+10,TMF – Quality,Currently in Use
+10,Vendor Oversight,Currently in Use
+10,AE/SAE – Management,Currently in Use
+10,Data Entry Timeliness,Planned to Use
+10,Data Processing – Querying,Currently in Use
+10,Asset/Compound Specific,Currently in Use
+10,Therapeutic Area Specific,Currently in Use
+10,Indication Specific,Currently in Use
+10,Protocol Specific,Currently in Use
+12,CRF Transcription Errors,Under Consideration
+12,TMF – Completeness,Planned to Use
+12,TMF – Quality,Under Consideration
+12,Vendor Oversight,Not Considered a QTL
+12,AE/SAE – Management,Not Considered a QTL
+12,Data Entry Timeliness,Planned to Use
+12,Data Processing – Querying,Planned to Use
+12,Asset/Compound Specific,Planned to Use
+12,Therapeutic Area Specific,Planned to Use
+12,Indication Specific,Planned to Use
+12,Protocol Specific,Currently in Use
+13,CRF Transcription Errors,Not Considered a QTL
+13,TMF – Completeness,Not Considered a QTL
+13,TMF – Quality,Not Considered a QTL
+13,Vendor Oversight,Not Considered a QTL
+13,AE/SAE – Management,Under Consideration
+13,Data Entry Timeliness,Not Considered a QTL
+13,Data Processing – Querying,Not Considered a QTL
+13,Asset/Compound Specific,Under Consideration
+13,Therapeutic Area Specific,Under Consideration
+13,Indication Specific,Under Consideration
+13,Protocol Specific,Currently in Use
+13,Other1,Under Consideration
+13,NA,NA
+14,CRF Transcription Errors,Not Considered a QTL
+14,TMF – Completeness,Not Considered a QTL
+14,TMF – Quality,Not Considered a QTL
+14,Vendor Oversight,Not Considered a QTL
+14,AE/SAE – Management,Not Considered a QTL
+14,Data Entry Timeliness,Not Considered a QTL
+14,Data Processing – Querying,Not Considered a QTL
+14,Asset/Compound Specific,Under Consideration
+14,Therapeutic Area Specific,Under Consideration
+14,Indication Specific,Not Considered a QTL
+14,Protocol Specific,Under Consideration
+15,CRF Transcription Errors,Not Considered a QTL
+15,TMF – Completeness,Not Considered a QTL
+15,TMF – Quality,Not Considered a QTL
+15,Vendor Oversight,Not Considered a QTL
+15,AE/SAE – Management,Not Considered a QTL
+15,Data Entry Timeliness,Not Considered a QTL
+15,Data Processing – Querying,Not Considered a QTL
+15,Asset/Compound Specific,Not Considered a QTL
+15,Therapeutic Area Specific,Currently in Use
+15,Indication Specific,Currently in Use
+15,Protocol Specific,Currently in Use

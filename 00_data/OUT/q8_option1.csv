@@ -1,0 +1,187 @@
+response_id,activity,trial_attributes
+1,QTL’s Utilized,Trial Design
+1,QTL’s Utilized,Trial Phase
+1,QTL’s Utilized,Trial Size
+1,QTL’s Aligne...,Trial Design
+1,QTL’s Aligne...,Trial Phase
+1,QTL’s Aligne...,Trial Size
+1,QTL Review P...,Trial Design
+1,QTL Review P...,Trial Phase
+1,QTL Review P...,Trial Size
+1,Frequency of...,Trial Design
+1,Frequency of...,Trial Phase
+1,Frequency of...,Trial Size
+1,Communicatio...,Trial Design
+1,Communicatio...,Trial Phase
+1,Communicatio...,Trial Size
+1,Implementati...,Trial Design
+1,Implementati...,Trial Phase
+1,Implementati...,Trial Size
+1,Reporting Si...,Trial Design
+1,Reporting Si...,Trial Phase
+1,Reporting Si...,Trial Size
+2,Identificati...,Unable to Answer
+2,Overall Impl...,Unable to Answer
+2,QTL’s Utilized,Trial Size
+2,QTL’s Aligne...,Trial Size
+2,QTL Review P...,Trial Size
+2,Frequency of...,Trial Size
+2,Communicatio...,Mixed Response
+2,Implementati...,Mixed Response
+2,Reporting Si...,Mixed Response
+3,Identificati...,Not Utilized
+3,Overall Impl...,Not Utilized
+3,QTL’s Utilized,Trial Design
+3,QTL’s Utilized,Trial Phase
+3,QTL’s Utilized,Trial Size
+3,QTL’s Aligne...,Not Utilized
+3,QTL Review P...,Trial Phase
+3,Frequency of...,Trial Phase
+3,Communicatio...,Trial Design
+3,Communicatio...,Trial Phase
+3,Communicatio...,Trial Size
+3,Implementati...,Trial Design
+3,Implementati...,Trial Phase
+3,Implementati...,Trial Size
+3,Reporting Si...,Trial Design
+3,Reporting Si...,Trial Phase
+3,Reporting Si...,Trial Size
+4,Identificati...,Not Utilized
+4,Overall Impl...,Mixed Response
+4,QTL’s Utilized,Trial Design
+4,QTL’s Utilized,Trial Phase
+4,QTL’s Utilized,Trial Size
+4,QTL’s Aligne...,Not Utilized
+4,QTL Review P...,Mixed Response
+4,Frequency of...,Mixed Response
+4,Communicatio...,Mixed Response
+4,Implementati...,Trial Design
+4,Implementati...,Trial Phase
+4,Implementati...,Trial Size
+4,Reporting Si...,Trial Design
+4,Reporting Si...,Trial Phase
+4,Reporting Si...,Trial Size
+5,Identificati...,Trial Design
+5,Identificati...,Trial Phase
+5,Identificati...,Trial Size
+5,Overall Impl...,Trial Design
+5,Overall Impl...,Trial Phase
+5,Overall Impl...,Trial Size
+5,QTL’s Utilized,Trial Design
+5,QTL’s Utilized,Trial Phase
+5,QTL’s Utilized,Trial Size
+5,QTL’s Aligne...,Trial Design
+5,QTL’s Aligne...,Trial Phase
+5,QTL’s Aligne...,Trial Size
+5,QTL Review P...,Trial Design
+5,QTL Review P...,Trial Phase
+5,QTL Review P...,Trial Size
+5,Frequency of...,Trial Design
+5,Frequency of...,Trial Phase
+5,Frequency of...,Trial Size
+5,Frequency of...,Not Utilized
+5,Communicatio...,Trial Design
+5,Communicatio...,Trial Phase
+5,Communicatio...,Trial Size
+5,Communicatio...,Not Utilized
+5,Implementati...,Trial Design
+5,Implementati...,Trial Phase
+5,Implementati...,Trial Size
+5,Reporting Si...,Trial Design
+5,Reporting Si...,Trial Phase
+5,Reporting Si...,Trial Size
+5,Reporting Si...,Not Utilized
+6,Identificati...,Not Utilized
+6,Overall Impl...,Not Utilized
+6,QTL’s Utilized,Not Utilized
+6,QTL’s Aligne...,Not Utilized
+6,QTL Review P...,Not Utilized
+6,Frequency of...,Not Utilized
+6,Communicatio...,Not Utilized
+6,Implementati...,Not Utilized
+6,Reporting Si...,Not Utilized
+7,Identificati...,Trial Design
+7,Overall Impl...,Trial Design
+7,QTL’s Utilized,Trial Design
+7,QTL’s Utilized,Trial Phase
+7,QTL’s Utilized,Trial Size
+7,QTL’s Aligne...,Mixed Response
+7,QTL Review P...,Trial Design
+7,QTL Review P...,Trial Phase
+7,QTL Review P...,Trial Size
+7,Frequency of...,Mixed Response
+7,Communicatio...,Mixed Response
+7,Implementati...,Unable to Answer
+7,Reporting Si...,Mixed Response
+8,Identificati...,Trial Phase
+8,Identificati...,Trial Size
+8,QTL’s Utilized,Trial Phase
+8,QTL’s Utilized,Trial Size
+8,Frequency of...,Trial Design
+8,Frequency of...,Trial Phase
+8,Frequency of...,Trial Size
+9,Identificati...,Unable to Answer
+9,Overall Impl...,Unable to Answer
+9,QTL’s Utilized,Unable to Answer
+9,QTL’s Aligne...,Unable to Answer
+9,QTL Review P...,Unable to Answer
+9,Frequency of...,Unable to Answer
+9,Communicatio...,Unable to Answer
+9,Implementati...,Unable to Answer
+9,Reporting Si...,Unable to Answer
+10,Identificati...,Trial Design
+10,Overall Impl...,Trial Design
+10,QTL’s Utilized,Trial Design
+10,QTL’s Aligne...,Trial Design
+10,QTL Review P...,Trial Design
+10,Frequency of...,Trial Design
+10,Communicatio...,Trial Design
+10,Implementati...,Trial Design
+10,Reporting Si...,Trial Design
+11,Identificati...,Mixed Response
+11,Overall Impl...,Unable to Answer
+11,QTL’s Utilized,Trial Phase
+11,QTL’s Aligne...,Trial Phase
+11,QTL Review P...,Trial Phase
+11,Frequency of...,Trial Size
+11,Communicatio...,Trial Phase
+11,Communicatio...,Trial Size
+11,Implementati...,Trial Size
+11,Reporting Si...,Trial Phase
+11,Reporting Si...,Trial Size
+12,Identificati...,Trial Design
+12,Identificati...,Trial Phase
+12,Overall Impl...,Not Utilized
+12,QTL’s Utilized,Trial Design
+12,QTL’s Utilized,Trial Phase
+12,QTL’s Aligne...,Trial Design
+12,QTL Review P...,Trial Design
+12,QTL Review P...,Trial Phase
+12,Frequency of...,Trial Design
+12,Communicatio...,Unable to Answer
+12,Implementati...,Trial Design
+12,Implementati...,Trial Phase
+12,Reporting Si...,Unable to Answer
+13,QTL’s Utilized,Trial Design
+13,QTL Review P...,Trial Size
+13,Frequency of...,Trial Design
+14,Identificati...,Trial Phase
+14,Overall Impl...,Unable to Answer
+14,QTL’s Utilized,Unable to Answer
+14,QTL’s Aligne...,Unable to Answer
+14,QTL Review P...,Unable to Answer
+14,Frequency of...,Unable to Answer
+14,Communicatio...,Unable to Answer
+14,Implementati...,Unable to Answer
+14,Reporting Si...,Unable to Answer
+15,Identificati...,Mixed Response
+15,Overall Impl...,Trial Design
+15,Overall Impl...,Trial Phase
+15,Overall Impl...,Trial Size
+15,QTL’s Utilized,Trial Design
+15,QTL’s Utilized,Trial Phase
+15,QTL’s Utilized,Trial Size
+15,QTL’s Utilized,Mixed Response
+15,QTL’s Aligne...,Trial Design
+15,QTL’s Aligne...,Trial Phase
+15,Frequency of...,Trial Design

@@ -1,0 +1,159 @@
+response_id,activity,documentation_type
+1,Identification of CTQ’s,Part of a Protocol
+1,Implementation of QbD,Part of a Protocol
+1,Implementation of Risk Strategy,Part of a Protocol
+1,QTL’s Utilized,Part of a Protocol
+1,QTL Review Processes,Part of a Protocol
+1,QTL’s Aligned with CTQ’s,Part of a Protocol
+1,Frequency of QTL Review,Part of a Protocol
+1,Communication of QTL Breaches,Part of a Protocol
+1,Implementation of Corrective Actions,Part of a Protocol
+1,Significant QTL Deviations in CSR,Part of a Protocol
+2,QTL’s Utilized,Separate Protocol
+2,QTL Review Processes,Separate Protocol
+2,QTL’s Aligned with CTQ’s,Separate Protocol
+2,Frequency of QTL Review,Separate Protocol
+2,Communication of QTL Breaches,Separate Protocol
+2,Implementation of Corrective Actions,Separate Protocol
+2,Significant QTL Deviations in CSR,Separate Protocol
+3,Identification of CTQ’s,Not Utilized
+3,Implementation of QbD,Not Utilized
+3,Implementation of Risk Strategy,Technology Solution
+3,QTL’s Utilized,Technology Solution
+3,QTL Review Processes,Technology Solution
+3,QTL’s Aligned with CTQ’s,Not Utilized
+3,Frequency of QTL Review,Part of a Protocol
+3,Communication of QTL Breaches,Part of a Protocol
+3,Implementation of Corrective Actions,Technology Solution
+3,Significant QTL Deviations in CSR,Technology Solution
+4,Identification of CTQ’s,Not Utilized
+4,Implementation of QbD,Not Utilized
+4,Implementation of Risk Strategy,Part of a Protocol
+4,QTL’s Utilized,Part of a Protocol
+4,QTL Review Processes,Part of a Protocol
+4,QTL’s Aligned with CTQ’s,Not Utilized
+4,Frequency of QTL Review,Part of a Protocol
+4,Communication of QTL Breaches,Part of a Protocol
+4,Implementation of Corrective Actions,Part of a Protocol
+4,Significant QTL Deviations in CSR,Part of a Protocol
+5,Identification of CTQ’s,Technology Solution
+5,Identification of CTQ’s,Separate Protocol
+5,Identification of CTQ’s,Part of a Protocol
+5,Implementation of QbD,Technology Solution
+5,Implementation of QbD,Separate Protocol
+5,Implementation of QbD,Part of a Protocol
+5,Implementation of Risk Strategy,Technology Solution
+5,Implementation of Risk Strategy,Separate Protocol
+5,Implementation of Risk Strategy,Part of a Protocol
+5,QTL’s Utilized,Technology Solution
+5,QTL’s Utilized,Separate Protocol
+5,QTL’s Utilized,Part of a Protocol
+5,QTL Review Processes,Technology Solution
+5,QTL’s Aligned with CTQ’s,Not Utilized
+5,Frequency of QTL Review,Technology Solution
+5,Frequency of QTL Review,Separate Protocol
+5,Frequency of QTL Review,Part of a Protocol
+5,Communication of QTL Breaches,Technology Solution
+5,Implementation of Corrective Actions,Technology Solution
+5,Implementation of Corrective Actions,Separate Protocol
+5,Implementation of Corrective Actions,Part of a Protocol
+5,Significant QTL Deviations in CSR,Technology Solution
+6,Identification of CTQ’s,Separate Protocol
+6,Implementation of QbD,Separate Protocol
+6,Implementation of Risk Strategy,Separate Protocol
+7,Identification of CTQ’s,Separate Protocol
+7,Identification of CTQ’s,Part of a Protocol
+7,Implementation of QbD,Part of a Protocol
+7,Implementation of Risk Strategy,Separate Protocol
+7,Implementation of Risk Strategy,Part of a Protocol
+7,QTL’s Utilized,Technology Solution
+7,QTL’s Utilized,Part of a Protocol
+7,QTL Review Processes,Technology Solution
+7,QTL’s Aligned with CTQ’s,Not Utilized
+7,Frequency of QTL Review,Technology Solution
+7,Communication of QTL Breaches,Technology Solution
+7,Implementation of Corrective Actions,Technology Solution
+7,Significant QTL Deviations in CSR,Technology Solution
+8,Identification of CTQ’s,Separate Protocol
+8,Identification of CTQ’s,Part of a Protocol
+8,Implementation of QbD,Separate Protocol
+8,Implementation of QbD,Part of a Protocol
+8,Implementation of Risk Strategy,Technology Solution
+8,Implementation of Risk Strategy,Separate Protocol
+8,Implementation of Risk Strategy,Part of a Protocol
+8,QTL’s Utilized,Separate Protocol
+8,QTL’s Utilized,Part of a Protocol
+8,QTL Review Processes,Technology Solution
+8,QTL’s Aligned with CTQ’s,Separate Protocol
+8,QTL’s Aligned with CTQ’s,Part of a Protocol
+8,Frequency of QTL Review,Separate Protocol
+8,Frequency of QTL Review,Part of a Protocol
+8,Communication of QTL Breaches,Other
+8,Implementation of Corrective Actions,Other
+8,Significant QTL Deviations in CSR,Other
+9,QTL’s Utilized,Technology Solution
+9,QTL Review Processes,Technology Solution
+9,Communication of QTL Breaches,Technology Solution
+9,Implementation of Corrective Actions,Technology Solution
+10,Identification of CTQ’s,Separate Protocol
+10,Implementation of QbD,Separate Protocol
+10,Implementation of Risk Strategy,Separate Protocol
+10,QTL’s Utilized,Separate Protocol
+10,QTL Review Processes,Separate Protocol
+10,QTL’s Aligned with CTQ’s,Separate Protocol
+10,Frequency of QTL Review,Separate Protocol
+10,Communication of QTL Breaches,Separate Protocol
+10,Implementation of Corrective Actions,Separate Protocol
+10,Significant QTL Deviations in CSR,Separate Protocol
+11,Identification of CTQ’s,Part of a Protocol
+11,Implementation of QbD,Part of a Protocol
+11,Implementation of Risk Strategy,Separate Protocol
+11,QTL’s Utilized,Separate Protocol
+11,QTL Review Processes,Separate Protocol
+11,QTL’s Aligned with CTQ’s,Separate Protocol
+11,Frequency of QTL Review,Separate Protocol
+11,Communication of QTL Breaches,Separate Protocol
+11,Implementation of Corrective Actions,Separate Protocol
+11,Significant QTL Deviations in CSR,Separate Protocol
+12,Identification of CTQ’s,Separate Protocol
+12,Implementation of QbD,Part of a Protocol
+12,Implementation of Risk Strategy,Separate Protocol
+12,Implementation of Risk Strategy,Part of a Protocol
+12,QTL’s Utilized,Separate Protocol
+12,QTL Review Processes,Separate Protocol
+12,QTL’s Aligned with CTQ’s,Separate Protocol
+12,Frequency of QTL Review,Separate Protocol
+12,Communication of QTL Breaches,Part of a Protocol
+12,Implementation of Corrective Actions,Separate Protocol
+12,Implementation of Corrective Actions,Part of a Protocol
+12,Significant QTL Deviations in CSR,Part of a Protocol
+13,Identification of CTQ’s,Technology Solution
+13,Implementation of QbD,Technology Solution
+13,Implementation of Risk Strategy,Technology Solution
+13,QTL’s Utilized,Technology Solution
+13,QTL Review Processes,Technology Solution
+13,QTL’s Aligned with CTQ’s,Technology Solution
+13,Frequency of QTL Review,Part of a Protocol
+13,Communication of QTL Breaches,Part of a Protocol
+13,Implementation of Corrective Actions,Technology Solution
+13,Significant QTL Deviations in CSR,Technology Solution
+14,Identification of CTQ’s,Part of a Protocol
+14,Implementation of QbD,Not Utilized
+14,Implementation of Risk Strategy,Separate Protocol
+14,QTL’s Utilized,Not Utilized
+14,QTL Review Processes,Not Utilized
+14,QTL’s Aligned with CTQ’s,Not Utilized
+14,Frequency of QTL Review,Not Utilized
+14,Communication of QTL Breaches,Not Utilized
+14,Implementation of Corrective Actions,Part of a Protocol
+14,Significant QTL Deviations in CSR,Not Utilized
+15,Identification of CTQ’s,Separate Protocol
+15,Implementation of QbD,Separate Protocol
+15,Implementation of Risk Strategy,Separate Protocol
+15,QTL’s Utilized,Part of a Protocol
+15,QTL Review Processes,Part of a Protocol
+15,QTL’s Aligned with CTQ’s,Part of a Protocol
+15,Frequency of QTL Review,Part of a Protocol
+15,Communication of QTL Breaches,Part of a Protocol
+15,Implementation of Corrective Actions,Separate Protocol
+15,Significant QTL Deviations in CSR,Part of a Protocol

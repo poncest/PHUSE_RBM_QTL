@@ -1,0 +1,51 @@
+transcelerate_parameters,rate_scale,count,pct,total_count,bar_axis,bar_label
+Primary Endpoint Assessment,High,9,0.8181818181818182,11,Primary Endpoint Assessment (9),82%
+Disposition – Early Termination,High,8,0.6666666666666666,12,Disposition – Early Termination (8),67%
+Lost to Follow Up,High,7,0.6363636363636364,11,Lost to Follow Up (7),64%
+PD – Other,Low,6,0.75,8,PD – Other (6),75%
+Secondary Endpoint Assessment,High,6,0.5454545454545454,11,Secondary Endpoint Assessment (6),55%
+Censored Data – Statistical analysis,High,6,0.5,12,Censored Data – Statistical analysis (6),50%
+PD – Study Conduct,Low,5,0.5555555555555556,9,PD – Study Conduct (5),56%
+Investigational Product – Compliance,High,5,0.5,10,Investigational Product – Compliance (5),50%
+Investigational Product - Other,Low,5,0.5,10,Investigational Product - Other (5),50%
+Randomization Failure,High,5,0.5,10,Randomization Failure (5),50%
+Informed Consent,Low,5,0.625,8,Informed Consent (5),62%
+PD – I/E Criteria,Low,4,0.36363636363636365,11,PD – I/E Criteria (4),36%
+PD – I/E Criteria,High,4,0.36363636363636365,11,PD – I/E Criteria (4),36%
+Investigational Product – Compliance,Medium,4,0.4,10,Investigational Product – Compliance (4),40%
+Randomization Failure,Low,4,0.4,10,Randomization Failure (4),40%
+AE/SAE - Reporting,Medium,4,0.4444444444444444,9,AE/SAE - Reporting (4),44%
+Repeated Timepoints for FIH/Early Phase trials,Low,4,0.36363636363636365,11,Repeated Timepoints for FIH/Early Phase trials (4),36%
+Repeated Timepoints for FIH/Early Phase trials,Medium,4,0.36363636363636365,11,Repeated Timepoints for FIH/Early Phase trials (4),36%
+Stratification,Low,4,0.4,10,Stratification (4),40%
+PD – I/E Criteria,Medium,3,0.2727272727272727,11,PD – I/E Criteria (3),27%
+Secondary Endpoint Assessment,Medium,3,0.2727272727272727,11,Secondary Endpoint Assessment (3),27%
+Investigational Product - Other,Medium,3,0.3,10,Investigational Product - Other (3),30%
+Lost to Follow Up,Low,3,0.2727272727272727,11,Lost to Follow Up (3),27%
+AE/SAE - Reporting,Low,3,0.3333333333333333,9,AE/SAE - Reporting (3),33%
+Censored Data – Statistical analysis,Low,3,0.25,12,Censored Data – Statistical analysis (3),25%
+Censored Data – Statistical analysis,Medium,3,0.25,12,Censored Data – Statistical analysis (3),25%
+Repeated Timepoints for FIH/Early Phase trials,High,3,0.2727272727272727,11,Repeated Timepoints for FIH/Early Phase trials (3),27%
+Stratification,Medium,3,0.3,10,Stratification (3),30%
+Stratification,High,3,0.3,10,Stratification (3),30%
+Other1,High,3,0.75,4,Other1 (3),75%
+PD – Study Conduct,Medium,2,0.2222222222222222,9,PD – Study Conduct (2),22%
+PD – Study Conduct,High,2,0.2222222222222222,9,PD – Study Conduct (2),22%
+Secondary Endpoint Assessment,Low,2,0.18181818181818182,11,Secondary Endpoint Assessment (2),18%
+Investigational Product - Other,High,2,0.2,10,Investigational Product - Other (2),20%
+Informed Consent,Medium,2,0.25,8,Informed Consent (2),25%
+AE/SAE - Reporting,High,2,0.2222222222222222,9,AE/SAE - Reporting (2),22%
+Disposition – Early Termination,Low,2,0.16666666666666666,12,Disposition – Early Termination (2),17%
+Disposition – Early Termination,Medium,2,0.16666666666666666,12,Disposition – Early Termination (2),17%
+PD – Other,Medium,1,0.125,8,PD – Other (1),12%
+PD – Other,High,1,0.125,8,PD – Other (1),12%
+Primary Endpoint Assessment,Low,1,0.09090909090909091,11,Primary Endpoint Assessment (1),9%
+Primary Endpoint Assessment,Medium,1,0.09090909090909091,11,Primary Endpoint Assessment (1),9%
+Investigational Product – Compliance,Low,1,0.1,10,Investigational Product – Compliance (1),10%
+Randomization Failure,Medium,1,0.1,10,Randomization Failure (1),10%
+Lost to Follow Up,Medium,1,0.09090909090909091,11,Lost to Follow Up (1),9%
+Informed Consent,High,1,0.125,8,Informed Consent (1),12%
+Other1,Low,1,0.25,4,Other1 (1),25%
+Other2,Low,1,0.5,2,Other2 (1),50%
+Other2,High,1,0.5,2,Other2 (1),50%
+Other3,Low,1,1,1,Other3 (1),100%

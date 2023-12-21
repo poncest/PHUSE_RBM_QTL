@@ -1,0 +1,129 @@
+response_id,possible_action,action_type
+1,Protocol Amendment,Not Applicable
+1,Change in QTL threshold,Not Applicable
+1,Change in QTL parameter metric,Not Applicable
+1,Change in QTL statistical distribution,Not Applicable
+1,Change in QTL statistical methodology,Not Applicable
+1,Change to trial monitoring strategy,Primary Breach
+1,Change to trial monitoring strategy,Secondary Breach
+1,Instructions provided to sites,Primary Breach
+1,Instructions provided to sites,Secondary Breach
+1,Instructions provided to vendors,Primary Breach
+1,Instructions provided to vendors,Secondary Breach
+2,Instructions provided to sites,Primary Breach
+2,Instructions provided to sites,Secondary Breach
+2,Instructions provided to vendors,Primary Breach
+2,Instructions provided to vendors,Secondary Breach
+3,Protocol Amendment,Primary Breach
+3,Change in QTL threshold,Not Applicable
+3,Change in QTL parameter metric,Not Applicable
+3,Change in QTL statistical distribution,Not Applicable
+3,Change in QTL statistical methodology,Not Applicable
+3,Change to trial monitoring strategy,Primary Breach
+3,Instructions provided to sites,Primary Breach
+3,Instructions provided to vendors,Not Applicable
+3,Other,Not Applicable
+4,Other,Primary Breach
+4,Other,Secondary Breach
+4,Other,Not Applicable
+5,Protocol Amendment,Primary Breach
+5,Change in QTL threshold,Secondary Breach
+5,Change in QTL parameter metric,Not Applicable
+5,Change in QTL statistical distribution,Not Applicable
+5,Change in QTL statistical methodology,Not Applicable
+5,Change to trial monitoring strategy,Not Applicable
+5,Instructions provided to sites,Primary Breach
+5,Instructions provided to sites,Secondary Breach
+5,Instructions provided to vendors,Primary Breach
+5,Instructions provided to vendors,Secondary Breach
+7,Protocol Amendment,Not Applicable
+7,Change in QTL threshold,Secondary Breach
+7,Change in QTL threshold,Not Applicable
+7,Change in QTL parameter metric,Not Applicable
+7,Change in QTL statistical distribution,Not Applicable
+7,Change in QTL statistical methodology,Not Applicable
+7,Change to trial monitoring strategy,Not Applicable
+7,Instructions provided to sites,Primary Breach
+7,Instructions provided to sites,Secondary Breach
+7,Instructions provided to vendors,Not Applicable
+7,Other,Not Applicable
+8,Protocol Amendment,Primary Breach
+8,Change in QTL threshold,Primary Breach
+8,Change in QTL threshold,Secondary Breach
+8,Change in QTL parameter metric,Primary Breach
+8,Change in QTL parameter metric,Secondary Breach
+8,Change in QTL statistical distribution,Primary Breach
+8,Change in QTL statistical distribution,Secondary Breach
+8,Change in QTL statistical methodology,Primary Breach
+8,Change in QTL statistical methodology,Secondary Breach
+8,Change to trial monitoring strategy,Primary Breach
+8,Change to trial monitoring strategy,Secondary Breach
+8,Instructions provided to sites,Primary Breach
+8,Instructions provided to sites,Secondary Breach
+8,Instructions provided to vendors,Primary Breach
+8,Instructions provided to vendors,Secondary Breach
+9,Protocol Amendment,Not Applicable
+9,Change in QTL threshold,Not Applicable
+9,Change in QTL parameter metric,Not Applicable
+9,Change in QTL statistical distribution,Not Applicable
+9,Change in QTL statistical methodology,Not Applicable
+9,Change to trial monitoring strategy,Not Applicable
+9,Instructions provided to sites,Not Applicable
+9,Instructions provided to vendors,Not Applicable
+9,Other,Not Applicable
+10,Protocol Amendment,Primary Breach
+10,Protocol Amendment,Secondary Breach
+10,Change in QTL threshold,Primary Breach
+10,Change in QTL threshold,Secondary Breach
+10,Change in QTL parameter metric,Primary Breach
+10,Change in QTL parameter metric,Secondary Breach
+10,Change in QTL statistical distribution,Primary Breach
+10,Change in QTL statistical distribution,Secondary Breach
+10,Change in QTL statistical methodology,Primary Breach
+10,Change in QTL statistical methodology,Secondary Breach
+10,Change to trial monitoring strategy,Primary Breach
+10,Change to trial monitoring strategy,Secondary Breach
+10,Instructions provided to sites,Primary Breach
+10,Instructions provided to sites,Secondary Breach
+10,Instructions provided to vendors,Primary Breach
+11,Protocol Amendment,Primary Breach
+11,Change in QTL threshold,Primary Breach
+11,Change in QTL parameter metric,Primary Breach
+11,Change in QTL statistical distribution,Secondary Breach
+11,Change in QTL statistical methodology,Not Applicable
+11,Change to trial monitoring strategy,Primary Breach
+11,Instructions provided to sites,Secondary Breach
+11,Instructions provided to vendors,Secondary Breach
+12,Protocol Amendment,Not Applicable
+12,Change in QTL threshold,Not Applicable
+12,Change in QTL parameter metric,Not Applicable
+12,Change in QTL statistical distribution,Not Applicable
+12,Change in QTL statistical methodology,Not Applicable
+12,Change to trial monitoring strategy,Not Applicable
+12,Instructions provided to sites,Not Applicable
+12,Instructions provided to vendors,Not Applicable
+12,Other,Not Applicable
+13,Protocol Amendment,Primary Breach
+13,Protocol Amendment,Secondary Breach
+13,Change in QTL threshold,Primary Breach
+13,Change in QTL threshold,Secondary Breach
+13,Change in QTL parameter metric,Primary Breach
+13,Change in QTL parameter metric,Secondary Breach
+13,Change in QTL statistical distribution,Primary Breach
+13,Change in QTL statistical distribution,Secondary Breach
+13,Change in QTL statistical methodology,Primary Breach
+13,Change in QTL statistical methodology,Secondary Breach
+13,Change to trial monitoring strategy,Primary Breach
+13,Change to trial monitoring strategy,Secondary Breach
+13,Instructions provided to sites,Primary Breach
+13,Instructions provided to sites,Secondary Breach
+13,Instructions provided to vendors,Primary Breach
+13,Instructions provided to vendors,Secondary Breach
+15,Protocol Amendment,Primary Breach
+15,Change in QTL threshold,Primary Breach
+15,Change in QTL parameter metric,Not Applicable
+15,Change in QTL statistical distribution,Not Applicable
+15,Change in QTL statistical methodology,Not Applicable
+15,Change to trial monitoring strategy,Primary Breach
+15,Instructions provided to sites,Primary Breach
+15,Instructions provided to vendors,Primary Breach
