@@ -15,7 +15,7 @@
 
 -   More information can be found [HERE](https://advance.phuse.global/display/WEL/Quality+Tolerance+Limits).
 
--   A list of Figures and Tracker can be found [HERE](https://github.com/poncest/PHUSE_RBM_QTL/tree/main/04_report).
+-   A list of Figures and Tracker can be found [HERE](https://github.com/poncest/PHUSE_RBM_QTL/tree/main/04_doc).
 
 ------------------------------------------------------------------------
 
