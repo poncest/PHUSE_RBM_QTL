@@ -1437,4 +1437,6 @@ q24_rate_clean <- q24_rate_raw %>%
     bar_label = str_glue("{ scales::percent(pct, accuracy = 1) }")
   ) 
 
+write_csv(x = q24_rate_clean, 
+          file = "00_data/OUT/q24_rate_clean.csv")
 
