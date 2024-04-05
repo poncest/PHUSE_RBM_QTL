@@ -1,243 +1,243 @@
 response_id,stage_phase,rbm_approaches
-1,FIH,CTQ Factors
+1,FIH,CtQ Factors
 1,FIH,QbD Processes
-1,FIH,QTL'S
-1,FIH,Alignment of QTL'S with CTQ'S
+1,FIH,QTLs
+1,FIH,Alignment of QTLs with CtQs
 1,FIH,Other Risk-Based Approaches
-1,Phase I Non-FIH,CTQ Factors
-1,Phase I Non-FIH,QbD Processes
-1,Phase I Non-FIH,QTL'S
-1,Phase I Non-FIH,Alignment of QTL'S with CTQ'S
-1,Phase I Non-FIH,Other Risk-Based Approaches
-1,Phase II,CTQ Factors
+1,Phase I Non–FIH,CtQ Factors
+1,Phase I Non–FIH,QbD Processes
+1,Phase I Non–FIH,QTLs
+1,Phase I Non–FIH,Alignment of QTLs with CtQs
+1,Phase I Non–FIH,Other Risk-Based Approaches
+1,Phase II,CtQ Factors
 1,Phase II,QbD Processes
-1,Phase II,QTL'S
-1,Phase II,Alignment of QTL'S with CTQ'S
+1,Phase II,QTLs
+1,Phase II,Alignment of QTLs with CtQs
 1,Phase II,Other Risk-Based Approaches
-1,Phase III - RS,CTQ Factors
-1,Phase III - RS,QbD Processes
-1,Phase III - RS,QTL'S
-1,Phase III - RS,Alignment of QTL'S with CTQ'S
-1,Phase III - RS,Other Risk-Based Approaches
-1,Phase III - FU,CTQ Factors
-1,Phase III - FU,QbD Processes
-1,Phase III - FU,QTL'S
-1,Phase III - FU,Alignment of QTL'S with CTQ'S
-1,Phase III - FU,Other Risk-Based Approaches
-1,Phase IV,CTQ Factors
+1,Phase III – RS,CtQ Factors
+1,Phase III – RS,QbD Processes
+1,Phase III – RS,QTLs
+1,Phase III – RS,Alignment of QTLs with CtQs
+1,Phase III – RS,Other Risk-Based Approaches
+1,Phase III – FU,CtQ Factors
+1,Phase III – FU,QbD Processes
+1,Phase III – FU,QTLs
+1,Phase III – FU,Alignment of QTLs with CtQs
+1,Phase III – FU,Other Risk-Based Approaches
+1,Phase IV,CtQ Factors
 1,Phase IV,QbD Processes
-1,Phase IV,QTL'S
-1,Phase IV,Alignment of QTL'S with CTQ'S
+1,Phase IV,QTLs
+1,Phase IV,Alignment of QTLs with CtQs
 1,Phase IV,Other Risk-Based Approaches
-2,FIH,CTQ Factors
-2,FIH,QTL'S
-2,FIH,Alignment of QTL'S with CTQ'S
+2,FIH,CtQ Factors
+2,FIH,QTLs
+2,FIH,Alignment of QTLs with CtQs
 2,FIH,Other Risk-Based Approaches
-2,Phase I Non-FIH,CTQ Factors
-2,Phase I Non-FIH,QTL'S
-2,Phase I Non-FIH,Alignment of QTL'S with CTQ'S
-2,Phase I Non-FIH,Other Risk-Based Approaches
-2,Phase II,CTQ Factors
-2,Phase II,QTL'S
-2,Phase II,Alignment of QTL'S with CTQ'S
+2,Phase I Non–FIH,CtQ Factors
+2,Phase I Non–FIH,QTLs
+2,Phase I Non–FIH,Alignment of QTLs with CtQs
+2,Phase I Non–FIH,Other Risk-Based Approaches
+2,Phase II,CtQ Factors
+2,Phase II,QTLs
+2,Phase II,Alignment of QTLs with CtQs
 2,Phase II,Other Risk-Based Approaches
-2,Phase III - RS,CTQ Factors
-2,Phase III - RS,QTL'S
-2,Phase III - RS,Alignment of QTL'S with CTQ'S
-2,Phase III - RS,Other Risk-Based Approaches
-2,Phase III - FU,CTQ Factors
-2,Phase III - FU,QTL'S
-2,Phase III - FU,Alignment of QTL'S with CTQ'S
-2,Phase III - FU,Other Risk-Based Approaches
-3,Phase II,QTL'S
-3,Phase III - RS,QTL'S
-4,Phase I Non-FIH,QTL'S
-4,Phase I Non-FIH,Other Risk-Based Approaches
-4,Phase II,QTL'S
+2,Phase III – RS,CtQ Factors
+2,Phase III – RS,QTLs
+2,Phase III – RS,Alignment of QTLs with CtQs
+2,Phase III – RS,Other Risk-Based Approaches
+2,Phase III – FU,CtQ Factors
+2,Phase III – FU,QTLs
+2,Phase III – FU,Alignment of QTLs with CtQs
+2,Phase III – FU,Other Risk-Based Approaches
+3,Phase II,QTLs
+3,Phase III – RS,QTLs
+4,Phase I Non–FIH,QTLs
+4,Phase I Non–FIH,Other Risk-Based Approaches
+4,Phase II,QTLs
 4,Phase II,Other Risk-Based Approaches
-4,Phase III - RS,QTL'S
-4,Phase III - RS,Other Risk-Based Approaches
-4,Phase III - FU,QTL'S
-4,Phase III - FU,Other Risk-Based Approaches
+4,Phase III – RS,QTLs
+4,Phase III – RS,Other Risk-Based Approaches
+4,Phase III – FU,QTLs
+4,Phase III – FU,Other Risk-Based Approaches
 4,Phase IV,Other Risk-Based Approaches
-5,FIH,CTQ Factors
+5,FIH,CtQ Factors
 5,FIH,QbD Processes
 5,FIH,Other Risk-Based Approaches
-5,Phase II,CTQ Factors
+5,Phase II,CtQ Factors
 5,Phase II,QbD Processes
-5,Phase II,QTL'S
-5,Phase II,Alignment of QTL'S with CTQ'S
+5,Phase II,QTLs
+5,Phase II,Alignment of QTLs with CtQs
 5,Phase II,Other Risk-Based Approaches
-5,Phase III - RS,CTQ Factors
-5,Phase III - RS,QbD Processes
-5,Phase III - RS,QTL'S
-5,Phase III - RS,Alignment of QTL'S with CTQ'S
-5,Phase III - RS,Other Risk-Based Approaches
-5,Phase III - FU,CTQ Factors
-5,Phase III - FU,QbD Processes
-5,Phase III - FU,QTL'S
-5,Phase III - FU,Alignment of QTL'S with CTQ'S
-5,Phase III - FU,Other Risk-Based Approaches
-5,Phase IV,CTQ Factors
+5,Phase III – RS,CtQ Factors
+5,Phase III – RS,QbD Processes
+5,Phase III – RS,QTLs
+5,Phase III – RS,Alignment of QTLs with CtQs
+5,Phase III – RS,Other Risk-Based Approaches
+5,Phase III – FU,CtQ Factors
+5,Phase III – FU,QbD Processes
+5,Phase III – FU,QTLs
+5,Phase III – FU,Alignment of QTLs with CtQs
+5,Phase III – FU,Other Risk-Based Approaches
+5,Phase IV,CtQ Factors
 5,Phase IV,QbD Processes
 5,Phase IV,Other Risk-Based Approaches
-6,FIH,CTQ Factors
+6,FIH,CtQ Factors
 6,FIH,QbD Processes
 6,FIH,Other Risk-Based Approaches
-6,Phase I Non-FIH,CTQ Factors
-6,Phase I Non-FIH,QbD Processes
-6,Phase I Non-FIH,Other Risk-Based Approaches
-6,Phase II,CTQ Factors
+6,Phase I Non–FIH,CtQ Factors
+6,Phase I Non–FIH,QbD Processes
+6,Phase I Non–FIH,Other Risk-Based Approaches
+6,Phase II,CtQ Factors
 6,Phase II,QbD Processes
 6,Phase II,Other Risk-Based Approaches
-6,Phase III - RS,CTQ Factors
-6,Phase III - RS,QbD Processes
-6,Phase III - RS,Other Risk-Based Approaches
-6,Phase III - FU,CTQ Factors
-6,Phase III - FU,QbD Processes
-6,Phase III - FU,Other Risk-Based Approaches
-6,Phase IV,CTQ Factors
+6,Phase III – RS,CtQ Factors
+6,Phase III – RS,QbD Processes
+6,Phase III – RS,Other Risk-Based Approaches
+6,Phase III – FU,CtQ Factors
+6,Phase III – FU,QbD Processes
+6,Phase III – FU,Other Risk-Based Approaches
+6,Phase IV,CtQ Factors
 6,Phase IV,QbD Processes
 6,Phase IV,Other Risk-Based Approaches
-7,FIH,CTQ Factors
+7,FIH,CtQ Factors
 7,FIH,QbD Processes
-7,Phase I Non-FIH,CTQ Factors
-7,Phase I Non-FIH,QbD Processes
-7,Phase II,CTQ Factors
+7,Phase I Non–FIH,CtQ Factors
+7,Phase I Non–FIH,QbD Processes
+7,Phase II,CtQ Factors
 7,Phase II,QbD Processes
-7,Phase III - RS,CTQ Factors
-7,Phase III - RS,QbD Processes
-7,Phase III - RS,QTL'S
-7,Phase III - RS,Alignment of QTL'S with CTQ'S
-7,Phase III - FU,CTQ Factors
-7,Phase III - FU,QbD Processes
-7,Phase III - FU,QTL'S
-7,Phase III - FU,Alignment of QTL'S with CTQ'S
-8,Phase I Non-FIH,Other Risk-Based Approaches
-8,Phase II,CTQ Factors
+7,Phase III – RS,CtQ Factors
+7,Phase III – RS,QbD Processes
+7,Phase III – RS,QTLs
+7,Phase III – RS,Alignment of QTLs with CtQs
+7,Phase III – FU,CtQ Factors
+7,Phase III – FU,QbD Processes
+7,Phase III – FU,QTLs
+7,Phase III – FU,Alignment of QTLs with CtQs
+8,Phase I Non–FIH,Other Risk-Based Approaches
+8,Phase II,CtQ Factors
 8,Phase II,QbD Processes
-8,Phase II,QTL'S
-8,Phase II,Alignment of QTL'S with CTQ'S
-8,Phase III - RS,CTQ Factors
-8,Phase III - RS,QbD Processes
-8,Phase III - RS,QTL'S
-8,Phase III - RS,Alignment of QTL'S with CTQ'S
-8,Phase III - FU,CTQ Factors
-8,Phase III - FU,QbD Processes
-8,Phase III - FU,QTL'S
-8,Phase III - FU,Alignment of QTL'S with CTQ'S
-8,Phase IV,CTQ Factors
+8,Phase II,QTLs
+8,Phase II,Alignment of QTLs with CtQs
+8,Phase III – RS,CtQ Factors
+8,Phase III – RS,QbD Processes
+8,Phase III – RS,QTLs
+8,Phase III – RS,Alignment of QTLs with CtQs
+8,Phase III – FU,CtQ Factors
+8,Phase III – FU,QbD Processes
+8,Phase III – FU,QTLs
+8,Phase III – FU,Alignment of QTLs with CtQs
+8,Phase IV,CtQ Factors
 8,Phase IV,QbD Processes
-8,Phase IV,QTL'S
-8,Phase IV,Alignment of QTL'S with CTQ'S
-9,FIH,CTQ Factors
-9,FIH,QTL'S
-9,FIH,Alignment of QTL'S with CTQ'S
+8,Phase IV,QTLs
+8,Phase IV,Alignment of QTLs with CtQs
+9,FIH,CtQ Factors
+9,FIH,QTLs
+9,FIH,Alignment of QTLs with CtQs
 9,FIH,Other Risk-Based Approaches
-9,Phase I Non-FIH,CTQ Factors
-9,Phase I Non-FIH,QTL'S
-9,Phase I Non-FIH,Alignment of QTL'S with CTQ'S
-9,Phase I Non-FIH,Other Risk-Based Approaches
-9,Phase II,CTQ Factors
-9,Phase II,QTL'S
-9,Phase II,Alignment of QTL'S with CTQ'S
+9,Phase I Non–FIH,CtQ Factors
+9,Phase I Non–FIH,QTLs
+9,Phase I Non–FIH,Alignment of QTLs with CtQs
+9,Phase I Non–FIH,Other Risk-Based Approaches
+9,Phase II,CtQ Factors
+9,Phase II,QTLs
+9,Phase II,Alignment of QTLs with CtQs
 9,Phase II,Other Risk-Based Approaches
-9,Phase III - RS,CTQ Factors
-9,Phase III - RS,QTL'S
-9,Phase III - RS,Alignment of QTL'S with CTQ'S
-9,Phase III - RS,Other Risk-Based Approaches
-9,Phase III - FU,CTQ Factors
-9,Phase III - FU,QTL'S
-9,Phase III - FU,Alignment of QTL'S with CTQ'S
-9,Phase III - FU,Other Risk-Based Approaches
-10,Phase II,CTQ Factors
+9,Phase III – RS,CtQ Factors
+9,Phase III – RS,QTLs
+9,Phase III – RS,Alignment of QTLs with CtQs
+9,Phase III – RS,Other Risk-Based Approaches
+9,Phase III – FU,CtQ Factors
+9,Phase III – FU,QTLs
+9,Phase III – FU,Alignment of QTLs with CtQs
+9,Phase III – FU,Other Risk-Based Approaches
+10,Phase II,CtQ Factors
 10,Phase II,QbD Processes
-11,FIH,CTQ Factors
+11,FIH,CtQ Factors
 11,FIH,QbD Processes
-11,Phase I Non-FIH,CTQ Factors
-11,Phase I Non-FIH,QbD Processes
-11,Phase I Non-FIH,QTL'S
-11,Phase I Non-FIH,Alignment of QTL'S with CTQ'S
-11,Phase I Non-FIH,Other Risk-Based Approaches
-11,Phase II,CTQ Factors
+11,Phase I Non–FIH,CtQ Factors
+11,Phase I Non–FIH,QbD Processes
+11,Phase I Non–FIH,QTLs
+11,Phase I Non–FIH,Alignment of QTLs with CtQs
+11,Phase I Non–FIH,Other Risk-Based Approaches
+11,Phase II,CtQ Factors
 11,Phase II,QbD Processes
-11,Phase II,QTL'S
-11,Phase II,Alignment of QTL'S with CTQ'S
+11,Phase II,QTLs
+11,Phase II,Alignment of QTLs with CtQs
 11,Phase II,Other Risk-Based Approaches
-11,Phase III - RS,CTQ Factors
-11,Phase III - RS,QbD Processes
-11,Phase III - RS,QTL'S
-11,Phase III - RS,Alignment of QTL'S with CTQ'S
-11,Phase III - RS,Other Risk-Based Approaches
-11,Phase III - FU,CTQ Factors
-11,Phase III - FU,QbD Processes
-11,Phase III - FU,QTL'S
-11,Phase III - FU,Alignment of QTL'S with CTQ'S
-11,Phase III - FU,Other Risk-Based Approaches
-11,Phase IV,CTQ Factors
+11,Phase III – RS,CtQ Factors
+11,Phase III – RS,QbD Processes
+11,Phase III – RS,QTLs
+11,Phase III – RS,Alignment of QTLs with CtQs
+11,Phase III – RS,Other Risk-Based Approaches
+11,Phase III – FU,CtQ Factors
+11,Phase III – FU,QbD Processes
+11,Phase III – FU,QTLs
+11,Phase III – FU,Alignment of QTLs with CtQs
+11,Phase III – FU,Other Risk-Based Approaches
+11,Phase IV,CtQ Factors
 11,Phase IV,QbD Processes
-11,Phase IV,QTL'S
-11,Phase IV,Alignment of QTL'S with CTQ'S
+11,Phase IV,QTLs
+11,Phase IV,Alignment of QTLs with CtQs
 11,Phase IV,Other Risk-Based Approaches
 12,FIH,QbD Processes
-12,Phase I Non-FIH,QbD Processes
-12,Phase II,QTL'S
+12,Phase I Non–FIH,QbD Processes
+12,Phase II,QTLs
 12,Phase II,Other Risk-Based Approaches
-12,Phase III - RS,QTL'S
-12,Phase III - RS,Other Risk-Based Approaches
-12,Phase III - FU,QTL'S
+12,Phase III – RS,QTLs
+12,Phase III – RS,Other Risk-Based Approaches
+12,Phase III – FU,QTLs
 12,Phase IV,Other Risk-Based Approaches
-13,FIH,CTQ Factors
+13,FIH,CtQ Factors
 13,FIH,QbD Processes
-13,FIH,QTL'S
-13,FIH,Alignment of QTL'S with CTQ'S
-13,Phase I Non-FIH,CTQ Factors
-13,Phase I Non-FIH,QbD Processes
-13,Phase I Non-FIH,QTL'S
-13,Phase I Non-FIH,Alignment of QTL'S with CTQ'S
-13,Phase II,CTQ Factors
+13,FIH,QTLs
+13,FIH,Alignment of QTLs with CtQs
+13,Phase I Non–FIH,CtQ Factors
+13,Phase I Non–FIH,QbD Processes
+13,Phase I Non–FIH,QTLs
+13,Phase I Non–FIH,Alignment of QTLs with CtQs
+13,Phase II,CtQ Factors
 13,Phase II,QbD Processes
-13,Phase II,QTL'S
-13,Phase II,Alignment of QTL'S with CTQ'S
+13,Phase II,QTLs
+13,Phase II,Alignment of QTLs with CtQs
 13,Phase II,Other Risk-Based Approaches
-13,Phase III - RS,CTQ Factors
-13,Phase III - RS,QbD Processes
-13,Phase III - RS,QTL'S
-13,Phase III - RS,Alignment of QTL'S with CTQ'S
-13,Phase III - RS,Other Risk-Based Approaches
-13,Phase III - FU,CTQ Factors
-13,Phase III - FU,QbD Processes
-13,Phase III - FU,QTL'S
-13,Phase III - FU,Alignment of QTL'S with CTQ'S
-13,Phase III - FU,Other Risk-Based Approaches
-13,Phase IV,CTQ Factors
+13,Phase III – RS,CtQ Factors
+13,Phase III – RS,QbD Processes
+13,Phase III – RS,QTLs
+13,Phase III – RS,Alignment of QTLs with CtQs
+13,Phase III – RS,Other Risk-Based Approaches
+13,Phase III – FU,CtQ Factors
+13,Phase III – FU,QbD Processes
+13,Phase III – FU,QTLs
+13,Phase III – FU,Alignment of QTLs with CtQs
+13,Phase III – FU,Other Risk-Based Approaches
+13,Phase IV,CtQ Factors
 13,Phase IV,QbD Processes
-13,Phase IV,QTL'S
-13,Phase IV,Alignment of QTL'S with CTQ'S
+13,Phase IV,QTLs
+13,Phase IV,Alignment of QTLs with CtQs
 13,Phase IV,Other Risk-Based Approaches
-14,FIH,CTQ Factors
+14,FIH,CtQ Factors
 14,FIH,Other Risk-Based Approaches
-14,Phase I Non-FIH,CTQ Factors
-14,Phase I Non-FIH,Other Risk-Based Approaches
-14,Phase II,CTQ Factors
+14,Phase I Non–FIH,CtQ Factors
+14,Phase I Non–FIH,Other Risk-Based Approaches
+14,Phase II,CtQ Factors
 14,Phase II,Other Risk-Based Approaches
-14,Phase III - RS,CTQ Factors
-14,Phase III - RS,Other Risk-Based Approaches
-14,Phase III - FU,CTQ Factors
-14,Phase III - FU,Other Risk-Based Approaches
-15,Phase I Non-FIH,CTQ Factors
-15,Phase I Non-FIH,QbD Processes
-15,Phase I Non-FIH,Other Risk-Based Approaches
-15,Phase II,CTQ Factors
+14,Phase III – RS,CtQ Factors
+14,Phase III – RS,Other Risk-Based Approaches
+14,Phase III – FU,CtQ Factors
+14,Phase III – FU,Other Risk-Based Approaches
+15,Phase I Non–FIH,CtQ Factors
+15,Phase I Non–FIH,QbD Processes
+15,Phase I Non–FIH,Other Risk-Based Approaches
+15,Phase II,CtQ Factors
 15,Phase II,QbD Processes
-15,Phase II,QTL'S
-15,Phase II,Alignment of QTL'S with CTQ'S
+15,Phase II,QTLs
+15,Phase II,Alignment of QTLs with CtQs
 15,Phase II,Other Risk-Based Approaches
-15,Phase III - RS,CTQ Factors
-15,Phase III - RS,QbD Processes
-15,Phase III - RS,QTL'S
-15,Phase III - RS,Alignment of QTL'S with CTQ'S
-15,Phase III - RS,Other Risk-Based Approaches
-15,Phase III - FU,CTQ Factors
-15,Phase III - FU,QbD Processes
-15,Phase III - FU,Other Risk-Based Approaches
+15,Phase III – RS,CtQ Factors
+15,Phase III – RS,QbD Processes
+15,Phase III – RS,QTLs
+15,Phase III – RS,Alignment of QTLs with CtQs
+15,Phase III – RS,Other Risk-Based Approaches
+15,Phase III – FU,CtQ Factors
+15,Phase III – FU,QbD Processes
+15,Phase III – FU,Other Risk-Based Approaches

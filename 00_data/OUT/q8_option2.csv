@@ -1,187 +1,187 @@
 response_id,activity,trial_attributes
-1,QTL’s Utilized,Trial Design
-1,QTL’s Utilized,Trial Phase
-1,QTL’s Utilized,Trial Size
-1,QTL’s Aligned with CTQ’s,Trial Design
-1,QTL’s Aligned with CTQ’s,Trial Phase
-1,QTL’s Aligned with CTQ’s,Trial Size
-1,QTL Review Processes,Trial Design
-1,QTL Review Processes,Trial Phase
-1,QTL Review Processes,Trial Size
-1,Frequency of QTL Review,Trial Design
-1,Frequency of QTL Review,Trial Phase
-1,Frequency of QTL Review,Trial Size
-1,Communication of QTL Breaches,Trial Design
-1,Communication of QTL Breaches,Trial Phase
-1,Communication of QTL Breaches,Trial Size
+1,QTLs Utilized,Trial Design
+1,QTLs Utilized,Trial Phase
+1,QTLs Utilized,Trial Size
+1,QTLs Aligned with CtQ’s,Trial Design
+1,QTLs Aligned with CtQ’s,Trial Phase
+1,QTLs Aligned with CtQ’s,Trial Size
+1,QTLs Review Processes,Trial Design
+1,QTLs Review Processes,Trial Phase
+1,QTLs Review Processes,Trial Size
+1,Frequency of QTLs Review,Trial Design
+1,Frequency of QTLs Review,Trial Phase
+1,Frequency of QTLs Review,Trial Size
+1,Communication of QTLs Breaches,Trial Design
+1,Communication of QTLs Breaches,Trial Phase
+1,Communication of QTLs Breaches,Trial Size
 1,Implementation of Corrective Actions,Trial Design
 1,Implementation of Corrective Actions,Trial Phase
 1,Implementation of Corrective Actions,Trial Size
-1,Reporting Significant QTL Deviations in CSR,Trial Design
-1,Reporting Significant QTL Deviations in CSR,Trial Phase
-1,Reporting Significant QTL Deviations in CSR,Trial Size
-2,Identification of CTQ’s,Unable to Answer
+1,Reporting Significant QTLs Deviations in CSRs,Trial Design
+1,Reporting Significant QTLs Deviations in CSRs,Trial Phase
+1,Reporting Significant QTLs Deviations in CSRs,Trial Size
+2,Identification of CtQs,Unable to Answer
 2,Overall Implementation of QbD,Unable to Answer
-2,QTL’s Utilized,Trial Size
-2,QTL’s Aligned with CTQ’s,Trial Size
-2,QTL Review Processes,Trial Size
-2,Frequency of QTL Review,Trial Size
-2,Communication of QTL Breaches,Mixed Response
+2,QTLs Utilized,Trial Size
+2,QTLs Aligned with CtQ’s,Trial Size
+2,QTLs Review Processes,Trial Size
+2,Frequency of QTLs Review,Trial Size
+2,Communication of QTLs Breaches,Mixed Response
 2,Implementation of Corrective Actions,Mixed Response
-2,Reporting Significant QTL Deviations in CSR,Mixed Response
-3,Identification of CTQ’s,Not Utilized
+2,Reporting Significant QTLs Deviations in CSRs,Mixed Response
+3,Identification of CtQs,Not Utilized
 3,Overall Implementation of QbD,Not Utilized
-3,QTL’s Utilized,Trial Design
-3,QTL’s Utilized,Trial Phase
-3,QTL’s Utilized,Trial Size
-3,QTL’s Aligned with CTQ’s,Not Utilized
-3,QTL Review Processes,Trial Phase
-3,Frequency of QTL Review,Trial Phase
-3,Communication of QTL Breaches,Trial Design
-3,Communication of QTL Breaches,Trial Phase
-3,Communication of QTL Breaches,Trial Size
+3,QTLs Utilized,Trial Design
+3,QTLs Utilized,Trial Phase
+3,QTLs Utilized,Trial Size
+3,QTLs Aligned with CtQ’s,Not Utilized
+3,QTLs Review Processes,Trial Phase
+3,Frequency of QTLs Review,Trial Phase
+3,Communication of QTLs Breaches,Trial Design
+3,Communication of QTLs Breaches,Trial Phase
+3,Communication of QTLs Breaches,Trial Size
 3,Implementation of Corrective Actions,Trial Design
 3,Implementation of Corrective Actions,Trial Phase
 3,Implementation of Corrective Actions,Trial Size
-3,Reporting Significant QTL Deviations in CSR,Trial Design
-3,Reporting Significant QTL Deviations in CSR,Trial Phase
-3,Reporting Significant QTL Deviations in CSR,Trial Size
-4,Identification of CTQ’s,Not Utilized
+3,Reporting Significant QTLs Deviations in CSRs,Trial Design
+3,Reporting Significant QTLs Deviations in CSRs,Trial Phase
+3,Reporting Significant QTLs Deviations in CSRs,Trial Size
+4,Identification of CtQs,Not Utilized
 4,Overall Implementation of QbD,Mixed Response
-4,QTL’s Utilized,Trial Design
-4,QTL’s Utilized,Trial Phase
-4,QTL’s Utilized,Trial Size
-4,QTL’s Aligned with CTQ’s,Not Utilized
-4,QTL Review Processes,Mixed Response
-4,Frequency of QTL Review,Mixed Response
-4,Communication of QTL Breaches,Mixed Response
+4,QTLs Utilized,Trial Design
+4,QTLs Utilized,Trial Phase
+4,QTLs Utilized,Trial Size
+4,QTLs Aligned with CtQ’s,Not Utilized
+4,QTLs Review Processes,Mixed Response
+4,Frequency of QTLs Review,Mixed Response
+4,Communication of QTLs Breaches,Mixed Response
 4,Implementation of Corrective Actions,Trial Design
 4,Implementation of Corrective Actions,Trial Phase
 4,Implementation of Corrective Actions,Trial Size
-4,Reporting Significant QTL Deviations in CSR,Trial Design
-4,Reporting Significant QTL Deviations in CSR,Trial Phase
-4,Reporting Significant QTL Deviations in CSR,Trial Size
-5,Identification of CTQ’s,Trial Design
-5,Identification of CTQ’s,Trial Phase
-5,Identification of CTQ’s,Trial Size
+4,Reporting Significant QTLs Deviations in CSRs,Trial Design
+4,Reporting Significant QTLs Deviations in CSRs,Trial Phase
+4,Reporting Significant QTLs Deviations in CSRs,Trial Size
+5,Identification of CtQs,Trial Design
+5,Identification of CtQs,Trial Phase
+5,Identification of CtQs,Trial Size
 5,Overall Implementation of QbD,Trial Design
 5,Overall Implementation of QbD,Trial Phase
 5,Overall Implementation of QbD,Trial Size
-5,QTL’s Utilized,Trial Design
-5,QTL’s Utilized,Trial Phase
-5,QTL’s Utilized,Trial Size
-5,QTL’s Aligned with CTQ’s,Trial Design
-5,QTL’s Aligned with CTQ’s,Trial Phase
-5,QTL’s Aligned with CTQ’s,Trial Size
-5,QTL Review Processes,Trial Design
-5,QTL Review Processes,Trial Phase
-5,QTL Review Processes,Trial Size
-5,Frequency of QTL Review,Trial Design
-5,Frequency of QTL Review,Trial Phase
-5,Frequency of QTL Review,Trial Size
-5,Frequency of QTL Review,Not Utilized
-5,Communication of QTL Breaches,Trial Design
-5,Communication of QTL Breaches,Trial Phase
-5,Communication of QTL Breaches,Trial Size
-5,Communication of QTL Breaches,Not Utilized
+5,QTLs Utilized,Trial Design
+5,QTLs Utilized,Trial Phase
+5,QTLs Utilized,Trial Size
+5,QTLs Aligned with CtQ’s,Trial Design
+5,QTLs Aligned with CtQ’s,Trial Phase
+5,QTLs Aligned with CtQ’s,Trial Size
+5,QTLs Review Processes,Trial Design
+5,QTLs Review Processes,Trial Phase
+5,QTLs Review Processes,Trial Size
+5,Frequency of QTLs Review,Trial Design
+5,Frequency of QTLs Review,Trial Phase
+5,Frequency of QTLs Review,Trial Size
+5,Frequency of QTLs Review,Not Utilized
+5,Communication of QTLs Breaches,Trial Design
+5,Communication of QTLs Breaches,Trial Phase
+5,Communication of QTLs Breaches,Trial Size
+5,Communication of QTLs Breaches,Not Utilized
 5,Implementation of Corrective Actions,Trial Design
 5,Implementation of Corrective Actions,Trial Phase
 5,Implementation of Corrective Actions,Trial Size
-5,Reporting Significant QTL Deviations in CSR,Trial Design
-5,Reporting Significant QTL Deviations in CSR,Trial Phase
-5,Reporting Significant QTL Deviations in CSR,Trial Size
-5,Reporting Significant QTL Deviations in CSR,Not Utilized
-6,Identification of CTQ’s,Not Utilized
+5,Reporting Significant QTLs Deviations in CSRs,Trial Design
+5,Reporting Significant QTLs Deviations in CSRs,Trial Phase
+5,Reporting Significant QTLs Deviations in CSRs,Trial Size
+5,Reporting Significant QTLs Deviations in CSRs,Not Utilized
+6,Identification of CtQs,Not Utilized
 6,Overall Implementation of QbD,Not Utilized
-6,QTL’s Utilized,Not Utilized
-6,QTL’s Aligned with CTQ’s,Not Utilized
-6,QTL Review Processes,Not Utilized
-6,Frequency of QTL Review,Not Utilized
-6,Communication of QTL Breaches,Not Utilized
+6,QTLs Utilized,Not Utilized
+6,QTLs Aligned with CtQ’s,Not Utilized
+6,QTLs Review Processes,Not Utilized
+6,Frequency of QTLs Review,Not Utilized
+6,Communication of QTLs Breaches,Not Utilized
 6,Implementation of Corrective Actions,Not Utilized
-6,Reporting Significant QTL Deviations in CSR,Not Utilized
-7,Identification of CTQ’s,Trial Design
+6,Reporting Significant QTLs Deviations in CSRs,Not Utilized
+7,Identification of CtQs,Trial Design
 7,Overall Implementation of QbD,Trial Design
-7,QTL’s Utilized,Trial Design
-7,QTL’s Utilized,Trial Phase
-7,QTL’s Utilized,Trial Size
-7,QTL’s Aligned with CTQ’s,Mixed Response
-7,QTL Review Processes,Trial Design
-7,QTL Review Processes,Trial Phase
-7,QTL Review Processes,Trial Size
-7,Frequency of QTL Review,Mixed Response
-7,Communication of QTL Breaches,Mixed Response
+7,QTLs Utilized,Trial Design
+7,QTLs Utilized,Trial Phase
+7,QTLs Utilized,Trial Size
+7,QTLs Aligned with CtQ’s,Mixed Response
+7,QTLs Review Processes,Trial Design
+7,QTLs Review Processes,Trial Phase
+7,QTLs Review Processes,Trial Size
+7,Frequency of QTLs Review,Mixed Response
+7,Communication of QTLs Breaches,Mixed Response
 7,Implementation of Corrective Actions,Unable to Answer
-7,Reporting Significant QTL Deviations in CSR,Mixed Response
-8,Identification of CTQ’s,Trial Phase
-8,Identification of CTQ’s,Trial Size
-8,QTL’s Utilized,Trial Phase
-8,QTL’s Utilized,Trial Size
-8,Frequency of QTL Review,Trial Design
-8,Frequency of QTL Review,Trial Phase
-8,Frequency of QTL Review,Trial Size
-9,Identification of CTQ’s,Unable to Answer
+7,Reporting Significant QTLs Deviations in CSRs,Mixed Response
+8,Identification of CtQs,Trial Phase
+8,Identification of CtQs,Trial Size
+8,QTLs Utilized,Trial Phase
+8,QTLs Utilized,Trial Size
+8,Frequency of QTLs Review,Trial Design
+8,Frequency of QTLs Review,Trial Phase
+8,Frequency of QTLs Review,Trial Size
+9,Identification of CtQs,Unable to Answer
 9,Overall Implementation of QbD,Unable to Answer
-9,QTL’s Utilized,Unable to Answer
-9,QTL’s Aligned with CTQ’s,Unable to Answer
-9,QTL Review Processes,Unable to Answer
-9,Frequency of QTL Review,Unable to Answer
-9,Communication of QTL Breaches,Unable to Answer
+9,QTLs Utilized,Unable to Answer
+9,QTLs Aligned with CtQ’s,Unable to Answer
+9,QTLs Review Processes,Unable to Answer
+9,Frequency of QTLs Review,Unable to Answer
+9,Communication of QTLs Breaches,Unable to Answer
 9,Implementation of Corrective Actions,Unable to Answer
-9,Reporting Significant QTL Deviations in CSR,Unable to Answer
-10,Identification of CTQ’s,Trial Design
+9,Reporting Significant QTLs Deviations in CSRs,Unable to Answer
+10,Identification of CtQs,Trial Design
 10,Overall Implementation of QbD,Trial Design
-10,QTL’s Utilized,Trial Design
-10,QTL’s Aligned with CTQ’s,Trial Design
-10,QTL Review Processes,Trial Design
-10,Frequency of QTL Review,Trial Design
-10,Communication of QTL Breaches,Trial Design
+10,QTLs Utilized,Trial Design
+10,QTLs Aligned with CtQ’s,Trial Design
+10,QTLs Review Processes,Trial Design
+10,Frequency of QTLs Review,Trial Design
+10,Communication of QTLs Breaches,Trial Design
 10,Implementation of Corrective Actions,Trial Design
-10,Reporting Significant QTL Deviations in CSR,Trial Design
-11,Identification of CTQ’s,Mixed Response
+10,Reporting Significant QTLs Deviations in CSRs,Trial Design
+11,Identification of CtQs,Mixed Response
 11,Overall Implementation of QbD,Unable to Answer
-11,QTL’s Utilized,Trial Phase
-11,QTL’s Aligned with CTQ’s,Trial Phase
-11,QTL Review Processes,Trial Phase
-11,Frequency of QTL Review,Trial Size
-11,Communication of QTL Breaches,Trial Phase
-11,Communication of QTL Breaches,Trial Size
+11,QTLs Utilized,Trial Phase
+11,QTLs Aligned with CtQ’s,Trial Phase
+11,QTLs Review Processes,Trial Phase
+11,Frequency of QTLs Review,Trial Size
+11,Communication of QTLs Breaches,Trial Phase
+11,Communication of QTLs Breaches,Trial Size
 11,Implementation of Corrective Actions,Trial Size
-11,Reporting Significant QTL Deviations in CSR,Trial Phase
-11,Reporting Significant QTL Deviations in CSR,Trial Size
-12,Identification of CTQ’s,Trial Design
-12,Identification of CTQ’s,Trial Phase
+11,Reporting Significant QTLs Deviations in CSRs,Trial Phase
+11,Reporting Significant QTLs Deviations in CSRs,Trial Size
+12,Identification of CtQs,Trial Design
+12,Identification of CtQs,Trial Phase
 12,Overall Implementation of QbD,Not Utilized
-12,QTL’s Utilized,Trial Design
-12,QTL’s Utilized,Trial Phase
-12,QTL’s Aligned with CTQ’s,Trial Design
-12,QTL Review Processes,Trial Design
-12,QTL Review Processes,Trial Phase
-12,Frequency of QTL Review,Trial Design
-12,Communication of QTL Breaches,Unable to Answer
+12,QTLs Utilized,Trial Design
+12,QTLs Utilized,Trial Phase
+12,QTLs Aligned with CtQ’s,Trial Design
+12,QTLs Review Processes,Trial Design
+12,QTLs Review Processes,Trial Phase
+12,Frequency of QTLs Review,Trial Design
+12,Communication of QTLs Breaches,Unable to Answer
 12,Implementation of Corrective Actions,Trial Design
 12,Implementation of Corrective Actions,Trial Phase
-12,Reporting Significant QTL Deviations in CSR,Unable to Answer
-13,QTL’s Utilized,Trial Design
-13,QTL Review Processes,Trial Size
-13,Frequency of QTL Review,Trial Design
-14,Identification of CTQ’s,Trial Phase
+12,Reporting Significant QTLs Deviations in CSRs,Unable to Answer
+13,QTLs Utilized,Trial Design
+13,QTLs Review Processes,Trial Size
+13,Frequency of QTLs Review,Trial Design
+14,Identification of CtQs,Trial Phase
 14,Overall Implementation of QbD,Unable to Answer
-14,QTL’s Utilized,Unable to Answer
-14,QTL’s Aligned with CTQ’s,Unable to Answer
-14,QTL Review Processes,Unable to Answer
-14,Frequency of QTL Review,Unable to Answer
-14,Communication of QTL Breaches,Unable to Answer
+14,QTLs Utilized,Unable to Answer
+14,QTLs Aligned with CtQ’s,Unable to Answer
+14,QTLs Review Processes,Unable to Answer
+14,Frequency of QTLs Review,Unable to Answer
+14,Communication of QTLs Breaches,Unable to Answer
 14,Implementation of Corrective Actions,Unable to Answer
-14,Reporting Significant QTL Deviations in CSR,Unable to Answer
-15,Identification of CTQ’s,Mixed Response
+14,Reporting Significant QTLs Deviations in CSRs,Unable to Answer
+15,Identification of CtQs,Mixed Response
 15,Overall Implementation of QbD,Trial Design
 15,Overall Implementation of QbD,Trial Phase
 15,Overall Implementation of QbD,Trial Size
-15,QTL’s Utilized,Trial Design
-15,QTL’s Utilized,Trial Phase
-15,QTL’s Utilized,Trial Size
-15,QTL’s Utilized,Mixed Response
-15,QTL’s Aligned with CTQ’s,Trial Design
-15,QTL’s Aligned with CTQ’s,Trial Phase
-15,Frequency of QTL Review,Trial Design
+15,QTLs Utilized,Trial Design
+15,QTLs Utilized,Trial Phase
+15,QTLs Utilized,Trial Size
+15,QTLs Utilized,Mixed Response
+15,QTLs Aligned with CtQ’s,Trial Design
+15,QTLs Aligned with CtQ’s,Trial Phase
+15,Frequency of QTLs Review,Trial Design

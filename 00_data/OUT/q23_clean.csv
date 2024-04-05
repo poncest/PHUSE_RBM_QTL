@@ -5,14 +5,14 @@ response_id,transcelerate_parameters,status
 1,Primary Endpoint Assessment,Currently in Use
 1,Secondary Endpoint Assessment,Currently in Use
 1,Investigational Product – Compliance,Currently in Use
-1,Investigational Product - Other,Currently in Use
+1,Investigational Product – Other,Currently in Use
 1,Randomization Failure,Planned to Use
 1,Lost to Follow Up,Under Consideration
 1,Informed Consent,Under Consideration
-1,AE/SAE - Reporting,Under Consideration
-1,Censored Data – Statistical analysis,Not Considered a QTL
+1,AE/SAE – Reporting,Under Consideration
+1,Censored Data – Statistical Analysis,Not Considered a QTL
 1,Disposition – Early Termination,Currently in Use
-1,Repeated Timepoints for FIH/Early Phase trials,Currently in Use
+1,Repeated Timepoints for FIH/Early Phase Trials,Currently in Use
 1,Stratification,Not Considered a QTL
 2,PD – I/E Criteria,Currently in Use
 2,PD – Study Conduct,Currently in Use
@@ -20,14 +20,14 @@ response_id,transcelerate_parameters,status
 2,Primary Endpoint Assessment,Currently in Use
 2,Secondary Endpoint Assessment,Currently in Use
 2,Investigational Product – Compliance,Not Considered a QTL
-2,Investigational Product - Other,Not Considered a QTL
+2,Investigational Product – Other,Not Considered a QTL
 2,Randomization Failure,Not Considered a QTL
 2,Lost to Follow Up,Planned to Use
 2,Informed Consent,Not Considered a QTL
-2,AE/SAE - Reporting,Not Considered a QTL
-2,Censored Data – Statistical analysis,Planned to Use
+2,AE/SAE – Reporting,Not Considered a QTL
+2,Censored Data – Statistical Analysis,Planned to Use
 2,Disposition – Early Termination,Planned to Use
-2,Repeated Timepoints for FIH/Early Phase trials,Currently in Use
+2,Repeated Timepoints for FIH/Early Phase Trials,Currently in Use
 2,Stratification,Not Considered a QTL
 3,PD – I/E Criteria,Not Considered a QTL
 3,PD – Study Conduct,Currently in Use
@@ -35,14 +35,14 @@ response_id,transcelerate_parameters,status
 3,Primary Endpoint Assessment,Currently in Use
 3,Secondary Endpoint Assessment,Not Considered a QTL
 3,Investigational Product – Compliance,Currently in Use
-3,Investigational Product - Other,Not Considered a QTL
+3,Investigational Product – Other,Not Considered a QTL
 3,Randomization Failure,Not Considered a QTL
 3,Lost to Follow Up,Not Considered a QTL
 3,Informed Consent,Not Considered a QTL
-3,AE/SAE - Reporting,Currently in Use
-3,Censored Data – Statistical analysis,Under Consideration
+3,AE/SAE – Reporting,Currently in Use
+3,Censored Data – Statistical Analysis,Under Consideration
 3,Disposition – Early Termination,Not Considered a QTL
-3,Repeated Timepoints for FIH/Early Phase trials,Currently in Use
+3,Repeated Timepoints for FIH/Early Phase Trials,Currently in Use
 3,Stratification,Not Considered a QTL
 3,Other1,Not Considered a QTL
 3,Other2,Not Considered a QTL
@@ -50,7 +50,7 @@ response_id,transcelerate_parameters,status
 4,PD – I/E Criteria,Currently in Use
 4,Randomization Failure,Currently in Use
 4,Lost to Follow Up,Currently in Use
-4,Censored Data – Statistical analysis,Currently in Use
+4,Censored Data – Statistical Analysis,Currently in Use
 4,Disposition – Early Termination,Currently in Use
 5,PD – I/E Criteria,Currently in Use
 5,PD – Study Conduct,Currently in Use
@@ -58,14 +58,14 @@ response_id,transcelerate_parameters,status
 5,Primary Endpoint Assessment,Under Consideration
 5,Secondary Endpoint Assessment,Under Consideration
 5,Investigational Product – Compliance,Currently in Use
-5,Investigational Product - Other,Under Consideration
+5,Investigational Product – Other,Under Consideration
 5,Randomization Failure,Under Consideration
 5,Lost to Follow Up,Under Consideration
 5,Informed Consent,Under Consideration
-5,AE/SAE - Reporting,Currently in Use
-5,Censored Data – Statistical analysis,Under Consideration
+5,AE/SAE – Reporting,Currently in Use
+5,Censored Data – Statistical Analysis,Under Consideration
 5,Disposition – Early Termination,Under Consideration
-5,Repeated Timepoints for FIH/Early Phase trials,Under Consideration
+5,Repeated Timepoints for FIH/Early Phase Trials,Under Consideration
 5,Stratification,Under Consideration
 5,Other1,Under Consideration
 6,PD – I/E Criteria,Under Consideration
@@ -79,26 +79,26 @@ response_id,transcelerate_parameters,status
 7,Primary Endpoint Assessment,Currently in Use
 7,Secondary Endpoint Assessment,Not Considered a QTL
 7,Investigational Product – Compliance,Not Considered a QTL
-7,Investigational Product - Other,Not Considered a QTL
+7,Investigational Product – Other,Not Considered a QTL
 7,Randomization Failure,Currently in Use
 7,Lost to Follow Up,Currently in Use
 7,Informed Consent,Currently in Use
-7,AE/SAE - Reporting,Not Considered a QTL
-7,Censored Data – Statistical analysis,Currently in Use
+7,AE/SAE – Reporting,Not Considered a QTL
+7,Censored Data – Statistical Analysis,Currently in Use
 7,Disposition – Early Termination,Currently in Use
-7,Repeated Timepoints for FIH/Early Phase trials,Not Considered a QTL
+7,Repeated Timepoints for FIH/Early Phase Trials,Not Considered a QTL
 7,Stratification,Currently in Use
 8,Primary Endpoint Assessment,Currently in Use
 8,Secondary Endpoint Assessment,Currently in Use
 8,Investigational Product – Compliance,Currently in Use
-8,Investigational Product - Other,Currently in Use
+8,Investigational Product – Other,Currently in Use
 8,Randomization Failure,Planned to Use
 8,Lost to Follow Up,Currently in Use
 8,Informed Consent,Not Considered a QTL
-8,AE/SAE - Reporting,Not Considered a QTL
-8,Censored Data – Statistical analysis,Currently in Use
+8,AE/SAE – Reporting,Not Considered a QTL
+8,Censored Data – Statistical Analysis,Currently in Use
 8,Disposition – Early Termination,Currently in Use
-8,Repeated Timepoints for FIH/Early Phase trials,Not Considered a QTL
+8,Repeated Timepoints for FIH/Early Phase Trials,Not Considered a QTL
 8,Stratification,Currently in Use
 9,PD – I/E Criteria,Not Considered a QTL
 9,PD – Study Conduct,Not Considered a QTL
@@ -106,14 +106,14 @@ response_id,transcelerate_parameters,status
 9,Primary Endpoint Assessment,Planned to Use
 9,Secondary Endpoint Assessment,Planned to Use
 9,Investigational Product – Compliance,Planned to Use
-9,Investigational Product - Other,Not Considered a QTL
+9,Investigational Product – Other,Not Considered a QTL
 9,Randomization Failure,Not Considered a QTL
 9,Lost to Follow Up,Not Considered a QTL
 9,Informed Consent,Planned to Use
-9,AE/SAE - Reporting,Planned to Use
-9,Censored Data – Statistical analysis,Not Considered a QTL
+9,AE/SAE – Reporting,Planned to Use
+9,Censored Data – Statistical Analysis,Not Considered a QTL
 9,Disposition – Early Termination,Not Considered a QTL
-9,Repeated Timepoints for FIH/Early Phase trials,Not Considered a QTL
+9,Repeated Timepoints for FIH/Early Phase Trials,Not Considered a QTL
 9,Stratification,Not Considered a QTL
 9,Other1,Not Considered a QTL
 9,Other2,Not Considered a QTL
@@ -126,11 +126,11 @@ response_id,transcelerate_parameters,status
 10,Randomization Failure,Currently in Use
 10,Lost to Follow Up,Planned to Use
 10,Informed Consent,Currently in Use
-10,AE/SAE - Reporting,Currently in Use
-10,Censored Data – Statistical analysis,Currently in Use
+10,AE/SAE – Reporting,Currently in Use
+10,Censored Data – Statistical Analysis,Currently in Use
 10,Disposition – Early Termination,Currently in Use
-10,Repeated Timepoints for FIH/Early Phase trials,Currently in Use
-10,Repeated Timepoints for FIH/Early Phase trials,Planned to Use
+10,Repeated Timepoints for FIH/Early Phase Trials,Currently in Use
+10,Repeated Timepoints for FIH/Early Phase Trials,Planned to Use
 10,Stratification,Currently in Use
 12,PD – I/E Criteria,Under Consideration
 12,PD – Study Conduct,Not Considered a QTL
@@ -138,14 +138,14 @@ response_id,transcelerate_parameters,status
 12,Primary Endpoint Assessment,Currently in Use
 12,Secondary Endpoint Assessment,Currently in Use
 12,Investigational Product – Compliance,Planned to Use
-12,Investigational Product - Other,Not Considered a QTL
+12,Investigational Product – Other,Not Considered a QTL
 12,Randomization Failure,Under Consideration
 12,Lost to Follow Up,Not Considered a QTL
 12,Informed Consent,Not Considered a QTL
-12,AE/SAE - Reporting,Not Considered a QTL
-12,Censored Data – Statistical analysis,Planned to Use
+12,AE/SAE – Reporting,Not Considered a QTL
+12,Censored Data – Statistical Analysis,Planned to Use
 12,Disposition – Early Termination,Not Considered a QTL
-12,Repeated Timepoints for FIH/Early Phase trials,Planned to Use
+12,Repeated Timepoints for FIH/Early Phase Trials,Planned to Use
 12,Stratification,Not Considered a QTL
 13,PD – I/E Criteria,Under Consideration
 13,PD – Study Conduct,Not Considered a QTL
@@ -153,14 +153,14 @@ response_id,transcelerate_parameters,status
 13,Primary Endpoint Assessment,Currently in Use
 13,Secondary Endpoint Assessment,Currently in Use
 13,Investigational Product – Compliance,Planned to Use
-13,Investigational Product - Other,Under Consideration
+13,Investigational Product – Other,Under Consideration
 13,Randomization Failure,Not Considered a QTL
 13,Lost to Follow Up,Under Consideration
 13,Informed Consent,Not Considered a QTL
-13,AE/SAE - Reporting,Planned to Use
-13,Censored Data – Statistical analysis,Under Consideration
+13,AE/SAE – Reporting,Planned to Use
+13,Censored Data – Statistical Analysis,Under Consideration
 13,Disposition – Early Termination,Currently in Use
-13,Repeated Timepoints for FIH/Early Phase trials,Under Consideration
+13,Repeated Timepoints for FIH/Early Phase Trials,Under Consideration
 13,Stratification,Under Consideration
 13,Other1,Under Consideration
 14,PD – I/E Criteria,Not Considered a QTL
@@ -169,14 +169,14 @@ response_id,transcelerate_parameters,status
 14,Primary Endpoint Assessment,Planned to Use
 14,Secondary Endpoint Assessment,Not Considered a QTL
 14,Investigational Product – Compliance,Planned to Use
-14,Investigational Product - Other,Not Considered a QTL
+14,Investigational Product – Other,Not Considered a QTL
 14,Randomization Failure,Under Consideration
 14,Lost to Follow Up,Planned to Use
 14,Informed Consent,Not Considered a QTL
-14,AE/SAE - Reporting,Under Consideration
-14,Censored Data – Statistical analysis,Under Consideration
+14,AE/SAE – Reporting,Under Consideration
+14,Censored Data – Statistical Analysis,Under Consideration
 14,Disposition – Early Termination,Planned to Use
-14,Repeated Timepoints for FIH/Early Phase trials,Under Consideration
+14,Repeated Timepoints for FIH/Early Phase Trials,Under Consideration
 14,Stratification,Under Consideration
 14,Other1,Not Considered a QTL
 14,Other2,Not Considered a QTL
@@ -187,11 +187,11 @@ response_id,transcelerate_parameters,status
 15,Primary Endpoint Assessment,Currently in Use
 15,Secondary Endpoint Assessment,Currently in Use
 15,Investigational Product – Compliance,Currently in Use
-15,Investigational Product - Other,Not Considered a QTL
+15,Investigational Product – Other,Not Considered a QTL
 15,Randomization Failure,Currently in Use
 15,Lost to Follow Up,Currently in Use
 15,Informed Consent,Not Considered a QTL
-15,AE/SAE - Reporting,Not Considered a QTL
+15,AE/SAE – Reporting,Not Considered a QTL
 15,Disposition – Early Termination,Currently in Use
-15,Repeated Timepoints for FIH/Early Phase trials,Not Considered a QTL
+15,Repeated Timepoints for FIH/Early Phase Trials,Not Considered a QTL
 15,Stratification,Currently in Use
