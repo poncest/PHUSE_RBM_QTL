@@ -35,12 +35,37 @@ This project supports the publication of the RBM-QTL white paper by generating n
 - More details available on the [PHUSE Workspace](https://advance.phuse.global/display/WEL/Quality+Tolerance+Limits).
 
 ### Folder Structure
-<details>
-<summary>Click to expand</summary>
-![Folder Structure](02_img\folder_tree_structure.png)
 
-
-</details>
+📁 PHUSE_RBM_QTL
+├── 📁 00_data
+│   ├── 📁 IN
+│   └── 📁 OUT
+├── 📁 00_fonts
+├── 📁 01_scripts
+│   ├── 📁 01_initial_work
+│   ├── 📁 02_selected_figures
+│   ├── 📁 03_updated_figures
+│   └── 📄 install_deps.R
+├── 📁 02_img
+│   ├── 📁 01_initial_work
+│   ├── 📁 02_selected_figures
+│   ├── 📁 03_updated_figures
+│   └── 📄 folder_tree_structure.png
+├── 📁 03_functions
+│   └── 📄 01_helper_functions.R
+├── 📁 04_doc
+│   ├── 📄 01_initial_work_figures.docx
+│   ├── 📄 02_selected_figures.docx
+│   ├── 📄 03_updated_selected_figures.docx
+│   └── 📄 QTL_Questionnaire_20Dec2022_Final.docx
+├── 📄 .gitignore
+├── 📄 AUTHORS.txt
+├── 📄 CITATION.md
+├── 📄 LICENSE
+├── 📄 PHUSE_RBM_QTL.Rproj
+├── 📄 README.md
+├── 📄 renv.lock
+└── 📄 session_info.txt
 
 ### Access the White Paper
 
