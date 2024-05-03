@@ -36,7 +36,7 @@ This project supports the publication of the RBM-QTL white paper by generating n
 
 ### Folder Structure
 
-![Folder Structure](02_img\folder_tree_structure.png)
+![](02_img/folder_tree_stucture.png)
 
 
 ### Access the White Paper
