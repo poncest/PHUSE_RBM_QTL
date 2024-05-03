@@ -1,6 +1,21 @@
-Steven Ponce <steven.ponce@bms.com>
-Author <name.name@work.com>
-Author <name.name@work.com>
-Author <name.name@work.com>
-Author <name.name@work.com>
+# Authors and Contributors
 
+## Project Authors
+- Chris Wells, Roche
+- Mireille Lovejoy, GE HealthCare
+- Michael Walega, Bristol Myers Squibb
+- Nathalie van Borrendam, Johnson & Johnson
+- Jennifer Krohn, Gilead Sciences
+- Johann Proeve, Cyntegrity
+
+## Contributors
+- Madalina-Daniela Spiridon, Roche: Contributed to transforming the Word-based survey into a Google Docs instrument.
+- Steven Ponce, Bristol Myers Squibb: Assisted in developing the visualizations for the project.
+
+## Additional Contributions
+- Kristin Stallcup, Takeda Pharmaceuticals International Co.: Contributed to the development of the survey instrument.
+- Barbara Seider, Zealand Pharma: Contributed to the development of the survey instrument and the white paper.
+- Extended members of the PHUSE Risk Based Quality Management (RBQM) Working Group, specifically those within the Quality Tolerance Limits team.
+
+## Contact
+- Email: workinggroups@phuse.global

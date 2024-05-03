@@ -176,7 +176,7 @@ ggsave(path = here("02_img/02_selected_figures/"),
 
 # Question 06 (Option 1) ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size 
 camcorder::gg_record( 
@@ -233,7 +233,7 @@ ggsave(path = here("02_img/03_updated_figures/"),
 
 # Question 06 (Option 2) ---- 
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size 
 camcorder::gg_record( 
@@ -295,7 +295,7 @@ ggsave(path = here("02_img/03_updated_figures/"),
 
 # Question 07 ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size ----
 camcorder::gg_record( 
@@ -415,7 +415,7 @@ col_palette <- c("#1696d2", "#fdbf11", "#000000","#d2d2d2", "#ec008b", "#55b748"
 
 ### |-  option 2 ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size 
 camcorder::gg_record( 
@@ -624,7 +624,7 @@ ggsave(path = here("02_img/02_selected_figures/"),
 
 # Question 19 ---- 
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size 
 camcorder::gg_record( 
@@ -694,7 +694,7 @@ ggsave(path = here("02_img/03_updated_figures/"),
 
 # Question 20.3 ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size 
 camcorder::gg_record( 
@@ -756,7 +756,7 @@ ggsave(path = here("02_img/03_updated_figures/"),
 
 # |- status ---- 
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size 
 camcorder::gg_record( 
@@ -936,7 +936,7 @@ ggsave(path = here("02_img/02_selected_figures/"),
 
 # |- option 2 ---- 
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size 
 camcorder::gg_record( 
@@ -1197,7 +1197,7 @@ ggsave(path = here("02_img/02_selected_figures/"),
 
 # |- option 2 ---- 
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- figure size 
 camcorder::gg_record( 

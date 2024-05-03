@@ -393,7 +393,7 @@ write_csv(x = q6_clean,
 
 # Question 07 ----     
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q7_clean <- q7_raw |>  
   
@@ -455,7 +455,7 @@ write_csv(x = q7_clean,
 
 # Question 08  ----    
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q8_clean <- q8_raw |>  
   
@@ -556,7 +556,7 @@ write_csv(x = q8_clean,
 
 # |- option 2 ----      
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q8_option2 <- q8_clean |>  
   
@@ -753,7 +753,7 @@ write_csv(x = q18_clean,
 
 # Question 19 ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q19_clean <- q19_raw |>  
   
@@ -862,7 +862,7 @@ write_csv(x = q19_comments,
 
 # Question 20.3 ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q20.3_clean <- q20.3_raw |>  
   
@@ -951,7 +951,7 @@ write_csv(x = q20.3_other,
 
 # |- status ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q23_clean <- q23_raw |>  
   
@@ -1102,7 +1102,7 @@ write_csv(x = q23_comments,
 
 # |- rate ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q23_rate_clean <- q23_rate_raw |>  
   
@@ -1248,7 +1248,7 @@ write_csv(x = q23_rate_clean,
   
 # Question 24 ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q24_clean <- q24_raw |>  
   
@@ -1373,7 +1373,7 @@ write_csv(x = q24_comments,
 
 # |- rate ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q24_rate_clean <- q24_rate_raw |>  
   

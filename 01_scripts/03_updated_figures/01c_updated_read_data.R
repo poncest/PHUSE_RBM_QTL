@@ -36,7 +36,7 @@ source("03_functions/01_helper_functions.R")
 
 
 # loading the raw data (as is)
-raw_data <- fread(file = '00_data/IN/qtl_survey_response.csv') |>  
+raw_data <- fread(file = "00_data/IN/qtl_survey_response.csv") |>
   clean_names()
 
 # Question 03 ----
@@ -59,7 +59,7 @@ q5_raw <- raw_data |>
 
 # Question 06 ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q6_raw <- raw_data |> 
   select(
@@ -74,7 +74,7 @@ q6_raw <- raw_data |>
 
 # Question 07 ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q7_raw <- raw_data |> 
   select(
@@ -85,7 +85,7 @@ q7_raw <- raw_data |>
 
 # Question 08 ----      
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q8_raw <- raw_data |> 
   select(
@@ -135,7 +135,7 @@ q18_raw <- raw_data |>
 
 # Question 19 ----   
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q19_raw <- raw_data |> 
   select(
@@ -155,7 +155,7 @@ q19_raw <- raw_data |>
 
 # Question 20.3 ----   
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q20.3_raw <- raw_data |> 
   select(
@@ -166,7 +166,7 @@ q20.3_raw <- raw_data |>
 
 # Question 23 ----      
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- status ----
 q23_raw <- raw_data |> 
@@ -197,7 +197,7 @@ q23_raw <- raw_data |>
 
 # |- rate ----
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 q23_rate_raw <- raw_data |> 
   select(
@@ -247,7 +247,7 @@ q24_raw <- raw_data |>
     )
  
 
-### |- (UPDATED ----------------------------) ----
+### |- UPDATED -----
 
 # |- rate ----
 q24_rate_raw <- raw_data |> 

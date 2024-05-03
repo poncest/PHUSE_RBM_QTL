@@ -1,24 +1,90 @@
 # Phuse Risk Base Monitoring - Quality Tolerance Limits (RBM-QTL)
 
+### Introduction
+This project supports the publication of the RBM-QTL white paper by generating necessary figures. Quality Tolerance Limits (QTL) are statistical tools used in pharmaceutical industries to ensure quality in clinical trials.
+
 ### Project Goal
 
--   Generate the necessary figures to support the publication of the RBM-QTL white paper.
+- Generate figures supporting the publication of the RBM-QTL white paper.
 
-### How do you generate the figures?
+### Generating Figures
 
--   Initial Work:
-    -   Please navigate to the `01_scripts/01_initial_work` folder and execute the `04_runfile.R` script.
--   Selected Figures:
-    -   Please navigate to the `01_scripts/02_selected_figures` folder and execute the `04b_selected_runfile.R` script.
+- **Initial Work**:
+    - Early exploratory analysis.
+    - Run the following command in R:
+      ```
+      source("01_scripts/01_initial_work/04_runfile.R")
+      ```
+
+- **Selected Figures**:
+    - Figures selected based on author feedback.
+    - Run the following command in R:
+      ```
+      source("01_scripts/02_selected_figures/04b_selected_runfile.R")
+      ```
+
+- **Updated Figures**:
+    - Figures updated based on reviewer feedback.
+    - Run the following command in R:
+      ```
+      source("01_scripts/03_updated_figures/04c_updated_runfile.R")
+      ```
 
 ### Additional Information
 
--   More information can be found [HERE](https://advance.phuse.global/display/WEL/Quality+Tolerance+Limits).
-
--   A list of Figures and Tracker can be found [HERE](https://github.com/poncest/PHUSE_RBM_QTL/tree/main/04_doc).
-
-------------------------------------------------------------------------
+- More details available on the [PHUSE Workspace](https://advance.phuse.global/display/WEL/Quality+Tolerance+Limits).
 
 ### Folder Structure
+<details>
+<summary>Click to expand</summary>
 
-![](02_img/folder_tree_stucture.png "tree")
+📁 PHUSE_RBM_QTL
+├── 📁 00_data
+│   ├── 📁 IN
+│   └── 📁 OUT
+├── 📁 00_fonts
+├── 📁 01_scripts
+│   ├── 📁 01_initial_work
+│   ├── 📁 02_selected_figures
+│   ├── 📁 03_updated_figures
+│   └── 📄 install_deps.R
+├── 📁 02_img
+│   ├── 📁 01_initial_work
+│   ├── 📁 02_selected_figures
+│   ├── 📁 03_updated_figures
+│   └── 📄 folder_tree_structure.png
+├── 📁 03_functions
+│   └── 📄 01_helper_functions.R
+├── 📁 04_doc
+│   ├── 📄 01_initial_work_figures.docx
+│   ├── 📄 02_selected_figures.docx
+│   ├── 📄 03_updated_selected_figures.docx
+│   └── 📄 QTL_Questionnaire_20Dec2022_Final.docx
+├── 📄 .gitignore
+├── 📄 AUTHORS.txt
+├── 📄 CITATION.md
+├── 📄 LICENSE
+├── 📄 PHUSE_RBM_QTL.Rproj
+├── 📄 README.md
+├── 📄 renv.lock
+└── 📄 session_info.txt
+
+</details>
+
+### Access the White Paper
+
+- Online version available [HERE](https://phuse.s3.eu-central-1.amazonaws.com/Deliverables/Risk+Based+Monitoring/WP-084.pdf).
+- PDF copy available in this repository [HERE](04_doc/WP-084.pdf).
+
+### Abstract
+
+Risk-based quality management (RBQM) has been encouraged since 2013, when the EMA published a reflection paper on RBQM to support effective monitoring and quality of clinical trials RBQM applies the quality by design (QbD) principles, and, over the past several years, the industry’s understanding of a QbD approach to clinical trials has improved  Using QbD encourages designing quality into a trial during the planning phase. The identification of critical to quality factors (CtQs) as part of QbD is key to implementing RBQM.
+
+One method of monitoring risk associated with CtQs is to use quality tolerance limit (QTL) parameters which are linked to the key scientific question(s) of a trial and identify systemic issues that can jeopardize the integrity of trial endpoints.
+
+This white paper aims to provide the reader with valuable insights into the depth and breadth of QTL use by surveying the industry. It will also address how QTLs are used in the wider scope of implementing RBQM and the direction of stakeholders, given that the regulations regarding the conduct of clinical trials continue to evolve.
+
+
+### Contact Information
+
+For questions or support, please contact workinggroups@phuse.global.
